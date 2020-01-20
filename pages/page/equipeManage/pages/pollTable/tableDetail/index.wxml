@@ -1,0 +1,21 @@
+<!--pages/page/equipeManage/pages/pollTable/tableDetail/index.wxml-->
+<view class="detail">
+  <view class="item">
+    <view class="top">
+      <image class="icon" src="../../../resource/icon_detail.png"></image>
+      <view>巡检详情</view>
+    </view>
+    <view class="cont">
+      <view>巡检编号：{{curObj.code}}</view>
+      <view>巡检计划：{{curObj.planName}}</view>
+      <view>巡检人：{{curObj.username?curObj.username:'未知'}}</view>
+      <view>本次巡检日期：{{curObj.time}}</view>
+      <view>下次巡检日期：{{curObj.next_time}}</view>
+      <view>本次超期：{{curObj.exceed_count}}天</view>
+      <view>周期：{{curObj.period}}{{curObj.period_flag==0?'天':curObj.period_flag==2?'年':'月'}}</view>
+      <view>是否巡检：{{curObj.status1}}</view>
+      <view>计划状态：{{curObj.flag}}</view>
+    </view>
+  </view>
+  <view wx:if="{{curObj.flag == '启用'}}" class="btn" bindtap="goExecute">执行</view>
+</view>

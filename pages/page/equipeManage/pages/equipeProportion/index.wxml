@@ -1,0 +1,79 @@
+<!--pages/page/equipeManage/pages/equipeProportion/index.wxml-->
+<view class="proportion">
+  <view class="proportion-t">
+    <view class="list">
+      <input class="inp" bindinput="goInputCont" placeholder="请输入计划名称"></input>
+      <view class="icon-serch" bindtap="goGetData">
+        <image src="/images/icon_search@2x.png"></image>
+      </view>
+    </view>
+    <view class="list">
+      <view class="l l1">
+        <picker class="set-picker"
+         bindchange="goChangeDMAtableTime3" 
+         data-id="1" 
+         value="{{curSelectTypeIndex}}" 
+         range="{{typeArrList}}" 
+         range-key="{{'label'}}">
+          <view style="display: flex;align-items: center;">
+            <view class="picker">{{typeArrList[curSelectTypeIndex].label}}</view>
+            <image class="icon-more" src="/images/icon_more.png"></image>
+          </view>
+        </picker>
+      </view>
+      <view class="l l2">
+        <picker class="set-picker"
+         bindchange="goChangeDMAtableTime3" 
+         data-id="2" 
+         value="{{curSelectRenIndex}}" 
+         range="{{renArrList}}" 
+         range-key="{{'username'}}">
+          <view style="display: flex;align-items: center;">
+            <view class="picker">{{renArrList[curSelectRenIndex].username}}</view>
+            <image class="icon-more" src="/images/icon_more.png"></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <view class="proportion-c">
+    <view class="c">
+      <view class="top">
+        <image class="icon" src="../../resource/icon_state.png"></image>
+        <text>设备状态占比</text>
+      </view>
+      <view class="bot">
+        <ec-canvas style="width: 100%; height: 100%;" id="mychartGauge1" canvas-id="mychartGauge1" ec="{{ ec }}"></ec-canvas>
+      </view>
+      <view class="bottom">
+        <view class="list">
+          <view class="zhishi cen"></view>
+          <view>未执行</view>
+        </view>
+        <view class="list">
+          <view class="zhishi bot"></view>
+          <view>已执行</view>
+        </view>
+      </view>
+    </view>
+    <view class="c">
+      <view class="top">
+        <image class="icon" src="../../resource/icon_xunjian.png"></image>
+        <text>巡检数占比</text>
+      </view>
+      <view class="bot">
+        <ec-canvas style="width: 100%; height: 100%;" id="mychartGauge2" canvas-id="mychartGauge2" ec="{{ ec2 }}"></ec-canvas>
+      </view>
+      <view class="bottom">
+        <view class="list">
+          <view class="zhishi cen"></view>
+          <view>故障</view>
+        </view>
+        <view class="list">
+          <view class="zhishi bot"></view>
+          <view>正常</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

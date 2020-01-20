@@ -1,0 +1,323 @@
+/* pages/page/energy/pages/rankUnit/index.wxss */
+page {
+  background-color: #f1f1f1;
+}
+.rank-unit>.unit-top {
+  display: flex;
+  height: 82rpx;
+  background-color: #fff;
+  justify-content: space-between;
+}
+.rank-unit>.unit-top>.item {
+  height: 82rpx;
+  display: flex;
+  color: #282828;
+  align-items: center;
+}
+.rank-unit>.unit-top>.item.active {
+  border-bottom: 4rpx solid #3AA0FB;
+}
+.rank-unit>.unit-top>.item.l {
+  margin-left: 130rpx;
+}
+.rank-unit>.unit-top>.item.r {
+  margin-right: 130rpx;
+}
+
+/* 
+ * 下半部分css
+ */
+.unit-cont {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 88rpx;
+  overflow: auto;
+  position: absolute;
+  background-color: #fff;
+}
+/* 第一部分 */
+.unit-cont>.cont-1 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.unit-cont>.cont-1>.cont {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 120rpx;
+  overflow: auto;
+  position: absolute;
+}
+.unit-cont>.cont-1>.cont-x {
+  bottom: 147rpx;
+}
+/* 
+ * ---------第一部分头部
+ */
+.cont-1 .cont1>.item {
+  border-bottom: 1rpx solid #F1F1F1;
+}
+.cont-1 .cont1>.item>.title {
+  display: flex;
+  margin: 0 15px;
+  padding: 10px 0;
+  font-size: 16px;
+  align-items: center;
+  border-bottom: 1rpx solid #ECECEC;
+}
+.cont-1 .cont1>.item>.title>view {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.cont-1 .cont1>.item>.title>.right {
+  font-size: 14px;
+  color: #656565;
+  justify-content: flex-end;
+}
+.cont-1 .cont1>.item>.title>.right>.normal {
+  color: #18A61B;
+}
+.cont-1 .cont1>.item>.title>.right>.unnormal {
+  color: #18A61B;
+}
+.cont-1 .cont1>.item>.cont {
+  color: #656565;
+  font-size: 15px;
+  margin: 18rpx 26rpx;
+  transition: all .2s;
+}
+.cont-1 .cont1>.item>.cont>.list {
+  display: flex;
+  margin-bottom: 16rpx;
+}
+.cont-1 .cont1>.item>.cont>.list>.l {
+  display: flex;
+  width: 100%;
+}
+.cont-1 .cont1>.item>.cont>.list>.l .jin-du {
+  flex: 1
+}
+/* .cont-1>.cont>.cont1>.item>.cont>.list>.l {
+  flex: 3;
+} */
+/* 
+ * ---------第一部分底部
+ */
+.unit-cont>.cont-1>.bot {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 120rpx;
+  display: flex;
+  position: absolute;
+  border-top: 2rpx solid #e3e3e3;
+}
+.unit-cont>.cont-1>.bot-x {
+  height: 147rpx;
+}
+.unit-cont>.cont-1>.bot>.item {
+  flex: 1;
+  display: flex;
+  color: #989898;
+  font-size: 24rpx;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.unit-cont>.cont-1>.bot>.item.active {
+  color: #3AA0FB;
+}
+.unit-cont>.cont-1>.bot>.item>image {
+  width: 54rpx;
+  height: 54rpx;
+}
+.unit-cont>.cont-1>.bot>.item>.icon2 {
+  display: none;
+}
+.unit-cont>.cont-1>.bot>.active>.icon {
+  display: none;
+}
+.unit-cont>.cont-1>.bot>.active>.icon2 {
+  display: block;
+}
+/* 
+ * -------------第二部分 内容区域
+ */
+
+.cont-2>.item {
+  display: flex;
+  padding: 0 20rpx;
+  background: #fff;
+}
+.cont-2>.item>item-l {
+  width: 200rpx;
+  overflow: hidden;
+}
+.cont-2>.item .list1,
+.cont-2>.item .list2 {
+  width: 200rpx;
+  overflow: hidden;
+  padding: 20rpx 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border-bottom: 1px solid #F1F1F1;
+}
+.cont-2>.item .list2{
+  color: #656565;
+  font-size: 28rpx;
+  padding: 20rpx 0;
+}
+.cont-2>.item>scroll-view {
+  flex: 1;
+  overflow: auto;
+  white-space: nowrap;
+}
+.cont-2>.item .item-r {
+  width: 1400rpx;
+  display: flex;
+  padding: 20rpx 0 20rpx;
+  border-bottom: 1px solid #F1F1F1;
+}
+.cont-2>.item .item-r2 {
+  color: #656565;
+  font-size: 28rpx;
+}
+.cont-2>.item .item-r>.list {
+  width: 200rpx;
+  overflow: hidden;
+  text-align: center;
+  white-space: nowrap;
+  display: inline-block;
+  text-overflow: ellipsis;
+}
+.cont-2>.item .list3{
+  border: none;
+}
+/* 
+ * 第三部分-筛选
+ */
+.operation {
+  height: 75rpx;
+  background: #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 30rpx;
+  font-size: 24rpx;
+}
+.operation>view {
+  display: flex;
+  height: 32rpx;
+  align-items: center;
+}
+.operation>view>view {
+  margin-right: 10rpx;
+}
+.operation>view image {
+  width: 28rpx;
+  height: 28rpx;
+}
+.cont-2>.top {
+  bottom: 0;
+  top: 0rpx;
+  left: 0rpx;
+  width: 0rpx;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.3);
+}
+.cont-2>.top2 {
+  width: 750rpx;
+}
+.cont-2>.top>.top-cont {
+  height: 100%;
+  width: 600rpx;
+  left: -600rpx;
+  overflow: hidden;
+  background: #fff;
+  position: relative;
+  transition: all .5s;
+}
+.cont-2>.top2>.top-cont {
+  left: 0rpx;
+  overflow: hidden;
+  transition: all .5s;
+}
+/* 
+ * 弹窗css
+ */
+.cont-2>.top>.top-cont>.mask-top {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 84rpx;
+  padding: 20rpx;
+  overflow: auto;
+  position: absolute;
+}
+.cont-2>.top>.top-cont>.mask-top .item>tit {
+  color: #282828;
+}
+.cont-2>.top>.top-cont>.mask-top .item>.cont {
+  overflow: auto;
+  max-height: 300rpx;
+  margin: 10rpx 0 20rpx;
+}
+.cont-2>.top>.top-cont>.mask-top .item .btn {
+  margin: 10rpx 0;
+  font-size: 22rpx;
+  color: #989898;
+  margin-left: 10rpx;
+  padding: 6rpx 14rpx;
+  border-radius: 10rpx;
+  display: inline-block;
+  background-color: #D9D9D9;
+}
+.cont-2>.top>.top-cont>.mask-top .item .btn.active {
+  color: #fff;
+  background-color: #3AA0FB;
+}
+.cont-2>.top>.top-cont>.mask-top .picker {
+  display: flex;
+  width: 150rpx;
+  border-radius: 5px;
+  align-items: center;
+  padding: 6rpx 14rpx;
+  margin: 10rpx 0 20rpx;
+  justify-content: center;
+  border: 1rpx solid #f1f1f1;
+}
+.cont-2>.top>.top-cont>.mask-top .picker>.tit {
+  font-size: 22rpx;
+}
+.cont-2>.top>.top-cont>.mask-top .picker>.up {
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: 10rpx;
+}
+
+.cont-2>.top>.top-cont>.mask-bot {
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  height: 84rpx;
+  position: absolute;
+  border-top: 1rpx solid #e3e3e3;
+}
+.cont-2>.top>.top-cont>.mask-bot>.btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cont-2>.top>.top-cont>.mask-bot>.btn.btn-true {
+  color: #fff;
+  background-color: #FF6D6D;
+}
+.data-null {
+  margin-top: 0rpx;
+  padding: 20rpx 0;
+  background-color: #fff;
+}

@@ -1,0 +1,98 @@
+<!--pages/page/equipeManage/pages/index.wxml-->
+<view class="equipe">
+  <view class="top">
+    <view class="item">
+      <picker value="{{cur_eleSystem}}" 
+        range="{{eleSystemArrList}}" 
+        range-key="{{'name'}}" 
+        data-id="1" 
+        bindchange="goBindDateChange">
+        <view class="tit">{{eleSystemArrList[cur_eleSystem].name}}</view>
+        <image src="/images/icon_more.png"></image>
+      </picker>
+    </view>
+    <view class="item" wx:if="{{showSubSystem}}">
+      <picker value="{{cur_waterSystem}}" 
+        range="{{waterSystemArrList}}" 
+        range-key="{{'name'}}" 
+        data-id="2" 
+        bindchange="goBindDateChange">
+        <view class="tit">{{waterSystemArrList[cur_waterSystem].name}}</view>
+        <image src="/images/icon_more.png"></image>
+      </picker>
+    </view>
+    <!-- <view class="item">
+      <picker value="{{cur_hotSystem}}" 
+        range="{{hotSystemArrList}}" 
+        range-key="{{'name'}}" 
+        data-id="3" 
+        bindchange="goBindDateChange">
+        <view class="tit">{{hotSystemArrList[cur_hotSystem].name}}</view>
+        <image src="/images/icon_more.png"></image>
+      </picker>
+    </view>
+    <view class="item">
+      <picker value="{{cur_airSystem}}" 
+        range="{{airSystemArrList}}" 
+        range-key="{{'name'}}" 
+        data-id="4" 
+        bindchange="goBindDateChange">
+        <view class="tit">{{airSystemArrList[cur_airSystem].name}}</view>
+        <image src="/images/icon_more.png"></image>
+      </picker>
+    </view> -->
+  </view>
+  <view class="center">
+    <view class="item">
+      <picker value="{{cur_type}}" 
+        range="{{typeArrList}}" 
+        range-key="{{'name'}}" 
+        data-id="5" 
+        bindchange="goBindDateChange">
+        <view class="tit">{{typeArrList[cur_type].name}}</view>
+        <image src="/images/icon_more.png"></image>
+      </picker>
+    </view>
+    <view class="item" wx:if="{{showBuilding}}">
+      <picker value="{{cur_building}}" 
+        range="{{buildingArrList}}" 
+        range-key="{{'buildName'}}" 
+        data-id="6" 
+        bindchange="goBindDateChange">
+        <view class="tit">{{buildingArrList[cur_building].buildName}}</view>
+        <image src="/images/icon_more.png"></image>
+      </picker>
+    </view>
+  </view>
+  <scroll-view class="cont" scroll-y bindscrolltolower="goLoadNextPage">
+    <view class="item" wx:for="{{responseData}}" wx:key="item">
+      <view class="tit">
+        <view class="list t-l">{{item.name}}</view>
+        <view class="list t-r">{{item.code?item.code:'无'}}</view>
+      </view>
+      <view class="content">
+        <view class="list">型号：{{item.model}}</view>
+        <view class="list">故障次数：{{item.trouble==null?'无':item.trouble}}</view>
+        <view class="list">安装楼宇：{{item.buildingName?item.buildingName:'无'}}</view>
+        <view class="list">生产日期：{{item.pro_date}}</view>
+        <view class="list">安装楼层：{{item.floor_id}}</view>
+        <view class="list">安装日期：{{item.inst_date}}</view>
+        <view class="list">归属系统：{{item.systemName}}</view>
+        <view class="list">是否出档：{{item.is_out}}</view>
+      </view>
+      <view class="bot">
+        <view class="btn b-l"
+         bindtap="goUpdate" 
+         data-id="{{item}}">更新</view>
+        <view class="btn b-r"
+         bindtap="goOut" 
+         data-id="{{item}}" 
+         wx:if="{{item.is_out == '否'?true:false}}">出档</view>
+      </view>
+    </view>
+    <view class="data-null-cont" wx:if="{{responseData.length==0&&showNoContent}}">
+      <image class="icon" src="/images/icon_data_null.png"></image>
+      <view class="text">暂时没有内容呢</view>
+    </view>
+  </scroll-view>
+</view>

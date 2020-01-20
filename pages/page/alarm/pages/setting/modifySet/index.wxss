@@ -1,0 +1,2 @@
+/* pages/page/alarm/pages/setting/modifySet/index.wxss */
+@import '../addSet/index.wxss';

@@ -1,0 +1,90 @@
+<!--pages/page/warm/pages/heatExchange/index.wxml-->
+<view class="heat-exchange">
+  <view class="top">
+    <view class="left">
+      <picker
+       bindchange="goChangeHeatSystem" 
+       value="{{curSelectsystemIndex}}" 
+       range="{{heatSystemList}}" 
+       range-key="{{'label'}}">
+      <view style="display: flex;align-items: center">
+        <view class="picker">{{heatSystemList[curSelectsystemIndex].label}}</view>
+        <image class="icon-more" src="/images/icon_more.png"></image>
+      </view>
+      </picker>
+    </view>
+    <view class="right">
+      <view bindtap="goChangeHeatType" data-index="3" class="{{curHeatType==3?'active':''}}">实时</view>
+      <view bindtap="goChangeHeatType" data-index="0" class="{{curHeatType==0?'active':''}}">热量</view>
+      <view bindtap="goChangeHeatType" data-index="1" class="{{curHeatType==1?'active':''}}">电量</view>
+      <view bindtap="goChangeHeatType" data-index="2" class="{{curHeatType==2?'active':''}}">水量</view>
+    </view>
+  </view>
+  <view class="bot" wx:if="{{curHeatType!=3}}">
+    <view class="bot-item">
+      <view class="item-tit">
+        <image class="img" src="/images/img_calendar@2x.png"></image>
+        <view class="tit" wx:if="{{curHeatType==0}}">当年供暖季累计用热量</view>
+        <view class="tit" wx:if="{{curHeatType==1}}">当年供暖季累计用电量</view>
+        <view class="tit" wx:if="{{curHeatType==2}}">当年供暖季累计用水量</view>
+      </view>
+      <view class="item-cont">
+        <!-- <view class="cont-echarts"></view> -->
+        <ec-canvas id="mychart-dom-gauge" canvas-id="mychart-gauge" ec="{{ ec }}"></ec-canvas>
+      </view>
+    </view>
+    <view class="bot-item">
+      <view class="item-tit">
+        <image class="img" src="/images/img_calendar@2x.png"></image>
+        <view class="tit" wx:if="{{curHeatType==0}}">当月供暖季累计用热量</view>
+        <view class="tit" wx:if="{{curHeatType==1}}">当月供暖季累计用电量</view>
+        <view class="tit" wx:if="{{curHeatType==2}}">当月供暖季累计用水量</view>
+      </view>
+      <view class="item-cont">
+        <ec-canvas id="mychart-dom-gauge" canvas-id="mychart-gauge" ec="{{ ec2 }}"></ec-canvas>
+      </view>
+    </view>
+    <view class="bot-item">
+      <view class="item-tit">
+        <image class="img" src="/images/img_calendar@2x.png"></image>
+        <view class="tit" wx:if="{{curHeatType==0}}">当日供暖季累计用热量</view>
+        <view class="tit" wx:if="{{curHeatType==1}}">当日供暖季累计用电量</view>
+        <view class="tit" wx:if="{{curHeatType==2}}">当日供暖季累计用水量</view>
+      </view>
+      <view class="item-cont">
+        <ec-canvas id="mychart-dom-gauge" canvas-id="mychart-gauge" ec="{{ ec3 }}"></ec-canvas>
+      </view>
+    </view>
+  </view>
+  <view class="bot" wx:if="{{curHeatType==3}}">
+    <view class="item">
+      <view class="title">
+        <view class="left">
+          <image class="icon" src="../../resource/submenu_louyu@2x.png"></image>
+          <view class="tit">{{heatSystemList[curSelectsystemIndex].label}}</view>
+        </view>
+      </view>
+      <view class="cont">
+        <view class="list" wx:if="{{responseRealData2.length>0}}">
+          <view class="l" wx:for="{{responseRealData2}}">
+            <text style="color: #282828;">{{item.dataName}}</text>:
+            <text style="font-size: 26rpx">{{item.value}}</text></view>
+        </view>
+        <view class="list" wx:if="{{responseRealData3.length>0}}">
+          <view class="l" wx:for="{{responseRealData3}}">
+            <text style="color: #282828;">{{item.dataName}}</text>:
+            <text style="font-size: 26rpx">{{item.value}}</text></view>
+        </view>
+        <view class="list" wx:if="{{responseRealData4.length>0}}">
+          <view class="l" wx:for="{{responseRealData4}}">
+            <text style="color: #282828;">{{item.dataName}}</text>:
+            <text style="font-size: 26rpx">{{item.value}}</text></view>
+        </view>
+        <view class="data-null-cont" wx:if="{{responseRealData2.length==0&&showNoContent}}">
+          <image class="icon" src="/images/icon_data_null.png"></image>
+          <view class="text">暂时没有内容呢</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

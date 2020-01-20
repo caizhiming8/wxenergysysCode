@@ -1,0 +1,85 @@
+<!--pages/page/warm/pages/buildWarm/heatBuildRealData/index.wxml-->
+<view class="real-data">
+  <view class="real-top">
+    <view class="top-item">
+      <picker 
+        bindchange="goChangeBuildSystem"
+        value="{{curBuildIndex}}" 
+        range="{{buildSysList}}" 
+        range-key="{{'label'}}">
+        <view class="cont">
+          <view class="picker">{{buildSysList[curBuildIndex].label}}</view>
+          <image class="up" src="/images/icon_more.png"></image>
+        </view>
+      </picker>
+    </view>
+    <view class="top-item top-right">
+      <!-- <picker
+       bindchange="goChangeRoomSystem"
+       value="{{curRoomIndex}}" 
+       range="{{roomSysList}}" 
+       range-key="{{'roomName'}}">
+        <view class="cont">
+          <view class="picker">{{roomSysList[curRoomIndex].roomName}}</view>
+          <image class="up" src="/images/icon_more.png"></image>
+        </view>
+      </picker> -->
+    </view>
+  </view>
+  <view class="real-cont"
+   wx:for="{{buildRealDataArr}}"
+   wx:key="item" 
+   wx:if="{{curRoomIndex==0||curRoomIndex==item.data.status}}">
+    <view class="tit">
+      <view class="l-tit">{{item.data.data1x1x1.deviceName}}</view>
+      <view>
+        <text>状态：</text>
+        <text style="color: {{item.data.status == 1?'#24C121':'#24C121'}}">{{item.status == 1?'在线':'离线'}}</text>
+      </view>
+    </view>
+    <view class="item">
+      <image class="l-img" src="/images/new_img/icon_wen.png"></image>
+      <view class="r-cont">
+        <view class="tit" style="color: #282828;font-size: 32rpx">温度</view>
+        <view class="content">
+          <view>供水温度：{{item.data.data1x1x1.value}}</view>
+          <view>回水温度：{{item.data.data2x1x1.value}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="item">
+      <image class="l-img" src="/images/new_img/icon_ya.png"></image>
+      <view class="r-cont">
+        <view class="tit" style="color: #282828;font-size: 32rpx">压力</view>
+        <view class="content">
+          <view>供水压力：{{item.data.data3x1x1.value}}</view>
+          <view>回水压力：{{item.data.data4x1x1.value}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="item">
+      <image class="l-img" src="/images/new_img/icon_liu.png"></image>
+      <view class="r-cont">
+        <view class="tit" style="color: #282828;font-size: 32rpx">流量</view>
+        <view class="content">
+          <view>瞬时流量：{{item.data.data5x1x1.value}}</view>
+          <view>累计流量：{{item.data.data6x1x1.value}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="item">
+      <image class="l-img" src="/images/new_img/icon_re.png"></image>
+      <view class="r-cont">
+        <view class="tit" style="color: #282828;font-size: 32rpx">热量</view>
+        <view class="content">
+          <view>瞬时热量：{{item.data.data7x1x1.value}}</view>
+          <view>累计热量：{{item.data.data8x1x1.value}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="data-null-cont" wx:if="{{buildRealDataArr.length==0&&showNoContent}}">
+    <image class="icon" src="/images/icon_data_null.png"></image>
+    <view class="text">暂时没有内容呢</view>
+  </view>
+</view>

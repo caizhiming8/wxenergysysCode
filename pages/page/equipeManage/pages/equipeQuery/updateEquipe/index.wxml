@@ -1,0 +1,135 @@
+<!--pages/page/equipeManage/pages/equipeQuery/updateEquipe/index.wxml-->
+<view class="page-person">
+  <view class="item">
+    <view class="title">归属系统：</view>
+    <view class="cont">{{systemArrList[cur_system].name}}</view>
+    <view class="right2">
+      <picker value="{{cur_system}}" 
+        range="{{systemArrList}}" 
+        range-key="{{'name'}}" 
+        data-id="1" 
+        bindchange="goBindDateChange">
+        <view class="right-view">
+          <image class="icon2" src="../../../resource/submenu_enter@2x.png"/>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="item" wx:if="{{showSubSystem}}">
+    <view class="title2">归属子系统：</view>
+    <view class="cont">{{subSystemArrList[cur_subSystem].name}}</view>
+    <view class="right2">
+      <picker value="{{cur_subSystem}}" 
+        range="{{subSystemArrList}}" 
+        range-key="{{'name'}}" 
+        data-id="2" 
+        bindchange="goBindDateChange">
+        <view class="right-view">
+          <image class="icon2" src="../../../resource/submenu_enter@2x.png"/>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">产品类型：</view>
+    <view class="cont">{{deviceTypeArrList[cur_deviceType].type_name}}</view>
+    <view class="right2">
+      <picker value="{{cur_deviceType}}" 
+        range="{{deviceTypeArrList}}" 
+        range-key="{{'type_name'}}" 
+        data-id="3"
+        bindchange="goBindDateChange">
+        <view class="right-view">
+          <image class="icon2" src="../../../resource/submenu_enter@2x.png"/>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <!-- <view class="item">
+    <view class="title">安装楼宇：</view>
+    <view class="cont">{{buildingArrList[cur_building].buildName}}</view>
+    <view class="right2">
+      <picker value="{{cur_building}}" 
+        range="{{buildingArrList}}" 
+        range-key="{{'buildName'}}" 
+        data-id="6"
+        bindchange="goBindDateChange">
+        <view class="right-view">
+          <image class="icon2" src="../../../resource/submenu_enter@2x.png"/>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">安装楼层：</view>
+    <view class="cont">{{floorArrList[cur_floor].floor_name}}</view>
+    <view class="right2">
+      <picker value="{{cur_floor}}" 
+        range="{{floorArrList}}" 
+        range-key="{{'floor_name'}}" 
+        data-id="7"
+        bindchange="goBindDateChange">
+        <view class="right-view">
+          <image class="icon2" src="../../../resource/submenu_enter@2x.png"/>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">安装房间：</view>
+    <view class="cont">{{roomArrList[cur_room].roomName}}</view>
+    <view class="right2">
+      <picker value="{{cur_room}}" 
+        range="{{roomArrList}}" 
+        range-key="{{'roomName'}}" 
+        data-id="8"
+        bindchange="goBindDateChange">
+        <view class="right-view">
+          <image class="icon2" src="../../../resource/submenu_enter@2x.png"/>
+        </view>
+      </picker>
+    </view>
+  </view> -->
+  <view class="item">
+    <view class="title">责任人：</view>
+    <view class="cont">{{checkPersonArrList[cur_person].username}}</view>
+    <view class="right2">
+      <picker value="{{cur_person}}" 
+        range="{{checkPersonArrList}}" 
+        range-key="{{'username'}}" 
+        data-id="9"
+        bindchange="goBindDateChange">
+        <view class="right-view">
+          <image class="icon2" src="../../../resource/submenu_enter@2x.png"/>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">联系方式：</view>
+    <view class="cont">
+      <input class="put" 
+        bindinput="goInputText" 
+        type="number" 
+        data-id="4" 
+        maxlength="11" 
+        value="{{userPhone}}"
+        placeholder="请输入责任人联系方式" 
+        placeholder-class="place-style">
+      </input>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">资产归属：</view>
+    <view class="cont">
+      <input class="put"
+       bindinput="goInputText" 
+       data-id="5" 
+       value="{{assets_attribution}}"
+       placeholder="请输入资产归属" 
+       placeholder-class="place-style">
+      </input>
+    </view>
+  </view>
+  <view class="item-btn" bindtap="goSubmitForm">提交</view>
+</view>

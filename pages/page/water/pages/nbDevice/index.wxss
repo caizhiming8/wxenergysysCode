@@ -1,0 +1,2 @@
+/* pages/page/water/pages/nbDevice/index.wxss */
+@import '../facilityState/facilityState.wxss'

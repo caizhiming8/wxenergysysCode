@@ -1,0 +1,56 @@
+<!--pages/page/equipeManage/pages/pollRecord/index.wxml-->
+<view class="poll-record">
+  <view class="proportion-t">
+    <view class="list">
+      <input class="inp" bindinput="goInputCont" placeholder="请输入计划名称"></input>
+      <view class="icon-serch" bindtap="goGetData">
+        <image src="/images/icon_search@2x.png"></image>
+      </view>
+    </view>
+    <view class="list">
+      <view class="l l1">
+        <picker
+         class="set-picker" 
+         bindchange="goChangeDMAtableTime3" 
+         data-id="1" value="{{curSelectTypeIndex}}" 
+         range="{{typeArrList}}" range-key="{{'type_name'}}">
+          <view class="pick-middle">
+            <view class="picker">{{typeArrList[curSelectTypeIndex].type_name}}</view>
+            <image class="icon-more" src="/images/icon_more.png"></image>
+          </view>
+        </picker>
+      </view>
+      <view class="l l2">
+        <picker
+         class="set-picker" 
+         bindchange="goChangeDMAtableTime3" 
+         data-id="2" value="{{curSelectRenIndex}}" 
+         range="{{renArrList}}" range-key="{{'username'}}">
+          <view class="pick-middle">
+            <view class="picker">{{renArrList[curSelectRenIndex].username}}</view>
+            <image class="icon-more" src="/images/icon_more.png"></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <scroll-view class="record-c" scroll-y bindscrolltolower="goNextPage">
+    <view class="item"
+     wx:for="{{responceData}}" 
+     wx:key="item" 
+     bindtap="goPollRecordDetail" 
+     data-id="{{item}}">
+      <view class="list">
+        <view class="l">编号：{{item.code}}</view>
+        <view class="r">状态：<text class="{{item.status?'state':'state2'}}">{{item.status?'正常':'故障'}}</text></view>
+      </view>
+      <view class="list2">巡检人：{{item.username}}</view>
+      <view class="list2">巡检计划：{{item.planName}}</view>
+      <view class="list2">巡检日期：{{item.plan_time}}</view>
+    </view>
+    <view class="data-null-cont" wx:if="{{responceData.length==0&&showNoContent}}">
+      <image class="icon" src="/images/icon_data_null.png"></image>
+      <view class="text">暂时没有内容呢</view>
+    </view>
+  </scroll-view>
+</view>

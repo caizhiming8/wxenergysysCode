@@ -1,0 +1,33 @@
+<view class="subitem-menu">
+  <image src="../resource/submenu_banner.png" class="submenu-bg"></image>
+  <view class="menu-item" bindtap="goSubitemMenuPage" data-index="0" data-auth="1-1">
+    <image src="../resource/submenu_xiaoyuan@2x.png" class="item-icon"></image>
+    <view class="item-title">系统总用电</view>
+    <image src="../resource/submenu_enter@2x.png" class="item-next"></image>
+  </view>
+  <view class="menu-item" bindtap="goSubitemMenuPage" data-index="1" data-auth="1-2">
+    <image src="../resource/submenu_louyu@2x.png" class="item-icon"></image>
+    <view class="item-title">楼宇用电</view>
+    <image src="../resource/submenu_enter@2x.png" class="item-next"></image>
+  </view>
+  <view class="menu-item" bindtap="goSubitemMenuPage" data-index="2" data-auth="1-3">
+    <image src="../resource/submenu_zixitong@2x.png" class="item-icon"></image>
+    <view class="item-title">子系统用电</view>
+    <image src="../resource/submenu_enter@2x.png" class="item-next"></image>
+  </view>
+  <view class="menu-item" bindtap="goSubitemMenuPage" data-index="3">
+    <image src="../resource/submenu_shebei@2x.png" class="item-icon"></image>
+    <view class="item-title">设备状态</view>
+    <image src="../resource/submenu_enter@2x.png" class="item-next"></image>
+  </view>
+  <!-- <view class="menu-item" bindtap="goSubitemMenuPage" data-index="4">
+    <image src="../resource/submenu_shebei@2x.png" class="item-icon"></image>
+    <view class="item-title">电表状态</view>
+    <image src="../resource/submenu_enter@2x.png" class="item-next"></image>
+  </view> -->
+  <view class="sub-menu {{curSheBeiState == 0?'':'up'}}">
+    <view class="menu-item" bindtap="goSubitemMenuPage" data-index="4" data-auth="1-4">采集器状态</view>
+    <view class="menu-item" bindtap="goSubitemMenuPage" data-index="5" data-auth="1-4">电表状态</view>
+    <!--  last-item -->
+  </view>
+</view>

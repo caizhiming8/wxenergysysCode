@@ -1,0 +1,2 @@
+/* pages/page/electricity/pages/eleDeviceState/index.wxss */
+@import '../collecteFacility/collecteFacility.wxss'

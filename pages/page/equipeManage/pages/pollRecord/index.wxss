@@ -1,0 +1,44 @@
+/* pages/page/equipeManage/pages/pollRecord/index.wxss */
+@import '../equipeProportion/index.wxss';
+page {
+  background-color: #f1f1f1;
+}
+.proportion-t {
+  background-color: #fff;
+}
+.record-c {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 185rpx;
+  position: absolute;
+  background-color: #fff;
+}
+.record-c .item {
+  padding: 0 30rpx 30rpx;
+  border-bottom: 1px solid #ECECEC;
+}
+.record-c .item>.list {
+  display: flex;
+  color: #282828;
+  padding: 20rpx 0;
+  font-size: 30rpx;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ECECEC;
+}
+.record-c .item>.list .r {
+  color: #656565;
+  font-size: 24rpx;
+}
+.record-c .item>.list .r .state {
+  color: #3CBC27;
+}
+.record-c .item>.list .r .state2 {
+  color: #D23838;
+}
+.record-c .item>.list2 {
+  color: #656565;
+  font-size: 26rpx;
+  margin-top: 30rpx;
+}

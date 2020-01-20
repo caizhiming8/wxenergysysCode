@@ -1,0 +1,61 @@
+/* pages/page/alarm/pages/alarmSelect/index.wxss */
+.item {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  height: 330rpx;
+  font-size: 28rpx;
+  align-items: center;
+  border-radius: 20rpx;
+  flex-direction: column;
+  justify-content: center;
+}
+.item>.icon {
+  width: 240rpx;
+  height: 240rpx;
+}
+.item>.info {
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.item>.info>.icon {
+  width: 34rpx;
+  height: 34rpx;
+}
+.item>.info>.name {
+  margin-left: 14rpx;
+}
+
+.sel-top {
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  bottom: 150rpx;
+  position: absolute;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.sel-bot {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 150rpx;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+}
+.sel-bot .btn {
+  width: 372rpx;
+  height: 74rpx;
+  display: flex;
+  color: #ffffff;
+  font-size: 30rpx;
+  align-items: center;
+  border-radius: 37rpx;
+  justify-content: center;
+  background-color: #3AA0FB;
+}

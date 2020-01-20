@@ -1,0 +1,169 @@
+{
+  "pages": [
+    "pages/tabBar/index/index",
+    "pages/tabBar/home/home",
+    "pages/tabBar/my/my",
+    "pages/tabBar/alarm/alarm",
+    "pages/page/login/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3AA0FB",
+    "navigationBarTitleText": "能耗管理",
+    "navigationBarTextStyle": "white"
+  },
+  "subpackages": [
+    {
+      "root": "pages/page/my",
+      "pages": [
+        "pages/password",
+        "pages/switchProject/index",
+        "pages/benefit/index",
+        "pages/benefit/extraList/extraList",
+        "pages/benefit/addNewExtra/index",
+        "pages/benefit/extraDetail/index"
+      ]
+    },
+    {
+      "root": "pages/page/electricity",
+      "pages": [
+        "pages/eleMenu",
+        "pages/buildEle/buildEle",
+        "pages/subsysEle/subsysEle",
+        "pages/schoolEle/schoolEle",
+        "pages/collecteFacility/collecteFacility",
+        "pages/eleDeviceState/index"
+      ]
+    },
+    {
+      "root": "pages/page/water",
+      "pages": [
+        "pages/waterMenu",
+        "pages/energy/energy",
+        "pages/DMA/dma",
+        "pages/smallFlow/smallFlow",
+        "pages/facilityState/facilityState",
+        "pages/nbDevice/index"
+      ]
+    },
+    {
+      "root": "pages/page/warm",
+      "pages": [
+        "pages/warmmenu",
+        "pages/heatSource/index",
+        "pages/heatExchange/index",
+        "pages/buildWarm/index",
+        "pages/heatBalance/index",
+        "pages/heatBalance/balanceDetail/balanceDetail",
+        "pages/contactWay/index",
+        "pages/heatExchange/heatStation/index",
+        "pages/heatExchange/heatStationData/index",
+        "pages/buildWarm/heatBuildRealData/index"
+      ]
+    },
+    {
+      "root": "pages/page/air",
+      "pages": [
+        "pages/airMenu",
+        "pages/airGroup/index",
+        "pages/buildAir/index"
+      ]
+    },
+    {
+      "root": "pages/page/energy",
+      "pages": [
+        "pages/energyMenu",
+        "pages/quotaContrast/index",
+        "pages/rankUnit/index",
+        "pages/rankUnit/roomRank/index"
+      ]
+    },
+    {
+      "root": "pages/page/repairs",
+      "pages": [
+        "pages/repairMange/index",
+        "pages/repairMange/assignedPerson/index",
+        "pages/repairMange/repairsDetail/index",
+        "pages/repairMange/delegateDetail/index",
+        "pages/repairMange/lookPlan/index",
+        "pages/repairMange/lookComment/index",
+        "pages/repairMange/addNewApplay/index",
+        "pages/repairMange/repairSelect/index"
+      ]
+    },
+    {
+      "root": "pages/page/repairsUser",
+      "pages": [
+        "pages/repairMange/index",
+        "pages/repairMange/assignedPerson/index",
+        "pages/repairMange/repairsDetail/index",
+        "pages/repairMange/delegateDetail/index",
+        "pages/repairMange/lookPlan/index",
+        "pages/repairMange/addNewApplay/index",
+        "pages/repairMange/appraiseView/index",
+        "pages/repairMange/lookComment/index"
+      ]
+    },
+    {
+      "root": "pages/page/repairsWork",
+      "pages": [
+        "pages/repairMange/index",
+        "pages/repairMange/assignedPerson/index",
+        "pages/repairMange/repairsDetail/index",
+        "pages/repairMange/delegateDetail/index",
+        "pages/repairMange/lookPlan/index"
+      ]
+    },
+    {
+      "root": "pages/page/equipeManage",
+      "pages": [
+        "pages/index",
+        "pages/equipeQuery/index",
+        "pages/equipeIn/index",
+        "pages/equipeProportion/index",
+        "pages/pollTable/index",
+        "pages/pollRecord/index",
+        "pages/addApply/index",
+        "pages/addApply/deviceList/index",
+        "pages/executeForm/index",
+        "pages/pollRecord/recordDetail/index",
+        "pages/pollTable/tableDetail/index",
+        "pages/equipeQuery/updateEquipe/index"
+      ]
+    },
+    {
+      "root": "pages/page/alarm",
+      "pages": [
+        "pages/index",
+        "pages/setting/index",
+        "pages/alarmDetail/index",
+        "pages/alarmDetail/setWarn/index",
+        "pages/setting/addSet/index",
+        "pages/setting/modifySet/index",
+        "pages/alarmSelect/index",
+        "pages/alarmDispose/index"
+      ]
+    },
+    {
+      "root": "pages/page/message",
+      "pages": [
+        "pages/index",
+        "pages/addNew/index",
+        "pages/messDetail/index",
+        "pages/emptyPage/index"
+      ]
+    },
+    {
+      "root": "pages/page/messageuser",
+      "pages": [
+        "pages/index",
+        "pages/messDetail/index"
+      ]
+    }
+  ],
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json",
+  "networkTimeout": {
+    "request": 15000
+  }
+}

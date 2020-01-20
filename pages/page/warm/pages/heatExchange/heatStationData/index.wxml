@@ -1,0 +1,86 @@
+<!--pages/page/warm/pages/heatExchange/heatStationData/index.wxml-->
+<view class="heat-station">
+  <view class="station-top">
+    <view class="left">
+      <picker
+       bindchange="goChangeHeatSystem" 
+       value="{{curSelectsystemIndex}}" 
+       range="{{heatSystemList}}" 
+       range-key="{{'label'}}">
+        <view style="display: flex;align-items: center">
+          <view class="picker">{{heatSystemList[curSelectsystemIndex].label}}</view>
+          <image class="icon-more" src="/images/icon_more.png"></image>
+        </view>
+      </picker>
+    </view>
+    <view class="right">
+      <!-- <view class="item {{activeNav == 1?'active':''}}" bindtap="goChangeNav" data-id="1">供电</view>
+      <view class="item {{activeNav == 2?'active':''}}" bindtap="goChangeNav" data-id="2">供水</view>
+      <view class="item {{activeNav == 3?'active':''}}" bindtap="goChangeNav" data-id="3">供热</view> -->
+      <picker
+       bindchange="goChangeNav" 
+       value="{{curBuildIndex}}" 
+       range="{{buildSysList}}" 
+       range-key="{{'name'}}">
+        <view style="display: flex;align-items: center">
+          <view class="picker">{{buildSysList[curBuildIndex].name}}</view>
+          <image class="icon-more" src="/images/icon_more.png"></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="station-cont">
+    <view class="item top">
+      <view class="list">
+        <view class="left">
+          <image class="icon" src="../../../resource/heat_z_day.png"></image>
+          <view wx:if="{{curBuildIndex == 1}}">当日用电量</view>
+          <view wx:if="{{curBuildIndex == 2}}">当日用水量</view>
+          <view wx:if="{{curBuildIndex == 0}}">当日用暖量</view>
+        </view>
+        <view class="right">
+          <text class="led-font">{{dayDataNum}}</text>
+          <text wx:if="{{curBuildIndex == 1}}">kw·h</text>
+          <text wx:if="{{curBuildIndex == 2}}">m³</text>
+          <text wx:if="{{curBuildIndex == 0}}">GJ</text>
+        </view>
+      </view>
+      <view class="list">
+        <view class="left">
+          <image class="icon" src="../../../resource/heat_z_month.png"></image>
+          <view wx:if="{{curBuildIndex == 1}}">当月用电量</view>
+          <view wx:if="{{curBuildIndex == 2}}">当月用水量</view>
+          <view wx:if="{{curBuildIndex == 0}}">当月用暖量</view>
+        </view>
+        <view class="right month">
+          <text class="led-font">{{monthDataNum}}</text>
+          <text wx:if="{{curBuildIndex == 1}}">kw·h</text>
+          <text wx:if="{{curBuildIndex == 2}}">m³</text>
+          <text wx:if="{{curBuildIndex == 0}}">GJ</text>
+        </view>
+      </view>
+      <view class="list">
+        <view class="left">
+          <image class="icon" src="../../../resource/heat_z_year.png"></image>
+          <view wx:if="{{curBuildIndex == 1}}">当年用电量</view>
+          <view wx:if="{{curBuildIndex == 2}}">当年用水量</view>
+          <view wx:if="{{curBuildIndex == 0}}">当年用暖量</view>
+        </view>
+        <view class="right year">
+          <text class="led-font">{{yearDataNum}}</text>
+          <text wx:if="{{curBuildIndex == 1}}">kw·h</text>
+          <text wx:if="{{curBuildIndex == 2}}">m³</text>
+          <text wx:if="{{curBuildIndex == 0}}">GJ</text>
+        </view>
+      </view>
+    </view>
+    <view class="item bot">
+      <view class="tit" wx:if="{{curBuildIndex == 1}}">用电量趋势kw·h</view>
+      <view class="tit" wx:if="{{curBuildIndex == 2}}">用水量趋势m³</view>
+      <view class="tit" wx:if="{{curBuildIndex == 0}}">用暖量趋势GJ</view>
+      <view class="echarts">
+        <ec-canvas id="mychart-dom-gauge" canvas-id="mychart-gauge" ec="{{ ec }}"></ec-canvas>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,86 @@
+/* pages/page/energy/pages/quotaContrast/index.wxss */
+page {
+  background-color: #F1F1F1;
+}
+.contrast-search {
+  display: flex;
+  padding: 20rpx 15px;
+  background-color: #F1F1F1;
+}
+.contrast-search>.seacrch {
+  flex: 1;
+  height: 34px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  border-radius: 17px;
+  background-color: #fff;
+}
+.contrast-search>.seacrch>.input-seacrch {
+  width: 100%;
+  height: 28px;
+  font-size: 14px;
+  border-radius: 17px;
+  padding: 0 60rpx 0 34rpx;
+}
+.contrast-search>.seacrch>.icon-seacrch {
+  width: 19px;
+  right: 15px;
+  height: 19px;
+  padding: 10px;
+  position: absolute;
+}
+.table-cont>.item {
+  display: flex;
+  background: #fff;
+  padding: 20rpx 20rpx 0;
+}
+.table-cont>.item>item-l {
+  width: 200rpx;
+  overflow: hidden;
+}
+.table-cont>.item .list1,
+.table-cont>.item .list2 {
+  width: 200rpx;
+  overflow: hidden;
+  padding: 10rpx 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border-bottom: 1px solid #F1F1F1;
+}
+.table-cont>.item .list2{
+  color: #656565;
+  font-size: 28rpx;
+  padding: 10rpx 0;
+}
+.table-cont>.item>scroll-view {
+  flex: 1;
+  overflow: auto;
+  white-space: nowrap;
+}
+.table-cont>.item .item-r {
+  width: 800rpx;
+  display: flex;
+  padding: 10rpx 0 10rpx;
+  border-bottom: 1px solid #F1F1F1;
+}
+.table-cont>.item .item-r2 {
+  color: #656565;
+  font-size: 28rpx;
+}
+.table-cont>.item .item-r>.list {
+  width: 200rpx;
+  overflow: hidden;
+  text-align: center;
+  white-space: nowrap;
+  display: inline-block;
+  text-overflow: ellipsis;
+}
+.table-cont>.item .list3{
+  border: none;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}

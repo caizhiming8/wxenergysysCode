@@ -1,0 +1,144 @@
+<!--pages/page/equipeManage/pages/addApply/index.wxml-->
+<view class="add-apply">
+  <view class="item">
+    <view class="title">计划名称：</view>
+    <view class="cont">
+      <input class="put"
+       bindinput="goInputCont" 
+       data-id="1" 
+       placeholder="请输入计划名称" 
+       placeholder-class="place-style"></input>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">归属系统：</view>
+    <view class="cont">{{systemArrList[cur_system].name}}</view>
+    <view class="right2">
+      <picker value="{{cur_system}}" 
+        range="{{systemArrList}}" 
+        range-key="{{'name'}}" 
+        data-id="1" 
+        bindchange="goBindDateChange">
+        <view class="right-view">
+          <image class="icon2" src="../../resource/submenu_enter@2x.png"/>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="item" wx:if="{{showSubSystem}}">
+    <view class="title">归属子系统：</view>
+    <view class="cont">{{subSystemArrList[cur_subSystem].name}}</view>
+    <view class="right2">
+      <picker value="{{cur_subSystem}}" 
+        range="{{subSystemArrList}}" 
+        range-key="{{'name'}}" 
+        data-id="2" 
+        bindchange="goBindDateChange">
+        <view class="right-view">
+          <image class="icon2" src="../../resource/submenu_enter@2x.png"/>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">巡检人：</view>
+    <view class="cont">{{checkPersonArrList[cur_person].username}}</view>
+    <view class="right2">
+      <picker value="{{cur_person}}" 
+        range="{{checkPersonArrList}}" 
+        range-key="{{'username'}}" 
+        data-id="3" 
+        bindchange="goBindDateChange">
+        <view class="right-view">
+          <image class="icon2" src="../../resource/submenu_enter@2x.png"/>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">计划状态：</view>
+    <view class="cont">{{planStateArrList[cur_planState].name}}</view>
+    <view class="right2">
+      <picker value="{{cur_planState}}" 
+        range="{{planStateArrList}}" 
+        range-key="{{'name'}}"  
+        data-id="4" 
+        bindchange="goBindDateChange">
+        <view class="right-view">
+          <image class="icon2" src="../../resource/submenu_enter@2x.png"/>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">巡检周期：</view>
+    <view class="cont">
+      <input class="put" 
+        bindinput="goInputCont" 
+        data-id="2" 
+        placeholder="请输入时长" 
+        placeholder-class="place-style"></input>
+    </view>
+    <view class="right3">
+      <picker value="{{cur_period}}" 
+        range="{{periodArrList}}" 
+        range-key="{{'name'}}" 
+        data-id="5"  
+        bindchange="goBindDateChange">
+        <view class="right-view">
+          <text class="text">{{periodArrList[cur_period].name}}</text>
+          <image class="icon2" src="../../resource/submenu_enter@2x.png"/>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">巡检时间：</view>
+    <view class="cont">{{cur_timeData}}</view>
+    <view class="right2">
+      <picker mode="date" value="{{cur_timeData}}" 
+        start="2019-09-01" 
+        data-id="6" 
+        bindchange="goBindDateChange">
+        <image class="icon" src="../../resource/icon_rili.png"/>
+      </picker>
+    </view>
+  </view>
+  <view class="item"
+    style="margin-top: 10rpx"
+    bindtap="goSelectDevice">
+    <view class="title">设备选择：</view>
+    <view class="cont">
+      <input class="put" 
+        data-id="1" 
+        disabled="true" 
+        placeholder="选择设备" 
+        placeholder-class="place-style">
+      </input>
+    </view>
+    <view class="right2" >
+      <view class="right-view">
+        <image class="icon2" src="../../resource/submenu_enter@2x.png"/>
+      </view>
+    </view>
+  </view>
+  <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" 
+    data-index="{{index}}" 
+    bindtouchstart="touchstart" 
+    bindtouchmove="touchmove" 
+    wx:for="{{items}}" 
+    wx:key="item">
+    <view class='content' data-index="{{index}}">
+      <view class='column'>
+        <view class='row full_width'>
+          <text style='font-weight: bold;line-height:60rpx;'>{{item.name}}</text>
+          <text style='margin-left:30rpx;color:gray;line-height:60rpx;'>{{item.systemName}}</text>
+          <text style='margin-left:20rpx;color:gray;line-height:60rpx;'>{{item.type_name}}</text>
+        </view>
+        <text style='margin-top:10rpx;color:gray;'>{{item.code}}</text>
+      </view>
+    </view>
+    <view class="del" catchtap="del" data-index="{{index}}">删除</view>
+  </view>
+  <view class="item-btn" bindtap="goSubmitForm">确定</view>
+</view>

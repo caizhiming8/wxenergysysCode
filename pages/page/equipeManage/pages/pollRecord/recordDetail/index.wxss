@@ -1,0 +1,58 @@
+/* pages/page/equipeManage/pages/pollRecord/recordDetail/index.wxss */
+page {
+  background-color: #f1f1f1;
+}
+.detail>.item {
+  margin-bottom: 10rpx;
+  padding: 0 30rpx 30rpx;
+  background-color: #fff;
+}
+.detail>.item>.top {
+  display: flex;
+  color: #282828;
+  font-size: 24rpx;
+  padding: 14rpx 0;
+  border-bottom: 2rpx solid #EFEFEF;
+}
+.detail>.item>.top>image {
+  width: 34rpx;
+  height: 34rpx;
+  margin-right: 20rpx;
+}
+.detail>.item>.cont {
+  color: #656565;
+  font-size: 30rpx;
+}
+.detail>.item>.cont>view {
+  margin-top: 30rpx;
+}
+
+.detail>.item>.cont2>.list {
+  font-size: 30rp;
+  color: #656565;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+.detail>.item>.cont2>.list>.tit,
+.detail>.item>.cont2>.list>.data {
+  display: flex;
+  padding-bottom: 30rpx;
+}
+.detail>.item>.cont2>.list>.data {
+  color: #989898;
+  font-size: 26rpx;
+}
+.detail>.item>.cont2>.list>.tit>view,
+.detail>.item>.cont2>.list>.data>view {
+  flex: 1
+}
+.detail>.item>.cont2>.list>.tit>.r,
+.detail>.item>.cont2>.list>.data>.r {
+  display: flex;
+  justify-content: flex-end;
+}
+.detail>.item>.cont2>.list>.tit>.c,
+.detail>.item>.cont2>.list>.data>.c {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,45 @@
+<!--pages/page/equipeManage/pages/executeForm/index.wxml-->
+<view class="exwctue">
+  <view class="top">
+    <view class="item">
+      <view class="tit">计划名称：</view>
+      <view class="cont">{{planObj.planName}}</view>
+    </view>
+    <view class="item">
+      <view class="tit">巡检人：</view>
+      <view class="cont">{{planObj.username?planObj.username:'无'}}</view>
+    </view>
+    <view class="item2">
+      <textarea class="item-input"
+        maxlength="200"
+        bindinput="goInputTextarea"
+        auto-height placeholder="检查结果：" />
+      <!-- <textarea bindblur="bindTextAreaBlur" placeholder="" /> -->
+      <view class="limit">{{textareaLength}}/200</view>
+    </view>
+  </view>
+  <view class="center">执行操作</view>
+  <view class="table-list">
+    <view class="item" wx:for="{{responseData}}" wx:key="item">
+      <view class="top">
+        <view class="tit">
+          <view>设备编码</view>
+          <view class="c">设备类型</view>
+          <view class="r">设备名称</view>
+        </view>
+        <view class="data">
+          <view>{{item.code}}</view>
+          <view class="c">{{item.type_name}}</view>
+          <view class="r">{{item.name}}</view>
+        </view>
+      </view>
+      <view class="handle">
+        <radio-group bindchange="goRadioChange">
+          <radio value="{{'1-'+index}}" data-id="{{item}}" checked="{{item.checked == 1}}">正常</radio>
+          <radio value="{{'2-'+index}}" data-id="{{item}}" checked="{{item.checked == 2}}">故障</radio>
+        </radio-group>
+      </view>
+    </view>
+  </view>
+  <view class="item-btn" bindtap="goSubmitForm">确定</view>
+</view>

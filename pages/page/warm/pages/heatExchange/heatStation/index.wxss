@@ -1,0 +1,132 @@
+/* pages/page/warm/pages/heatExchange/heatStation/index.wxss */
+page {
+  background-color: #f1f1f1;
+}
+.heat-top {
+  display: flex;
+  font-size: 24rpx;
+  padding: 20rpx 30rpx;
+  justify-content: space-between;
+}
+.heat-top>view.left {
+  font-size: 14px;
+}
+.heat-top>view.left .picker {
+  display: inline-block;
+}
+.heat-top>view.left .icon-more {
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 6rpx;
+  margin-left: 10rpx;
+  transform:rotate(0deg);
+}
+
+/* 快捷数据 */
+.heat-shortcut {
+  display: flex;
+  height: 240rpx;
+  background-color: #fff;
+}
+.heat-shortcut>.item {
+  flex: 1;
+  display: flex;
+  color: #282828;
+  font-size: 22rpx;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.heat-shortcut>.item>.icon {
+  width: 78rpx;
+  height: 78rpx;
+  margin-bottom: 13rpx;
+}
+.heat-shortcut>.item>.tit {
+  color: #F96868;
+  font-size: 30rpx;
+  margin-bottom: 15rpx;
+}
+.heat-shortcut>.item>.tit.tit-o {
+  color: #FB8C3A;
+}
+.heat-shortcut>.item>.tit.tit-g {
+  color: #BA65FC;
+}
+.heat-shortcut>.item>.tit.tit-b {
+  color: #3AA0FB;
+}
+
+/* 内容部分 */
+.cont-item {
+  color: #656565;
+  font-size: 26rpx;
+  margin-top: 2rpx;
+  padding: 24rpx 30rpx;
+  background-color: #fff;
+}
+.cont-item>.item-tit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cont-item>.item-tit>.left {
+  display: flex;
+  color: #282828;
+  font-size: 30rpx;
+  align-items: center;
+}
+.cont-item>.item-tit>.left>.icon {
+  width: 50rpx;
+  height: 50rpx;
+}
+.cont-item>.item-tit>.left>.tit {
+  padding-left: 30rpx;
+}
+.cont-item>.item-tit>.right>.icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+.cont-item>.item-tit>.right>.icon.icon2 {
+  transform: rotate(90deg);
+}
+.cont-item>.item-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cont-item>.item-content.yes {
+  padding: 0 25rpx;
+}
+.cont-item>.item-content.yes>.list>view.right {
+  justify-content: flex-start;
+}
+.cont-item>.item-content.no {
+  display: block;
+}
+.cont-item>.item-content>.list {
+  width: 50%;
+  display: flex;
+  color: #656565;
+  font-size: 26rpx;
+  padding: 18rpx 0;
+}
+.cont-item>.item-content.yes>.list:nth-child(2n) {
+  justify-content: flex-end;
+}
+.cont-item>.item-content.no>.list {
+  width: 100%;
+}
+.cont-item>.item-content.no>.list>view {
+  flex: 1;
+}
+.cont-item>.item-content>.list>view.left {
+  display: flex;
+  justify-content: center;
+}
+.cont-item>.item-content>.list>view.right {
+  display: flex;
+  justify-content: flex-end;
+}
+.cont-item>.item-content.yes>.list:nth-child(2n) .right {
+  width: 150rpx;
+}

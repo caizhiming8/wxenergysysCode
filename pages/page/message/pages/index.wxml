@@ -1,0 +1,111 @@
+<!--pages/page/message/pages/index.wxml-->
+<view class="message-top">
+  <view class="t-item {{activeNav==1?'active':''}}" bindtap="goTabPage" data-id="1">
+    <view>系统消息</view>
+    <view class="b-mark"></view>
+  </view>
+  <view class="t-item {{activeNav==2?'active':''}}" bindtap="goTabPage" data-id="2">
+    <view>我发送的</view>
+    <view class="b-mark"></view>
+  </view>
+  <view class="t-item {{activeNav==3?'active':''}}" bindtap="goTabPage" data-id="3">
+    <view>我接收的</view>
+    <view class="b-mark"></view>
+  </view>
+</view>
+<scroll-view class="message-list" scroll-y="true" wx:if="{{activeNav == 1}}">
+  <view class="item" wx:for="{{responceData}}" wx:key="item" bindtap="goLookMyInfoDetail2" data-id="{{item}}">
+    <view class="top">
+      <view class="left">
+        <image class="icon" src="/images/icon_notify.png"></image>
+        <text>{{item.type}}</text>
+      </view>
+      <view class="right">
+        <text>{{item.time}}</text>
+        <view wx:if="{{item.status != '已读'}}" class="zhishi"></view>
+      </view>
+    </view>
+    <view class="cont">{{item.content}}</view>
+    <view class="bot">
+      <view class="left">查看详情</view>
+      <view class="right">
+        <image class="icon" src="/images/my_enter@2x.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="data-null-cont" wx:if="{{responceData.length==0&&showNoContent}}">
+    <image class="icon" src="/images/icon_data_null.png"></image>
+    <view class="text">暂时没有内容呢</view>
+  </view>
+</scroll-view>
+<scroll-view class="message-list" scroll-y="true" wx:if="{{activeNav == 2}}">
+  <view class="item" wx:for="{{responceData}}" wx:key="item" bindtap="goLookMyInfoDetail" data-id="{{item}}">
+    <view class="top">
+      <view class="left">
+        <image class="icon" src="/images/icon_notify2.png"></image>
+        <text>{{item.type}}</text>
+      </view>
+      <view class="right">
+        <text>{{item.time}}</text>
+        <!-- <view class="zhishi"></view> -->
+      </view>
+    </view>
+    <view class="cont">{{item.content}}</view>
+    <view class="bot">
+      <!-- <view class="left">发送人：{{item.creatName}}</view> -->
+      <view class="right">消息状态：{{item.status}}</view>
+    </view>
+  </view>
+  <view class="data-null-cont" wx:if="{{responceData.length==0&&showNoContent}}">
+    <image class="icon" src="/images/icon_data_null.png"></image>
+    <view class="text">暂时没有内容呢</view>
+  </view>
+</scroll-view>
+<scroll-view class="message-list" scroll-y="true" wx:if="{{activeNav == 3}}">
+  <view class="item" wx:for="{{responceData}}" wx:key="item" bindtap="goLookMyInfoDetail2" data-id="{{item}}">
+    <view class="top">
+      <view class="left">
+        <image class="icon" src="/images/icon_notify3.png"></image>
+        <text>{{item.type}}</text>
+      </view>
+      <view class="right">
+        <text>{{item.time}}</text>
+        <view class="zhishi" wx:if="{{item.status!='已读'}}"></view>
+      </view>
+    </view>
+    <view class="cont">{{item.content}}</view>
+    <view class="bot">
+      <view class="left">发送人：{{item.creatName?item.creatName:'系统发送'}}</view>
+      <view class="right">
+        <text>查看详情</text>
+        <image class="icon" src="/images/my_enter@2x.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="data-null-cont" wx:if="{{responceData.length==0&&showNoContent}}">
+    <image class="icon" src="/images/icon_data_null.png"></image>
+    <view class="text">暂时没有内容呢</view>
+  </view>
+</scroll-view>
+<view
+  class="addProject"
+  wx:if="{{showAddBtn}}"
+  style="right:{{newViewPosition.newRight}}px;bottom:{{newViewPosition.newBottom}}px;"
+  bindtouchmove="goViewTouchMove"
+  bindtap="goAddProject">
+  <image class="icon" src="/images/icon_add.png"></image>
+</view>
+<!-- <view
+  class="message-bot {{isIpx? 'message-bot-x': '' }}"
+  wx:if="{{showAddBtn}}">
+  <view class="item {{activeNav == 1?'active':''}}" bindtap="goTabPage" data-id="1">
+    <image class="icon" wx:if="{{activeNav == 1}}" src="../resource/bot_icon_sys_info2.png"></image>
+    <image class="icon" wx:if="{{activeNav != 1}}" src="../resource/bot_icon_sys_info.png"></image>
+    <view>告警通知</view>
+  </view>
+  <view class="item {{activeNav == 2?'active':''}}" bindtap="goTabPage" data-id="2">
+    <image class="icon" wx:if="{{activeNav == 2}}" src="../resource/bot_icon_my_info2.png"></image>
+    <image class="icon" wx:if="{{activeNav != 2}}" src="../resource/bot_icon_my_info.png"></image>
+    <view>我的消息</view>
+  </view>
+</view> -->

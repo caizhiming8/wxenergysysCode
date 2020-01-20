@@ -1,0 +1,40 @@
+<view class="shool-ele">
+  <view class="cont-top">
+    <view class="item">
+      <view class="left">
+        <image class="icon" src="/images/new_img/heat_z_day.png"></image>
+        <view>当日用电量</view>
+      </view>
+      <view class="right">
+        <text class="led-font">{{dayDataNum}}</text>
+        <text>kWh</text>
+      </view>
+    </view>
+    <view class="item">
+      <view class="left">
+        <image class="icon" src="/images/new_img/heat_z_month.png"></image>
+        <view>当月用电量</view>
+      </view>
+      <view class="right">
+        <text class="led-font">{{monthDataNum}}</text>
+        <text>kWh</text>
+      </view>
+    </view>
+    <view class="item">
+      <view class="left">
+        <image class="icon" src="/images/new_img/heat_z_year.png"></image>
+        <view>当年用电量</view>
+      </view>
+      <view class="right">
+        <text class="led-font">{{yearDataNum}}</text>
+        <text>kWh</text>
+      </view>
+    </view>
+  </view>
+  <view class="cont-echart">
+    <view class="tit">当月用电量趋势kWh</view>
+    <view class="echarts">
+      <ec-canvas id="mychart-dom-gauge" canvas-id="mychart-gauge" ec="{{ ec3 }}"></ec-canvas>
+    </view>
+  </view>
+</view>

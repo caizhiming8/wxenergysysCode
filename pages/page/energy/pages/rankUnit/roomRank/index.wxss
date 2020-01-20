@@ -1,0 +1,5 @@
+/* pages/page/energy/pages/rankUnit/roomRank/index.wxss */
+@import '../index.wxss';
+.unit-cont {
+  top: 0;
+}

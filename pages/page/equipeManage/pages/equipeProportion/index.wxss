@@ -1,0 +1,120 @@
+/* pages/page/equipeManage/pages/equipeProportion/index.wxss */
+.proportion-t {
+  display: flex;
+  height: 175rpx;
+  padding: 0 30rpx;
+  flex-direction: column;
+  justify-content: center;
+}
+.proportion-t>.list {
+  display: flex;
+  height: 65rpx;
+  margin-top: 10rpx;
+}
+.proportion-t>.list .inp {
+  flex: 1;
+  height: 65rpx;
+  padding-left: 30rpx;
+}
+.proportion-t>.list .icon-serch {
+  width: 65rpx;
+  height: 65rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom-left-radius: 65rpx;
+  border-bottom-right-radius: 65rpx;
+}
+.proportion-t>.list .icon-serch image {
+  width: 38rpx;
+  height: 38rpx;
+}
+.proportion-t>.list:first-child {
+  border-radius: 65rpx;
+  background-color: #f1f1f1;
+}
+.proportion-t>.list:last-child {
+  font-size: 24rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.proportion-t>.list>.l {
+  display: flex;
+  align-items: center;
+}
+.proportion-t>.list>.l .set-picker {
+  display: flex;
+  color: #3AA0FB;
+  margin-left: 5px;
+  align-items: center;
+}
+.proportion-t>.list>.l .picker {
+  display: inline-block;
+}
+.proportion-t>.list>.l .icon-more {
+  width: 15px;
+  height: 15px;
+}
+
+
+.proportion-c {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 175rpx;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  background-color: #f1f1f1;
+}
+.proportion-c .c {
+  flex: 1;
+  display: flex;
+  margin-top: 10rpx;
+  flex-direction: column;
+  background-color: #fff;
+}
+.proportion-c .c .top {
+  height: 40rpx;
+  display: flex;
+  padding: 30rpx;
+  color: #282828;
+  font-size: 24rpx;
+  align-items: center;
+}
+.proportion-c .c .top>.icon {
+  width: 36rpx;
+  height: 36rpx;
+}
+.proportion-c .c .top>text {
+  padding-left: 20rpx;
+}
+.proportion-c .c .bot {
+  flex: 1;
+}
+.proportion-c .c .bottom {
+  height: 40rpx;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30rpx;
+  justify-content: center;
+}
+
+.proportion-c .c .bottom>.list {
+  display: flex;
+  height: 20rpx;
+  color: #656565;
+  font-size: 20rpx;
+  margin-left: 70rpx;
+  align-items: center;
+}
+.proportion-c .c .bottom>.list>.zhishi {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 14rpx;
+  background-color: #FF9E9D;
+}
+.proportion-c .c .bottom>.list>.zhishi.cen {
+  background-color: #8693F3;
+}

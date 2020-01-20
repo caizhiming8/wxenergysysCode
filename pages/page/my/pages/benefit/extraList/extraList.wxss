@@ -1,0 +1,55 @@
+/* pages/page/my/pages/benefit/extraList/extraList.wxss */
+.extra {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+}
+.extra .item {
+  display: flex;
+  padding: 30rpx;
+  color: #656565;
+  font-size: 28rpx;
+  align-items: center;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+.extra .item>.left{
+  flex: 1;
+}
+.extra .item>.left>view {
+  padding-bottom: 30rpx;
+}
+.extra .item>.left>view:last-child {
+  padding-bottom: 0;
+}
+.extra .item>.right{
+  width: 32rpx;
+}
+.extra .item>.right>.icon {
+  width: 32rpx;
+  height: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 
+ * 增加项目按钮
+ */
+.addProject {
+  width: 45px;
+  right: 30rpx;
+  height: 45px;
+  display: flex;
+  bottom: 160rpx;
+  position: fixed;
+  align-items: center;
+  border-radius: 45px;
+  justify-content: center;
+  background-color: #3AA0FB;
+}
+.addProject .icon {
+  width: 48rpx;
+  height: 48rpx;
+}

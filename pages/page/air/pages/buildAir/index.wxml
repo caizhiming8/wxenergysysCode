@@ -1,0 +1,95 @@
+<view class="build-air">
+  <view class="air-top">
+    <view class="top-item">
+      <picker
+       bindchange="goChangeBuildSystem" 
+       value="{{curBuildIndex}}" 
+       range="{{buildSysList}}" 
+       range-key="{{'buildingName'}}">
+        <view class="pick-middle">
+          <view class="picker">{{buildSysList[curBuildIndex].buildingName}}</view>
+          <image class="up" src="/images/icon_more.png"></image>
+        </view>
+      </picker>
+    </view>
+    <view class="top-item top-right">
+      <picker
+       bindchange="goChangeRoomSystem" 
+       value="{{curRoomIndex}}" 
+       range="{{roomSysList}}" 
+       range-key="{{'roomName'}}">
+        <view class="pick-middle">
+          <view class="picker">{{roomSysList[curRoomIndex].roomName}}</view>
+          <image class="up" src="/images/icon_more.png"></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="air-content">
+    <view class="item top">
+      <view class="list">
+        <view class="left">
+          <image class="icon" src="../../resource/heat_z_day.png"></image>
+          <view>当日用电量</view>
+        </view>
+        <view class="right">
+          <text class="led-font">{{dayDataNum}}</text>
+          <text>kw·h</text>
+        </view>
+      </view>
+      <view class="list">
+        <view class="left">
+          <image class="icon" src="../../resource/heat_z_month.png"></image>
+          <view>当月用电量</view>
+        </view>
+        <view class="right month">
+          <text class="led-font">{{monthDataNum}}</text>
+          <text>kw·h</text>
+        </view>
+      </view>
+      <view class="list">
+        <view class="left">
+          <image class="icon" src="../../resource/heat_z_year.png"></image>
+          <view>当年用电量</view>
+        </view>
+        <view class="right year">
+          <text class="led-font">{{yearDataNum}}</text>
+          <text>kw·h</text>
+        </view>
+      </view>
+    </view>
+    <view class="item bot">
+      <view class="tit">用电量趋势kw·h</view>
+      <view class="echarts">
+        <ec-canvas id="mychart-dom-gauge" canvas-id="mychart-gauge" ec="{{ ec }}"></ec-canvas>
+      </view>
+    </view>
+    <!-- <view class="air-item">
+      <view class="item-tit">
+        <image class="img" src="/images/img_calendar@2x.png"></image>
+        <view class="tit">当日累计用电量</view>
+      </view>
+      <view class="item-cont">
+        <ec-canvas id="mychart-dom-gauge" canvas-id="mychart-gauge" ec="{{ ec }}"></ec-canvas>
+      </view>
+    </view>
+    <view class="air-item">
+      <view class="item-tit">
+        <image class="img" src="/images/img_calendar@2x.png"></image>
+        <view class="tit">当月累计用电量</view>
+      </view>
+      <view class="item-cont">
+        <ec-canvas id="mychart-dom-gauge" canvas-id="mychart-gauge" ec="{{ ec2 }}"></ec-canvas>
+      </view>
+    </view>
+    <view class="air-item">
+      <view class="item-tit">
+        <image class="img" src="/images/img_calendar@2x.png"></image>
+        <view class="tit">当年累计用电量</view>
+      </view>
+      <view class="item-cont">
+        <ec-canvas id="mychart-dom-gauge" canvas-id="mychart-gauge" ec="{{ ec3 }}"></ec-canvas>
+      </view>
+    </view> -->
+  </view>
+</view>

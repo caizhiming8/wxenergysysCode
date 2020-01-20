@@ -1,0 +1,226 @@
+<view class="home-view">
+  <!-- 顶部天气信息 -->
+  <view class="view-weather">
+    <image style="width: 100%;height: 380rpx" src="../../../images/home_bg@2x.png"></image>
+    <view class="cur-project"></view>
+    <!-- 当前项目：学校 -->
+    <view class="weather-info">
+      <view class="info info-l">
+        <view class="tit">昨日天气</view>
+        <view class="cont">
+          <view class="l">
+            <image style="width: 80rpx;height: 80rpx" src="{{historyWeather.img_src}}"></image>
+            <view class="num">
+              <view class="l">{{historyWeather.tmp}}</view>
+              <view class="r">
+                <view>℃</view>
+                <view>(实时)</view>
+              </view>
+            </view>
+          </view>
+          <view class="r">
+            <view>{{historyWeather.tmp_min}}~{{historyWeather.tmp_max}}℃</view>
+            <view style="margin-top: 10rpx;">{{historyWeather.cond_txt}}</view>
+            <view style="margin-top: 10rpx;">{{historyWeather.wind_dir}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="info info-r">
+        <view class="tit">今日天气</view>
+        <view class="cont cont-r">
+          <view class="l">
+            <image style="width: 80rpx;height: 80rpx" src="{{todayWeather.img_src}}"></image>
+            <view class="num">
+              <view class="l">{{todayWeather.tmp}}</view>
+              <view class="r">
+                <view>℃</view>
+                <view>(实时)</view>
+              </view>
+            </view>
+          </view>
+          <view class="r">
+            <view>{{todayWeather.tmp_min}}~{{todayWeather.tmp_max}}℃</view>
+            <view style="margin-top: 10rpx;">{{todayWeather.cond_txt}}</view>
+            <view style="margin-top: 10rpx;">{{todayWeather.wind_dir}}</view> 
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 菜单项 -->
+  <view class="view-menu">
+    <view class="menu-item" bindtap="goClickHomeMenu" data-index="0" data-auth="1">
+      <view class="item-img">
+        <image src="../../../images/home_electric@2x.png" mode="widthFix"></image>
+      </view>
+      <text class="item-tit">供电系统</text>
+    </view>
+    <view class="menu-item" bindtap="goClickHomeMenu" data-index="1" data-auth="2">
+      <view class="item-img">
+        <image src="../../../images/home_water@2x.png" mode="widthFix"></image>
+      </view>
+      <text class="item-tit">供水系统</text>
+    </view>
+    <view class="menu-item" bindtap="goClickHomeMenu" data-index="2" data-auth="3">
+      <view class="item-img">
+        <image src="../../../images/home_nuanqi@2x.png" mode="widthFix"></image>
+      </view>
+      <text class="item-tit">供暖系统</text>
+    </view>
+    <view class="menu-item" bindtap="goClickHomeMenu" data-index="3" data-auth="5">
+      <view class="item-img">
+        <image src="../../../images/home_kongtiao@2x.png" mode="widthFix"></image>
+      </view>
+      <text class="item-tit">中央空调</text>
+    </view>
+    <view class="menu-item" bindtap="goClickHomeMenu" data-index="4" data-auth="6">
+      <view class="item-img">
+        <image src="../../../images/home_nenghaodinge@2x.png" mode="widthFix"></image>
+      </view>
+      <text class="item-tit">能耗定额</text>
+    </view>
+    <view class="menu-item" bindtap="goClickHomeMenu" data-index="5" data-auth="4">
+      <view class="item-img">
+        <image src="../../../images/home_shebei@2x.png" mode="widthFix"></image>
+      </view>
+      <text class="item-tit">设备管理</text>
+    </view>
+    <view class="menu-item" bindtap="goClickHomeMenu" data-index="6" data-auth="7">
+      <view class="item-img">
+        <image src="../../../images/home_baoxiu@2x.png" mode="widthFix"></image>
+      </view>
+      <text class="item-tit">报修管理</text>
+    </view>
+    <view class="menu-item" bindtap="goClickHomeMenu" data-index="7" wx:if="{{!showExtraIcon}}">
+      <view class="item-img">
+        <image src="../../../images/home_more@2x.png" mode="widthFix"></image>
+      </view>
+      <text class="item-tit">更多</text>
+    </view>
+    <view class="menu-item" bindtap="goClickHomeMenu" data-index="8" wx:if="{{showExtraIcon}}">
+      <view class="item-img">
+        <image src="../../../images/home_extra@2x.png" mode="widthFix"></image>
+      </view>
+      <text class="item-tit">效益管理</text>
+    </view>
+  </view>
+  <!-- 上下轮播项 -->
+  <view class="view-swiper-tb">
+    <view class="tb-left">
+      <image mode="widthFix" src="../../../images/home_new_notify.png"></image>
+    </view>
+    <swiper class="tb-right" interval="{{homeSwiperObj.interval}}" 
+      autoplay="{{homeSwiperObj.autoplay}}" vertical="{{homeSwiperObj.vertical}}"
+      circular="{{homeSwiperObj.circular}}" display-multiple-items="{{homeSwiperObj.num}}"
+      bindtap="goLookAllMessage" data-auth="11" current="{{curIndex}}">
+      <block wx:for="{{homeSwiperObj.data}}" wx:key="item">
+        <swiper-item class="right-item">
+          <image
+           style="width: 8rpx;height: 8rpx" 
+           src="../../../images/icon_dian.png">
+          </image>
+          <text style="font-size: 28rpx;">{{item.systemName}}（{{item.num}}条）</text>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="tb-right2" bindtap="goLookAllMessage">
+      <image class="icon" src="../../../images/my_enter@2x.png"></image>
+    </view>
+  </view>
+  <view class="view-tab">
+    <swiper class="swiper-box" indicator-dots="true"
+      autoplay="true" interval="5000" duration="1000"
+      circular="true">
+        <swiper-item>
+          <view class="item">
+            <view class="top">
+              <view class="tit">今日数据</view>
+            </view>
+            <view class="cont">
+              <view class="list" bindtap="goLookSchoolEle">
+                <image style="width: 100%;height: 100%" src="../../../images/bg_dian.png"></image>
+                <view class="info">
+                  <view>用电量<text style="font-size: 20rpx">(kW·h)</text></view>
+                  <view class="info-num">{{eleObj.today}}</view>
+                </view>
+              </view>
+              <view class="list list2" bindtap="goLookSchoolWater">
+                <image style="width: 100%;height: 100%" src="../../../images/bg_shui.png"></image>
+                <view class="info">
+                  <view>用水量<text style="font-size: 20rpx">(m³)</text></view>
+                  <view class="info-num">{{waterObj.today}}</view>
+                </view>
+              </view>
+              <view class="list list2" bindtap="goLookSchoolWarm">
+                <image style="width: 100%;height: 100%" src="../../../images/bg_re.png"></image>
+                <view class="info">
+                  <view>用暖量<text style="font-size: 20rpx">(GJ)</text></view>
+                  <view class="info-num">{{heatObj.today}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </swiper-item>
+        <swiper-item>
+          <view class="item">
+            <view class="top">
+              <view class="tit">当月数据</view>
+            </view>
+            <view class="cont">
+              <view class="list" bindtap="goLookSchoolEle">
+                <image style="width: 100%;height: 100%" src="../../../images/bg_dian.png"></image>
+                <view class="info">
+                  <view>用电量<text style="font-size: 20rpx">(kW·h)</text></view>
+                  <view class="info-num">{{eleObj.tomonth}}</view>
+                </view>
+              </view>
+              <view class="list list2" bindtap="goLookSchoolWater">
+                <image style="width: 100%;height: 100%" src="../../../images/bg_shui.png"></image>
+                <view class="info">
+                  <view>用水量<text style="font-size: 20rpx">(m³)</text></view>
+                  <view class="info-num">{{waterObj.tomonth}}</view>
+                </view>
+              </view>
+              <view class="list list2" bindtap="goLookSchoolWarm">
+                <image style="width: 100%;height: 100%" src="../../../images/bg_re.png"></image>
+                <view class="info">
+                  <view>用暖量<text style="font-size: 20rpx">(GJ)</text></view>
+                  <view class="info-num">{{heatObj.tomonth}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </swiper-item>
+        <swiper-item>
+          <view class="item">
+            <view class="top">
+              <view class="tit">当年数据</view>
+            </view>
+            <view class="cont">
+              <view class="list" bindtap="goLookSchoolEle">
+                <image style="width: 100%;height: 100%" src="../../../images/bg_dian.png"></image>
+                <view class="info">
+                  <view>用电量<text style="font-size: 20rpx">(kW·h)</text></view>
+                  <view class="info-num">{{eleObj.toyear}}</view>
+                </view>
+              </view>
+              <view class="list list2" bindtap="goLookSchoolWater">
+                <image style="width: 100%;height: 100%" src="../../../images/bg_shui.png"></image>
+                <view class="info">
+                  <view>用水量<text style="font-size: 20rpx">(m³)</text></view>
+                  <view class="info-num">{{waterObj.toyear}}</view>
+                </view>
+              </view>
+              <view class="list list2" bindtap="goLookSchoolWarm">
+                <image style="width: 100%;height: 100%" src="../../../images/bg_re.png"></image>
+                <view class="info">
+                  <view>用暖量<text style="font-size: 20rpx">(GJ)</text></view>
+                  <view class="info-num">{{heatObj.toyear}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </swiper-item>
+    </swiper>
+  </view>
+</view>

@@ -1,0 +1,188 @@
+/* pages/page/my/pages/benefit/index.wxss */
+/* 头部 */
+/* .benefit>.top-nav {
+  width: 60%;
+  margin: 20rpx auto;
+  display: flex;
+  overflow: hidden;
+  border-radius: 10rpx;
+  border: 1rpx solid #3AA0FB;
+} */
+.benefit>.top-nav .item {
+  flex: 1;
+  display: flex;
+  height: 60rpx;
+  color: #3AA0FB;
+  font-size: 24rpx;
+  align-items: center;
+  justify-content: center;
+}
+.benefit>.top-nav .item:nth-child(2) {
+  border-left: 1rpx solid #3AA0FB;
+  border-right: 1rpx solid #3AA0FB;
+}
+.benefit>.top-nav .item.active {
+  color: #fff;
+  background-color: #3AA0FB;
+}
+
+
+
+.benefit>.top-nav {
+  display: flex;
+  height: 88rpx;
+  font-size: 28rpx;
+  padding: 0 20rpx;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1f1f1;
+}
+.benefit>.top-nav>.top-item {
+  display: flex;
+  height: 44rpx;
+  align-items: center;
+  justify-content: center;
+}
+.benefit>.top-nav>.top-item .picker {
+  display: inline-block;
+}
+.benefit>.top-nav>.top-item .cont {
+  display: flex;
+  align-items: center;
+}
+.benefit>.top-nav>.top-item image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 10rpx;
+}
+
+
+
+/* 中间内容 */
+.benefit>.cont {
+  left: 0;
+  right: 0;
+  top: 100rpx;
+  display: flex;
+  bottom: 100rpx;
+  position: absolute;
+  flex-direction: column;
+}
+.benefit>.cont-x {
+  top: 147rpx;
+}
+.benefit>.cont.index {
+  background-color: #F1F1F1;
+  /* padding: 0 20rpx 20rpx; */
+}
+/* 第一部分 */
+.benefit>.cont.index .cont-top {
+  display: flex;
+  background-color: #fff;
+}
+.benefit>.cont.index .cont-top .item {
+  flex: 1;
+  display: flex;
+  height: 150rpx;
+  color: #656565;
+  font-size: 26rpx;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.benefit>.cont.index .cont-top .item>.top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+.benefit>.cont.index .cont-top .item .num {
+  font-size: 42rpx;
+}
+.benefit>.cont.index .cont-top .item .num.g {
+  color: #0DA311;
+}
+.benefit>.cont.index .cont-top .item .num.r {
+  color: #E94C4C;
+}
+.benefit>.cont.index .cont-top .item .icon {
+  width: 30rpx;
+  height: 30rpx;
+  /* margin-bottom: 20rpx; */
+}
+.benefit>.cont.index .cont-top .item .icon>image {
+  width: 100%;
+  height: 100%;
+}
+
+
+.benefit>.cont.index .cont-table {
+  flex: 1;
+  margin-top: 10rpx;
+  padding: 30rpx 0;
+  background-color: #fff;
+}
+.benefit>.cont.index .cont-table .t-h {
+  display: flex;
+  color: #d3d3d3;
+  /* border-bottom: 2rpx solid #eee; */
+}
+.benefit>.cont.index .cont-table .t-h .item {
+  flex: 1;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.benefit>.cont.index .cont-table .t-h .item.b-t {
+  color: #282828;
+  font-size: 32rpx;
+}
+.benefit>.cont.index .cont-table .t-h .item.b-t2 {
+  color: #656565;
+  font-size: 30rpx;
+}
+
+/* 第二部分 */
+.benefit>.cont.setting>.cont-set {
+  flex: 1;
+}
+.benefit>.cont.setting>.cont-set:nth-child(1) {
+  border-bottom: 2rpx solid #f1f1f1;
+}
+.benefit>.cont.setting>.cont-set:nth-child(2) {
+  padding: 20rpx 0 0;
+}
+
+/* 底部 */
+.benefit>.bot {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  height: 100rpx;
+  color: #989898;
+  font-size: 24rpx;
+  position: absolute;
+  background-color: #fff;
+  border-top: 1rpx solid #f1f1f1;
+}
+.benefit>.bot-x {
+  height: 147rpx;
+}
+.benefit>.bot>.item {
+  flex: 1;
+  display: flex;
+  color: #989898;
+  font-size: 24rpx;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.benefit>.bot>.item.active {
+  color: #42A0F4;
+}
+.benefit>.bot>.item>.icon {
+  width: 54rpx;
+  height: 54rpx;
+  margin-top: 10rpx;
+}

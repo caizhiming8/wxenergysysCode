@@ -1,0 +1,118 @@
+/* pages/page/warm/pages/heatExchange/heatStationData/index.wxss */
+page {
+  background-color: #f1f1f1;
+}
+.station-top {
+  display: flex;
+  padding: 30rpx;
+  align-items: center;
+  background-color: #fff;
+  justify-content: space-between;
+}
+.station-top>view {
+  font-size: 14px;
+}
+.station-top>view .picker {
+  display: inline-block;
+}
+.station-top>view .icon-more {
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 6rpx;
+  margin-left: 10rpx;
+  transform: rotate(0deg);
+}
+/* .station-top .top {
+  width: 51%;
+  display: flex;
+  overflow: hidden;
+  font-size: 24rpx;
+  margin: 20rpx auto;
+  align-items: center;
+  border-radius: 10rpx;
+  border: 2rpx solid #3AA0FB;
+}
+.station-top .top>.item {
+  flex: 1;
+  display: flex;
+  height: 60rpx;
+  align-items: center;
+  justify-content: center;
+}
+.station-top .top>.item:nth-child(2) {
+  border-left: 2rpx solid #3AA0FB;
+  border-right: 2rpx solid #3AA0FB;
+}
+.station-top .top>.item.active {
+  color: #fff;
+  background-color: #3AA0FB;
+} */
+
+/* 内容部分 */
+.station-cont {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 95rpx;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+}
+.station-cont>.item {
+  margin-top: 10rpx;
+  background-color: #fff;
+}
+.station-cont>.item.top .list {
+  display: flex;
+  height: 130rpx;
+  padding: 0 30rpx;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+.station-cont>.item.top .list>.left {
+  display: flex;
+  color: #656565;
+  font-size: 30rpx;
+  align-items: center;
+}
+.station-cont>.item.top .list>.left :last-child {
+  padding-left: 30rpx;
+}
+.station-cont>.item.top .list>.left>.icon {
+  width: 64rpx;
+  height: 64rpx;
+}
+.station-cont>.item.top .list>.right {
+  color: #3AA0FB;
+  font-size: 36rx;
+}
+.station-cont>.item.top .list>.right>.led-font {
+  font-size: 54rpx;
+  font-family: 'UniDreamLED';
+}
+.station-cont>.item.top .list:nth-child(2) .right {
+  color: #FB873A;
+}
+.station-cont>.item.top .list:nth-child(3) .right {
+  color: #EB4242;
+}
+.station-cont>.item.top .list .right :nth-child(2) {
+  padding-left: 10rpx;
+}
+
+/* 底部echarts */
+.station-cont>.item.bot {
+  flex: 1;
+  display: flex;
+  padding: 30rpx;
+  flex-direction: column;
+}
+.station-cont>.item.bot>.tit {
+  color: #656565;
+  font-size: 30rpx;
+}
+.station-cont>.item.bot>.echarts {
+  flex: 1;
+  padding: 30rpx 0 0;
+}

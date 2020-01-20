@@ -1,0 +1,29 @@
+.info-detail {
+  padding: 50rpx 30rpx;
+}
+.info-detail .tit {
+  display: flex;
+  padding: 10rpx;
+  color: #010101;
+  font-size: 38rpx;
+  justify-content: center;
+}
+.info-detail .time,
+.info-detail .name {
+  display: flex;
+  padding: 10rpx;
+  color: #333333;
+  font-size: 22rpx;
+  justify-content: center;
+}
+.info-detail .cont {
+  display: flex;
+  padding: 10rpx 0;
+  justify-content: center;
+}
+.info-detail .name {
+  display: flex;
+  color: #333333;
+  font-size: 22rpx;
+  justify-content: flex-end;
+}

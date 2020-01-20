@@ -1,0 +1,57 @@
+/* pages/page/repairs/pages/repairMange/assignedPerson/index.wxss */
+page {
+  background-color: #f1f1f1;
+}
+.page-person>.item {
+  display: flex;
+  height: 88rpx;
+  color: #656565;
+  font-size: 30rpx;
+  padding: 0 30rpx;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 2rpx solid #f1f1f1;
+}
+.item>.title {
+  width: 150rpx;
+}
+.item>.title2 {
+  width: 210rpx;
+}
+.item>.cont {
+  flex: 1;
+}
+.item>.cont>.put {
+  width: 100%;
+  text-align: right;
+}
+.place-style {
+  text-align: right;
+}
+.item>.right {
+  display: flex;
+  width: 150rpx;
+  align-items: center;
+}
+.item>.right .icon {
+  width: 28rpx;
+  height: 25rpx;
+  margin-left: 10rpx;
+  vertical-align: middle;
+}
+.item>.right2 .icon2 {
+  width: 50rpx;
+  height: 50rpx;
+}
+.item-btn {
+  margin: auto;
+  color: #fff;
+  width: 690rpx;
+  height: 88rpx;
+  display: flex;
+  font-size: 36rpx;
+  margin-top: 210rpx;
+  align-items: center;
+  justify-content: center;
+  background-color: #3AA0FB;
+}

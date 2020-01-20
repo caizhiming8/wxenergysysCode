@@ -1,0 +1,35 @@
+<!--pages/tabBar/index/index.wxml-->
+<view class="nav nav-content {{isIpx?'nav-content-x':''}}">
+  <!-- 组件显示，根据自己需求添加 -->
+  <view hidden="{{currentTab == 0? false: true}}" bind:myevent="onMyEvent">
+    <component_home/>
+  </view>
+  <view hidden="{{currentTab == 3? false: true}}">
+    <component_my/>
+  </view>
+</view>
+
+<!-- 自定义 tabbar -->
+<view class="nav-tabs">
+  <view
+   class="tab-list {{currentTab == idx ? 'active' : 'default' }} {{isIpx?'tab-list-x':''}}" 
+   wx:for="{{items}}" 
+   wx:key="prototype" 
+   wx:for-index="idx" 
+   wx:for-item="item" 
+   data-current="{{idx}}"
+   data-auth="{{item.auth}}"
+   bindtap="swichNav">
+    <text class="tab-text"
+     wx:for-index="idx"
+     data-current="{{idx}}"
+     src="{{currentTab == idx ? item.selectedIconPath : item.iconPath }}">{{item.text}}</text>
+    <image
+     class="iconPath" 
+     wx:for-index="idx" 
+     data-current="{{idx}}" 
+     src="{{currentTab == idx ? item.selectedIconPath : item.iconPath }}"></image>
+    <view wx:if="{{item.showMark&&item.num>0}}" class="tab-mark">{{item.num}}</view>
+    <view wx:if="{{item.showMark2&&item.num>0}}" class="tab-mark2"></view>
+  </view>
+</view>

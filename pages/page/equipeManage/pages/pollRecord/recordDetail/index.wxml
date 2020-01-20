@@ -1,0 +1,46 @@
+<!--pages/page/equipeManage/pages/pollRecord/recordDetail/index.wxml-->
+<view class="detail">
+  <view class="item">
+    <view class="top">
+      <image class="icon" src="../../../resource/icon_detail.png"></image>
+      <view>巡检记录详情</view>
+    </view>
+    <view class="cont">
+      <view>巡检编号：{{curObj.code}}</view>
+      <view>巡检计划：{{curObj.planName}}</view>
+      <view>巡检人：{{curObj.username?curObj.username:'无'}}</view>
+      <view>本次巡检日期：{{curObj.plan_time}}</view>
+      <view>下次巡检日期：{{curObj.examine_time}}</view>
+      <view>设备总数：{{curObj.zcount}}</view>
+      <view>设备故障数：{{curObj.gcount}}</view>
+      <view>巡检状态：{{curObj.result}}</view>
+      <view>巡检结果：{{curObj.result}}</view>
+    </view>
+  </view>
+  <view class="item">
+    <view class="top">
+      <image class="icon" src="../../../resource/icon_detail.png"></image>
+      <view>操作记录详情</view>
+    </view>
+    <view class="cont2">
+      <view class="list" wx:for="{{responseData}}" wx:key="item">
+        <view class="tit">
+          <view>设备编码</view>
+          <view class="c">设备类型</view>
+          <view class="c">设备名称</view>
+          <view class="r">设备状态</view>
+        </view>
+        <view class="data">
+          <view>{{item.code}}</view>
+          <view class="c">{{item.type_name}}</view>
+          <view class="c">{{item.name}}</view>
+          <view class="r">{{item.status}}</view>
+        </view>
+      </view>
+      <view class="data-null-cont" wx:if="{{responseData.length==0&&showNoContent}}">
+        <image class="icon" src="/images/icon_data_null.png"></image>
+        <view class="text">暂时没有内容呢</view>
+      </view>
+    </view>
+  </view>
+</view>

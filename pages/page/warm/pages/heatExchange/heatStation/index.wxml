@@ -1,0 +1,109 @@
+<view class="heat-station">
+  <view class="heat-top">
+    <view>选择换热站</view>
+    <view class="left">
+      <picker
+       bindchange="goChangeHeatSystem" 
+       value="{{curSelectsystemIndex}}" 
+       range="{{heatSystemList}}" 
+       range-key="{{'label'}}">
+        <view style="display: flex;align-items: center">
+          <view class="picker">{{heatSystemList[curSelectsystemIndex].label}}</view>
+          <image class="icon-more" src="/images/icon_more.png"></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="heat-shortcut">
+    <view class="item">
+      <image class="icon" src="../../../resource/icon_wendu.png"></image>
+      <view class="tit">{{responseRealData.data1x8x1.value?responseRealData.data1x8x1.value:0}}</view>
+      <view>室外温度</view>
+    </view>
+    <view class="item">
+      <image class="icon" wx:if="{{responseRealData.status=='0'}}" src="../../../resource/icon_state.png"></image>
+      <image class="icon" wx:if="{{responseRealData.status!='0'}}" src="../../../resource/icon_state2.png"></image>
+      <view class="tit tit-o"
+       style="color: {{responseRealData.status=='0'?'#FB8C3A':'#3CC24F'}}">{{responseRealData.status=='0'?'离线':'在线'}}</view>
+      <view>通讯状态</view>
+    </view>
+    <view class="item">
+      <image class="icon" src="../../../resource/icon_water.png"></image>
+      <view class="tit tit-g">{{responseRealData.electricity.value?responseRealData.electricity.value:0}}kW·h</view>
+      <view>累计用电量</view>
+    </view>
+    <view class="item">
+      <image class="icon" src="../../../resource/icon_shuixiang.png"></image>
+      <view class="tit tit-b">{{responseRealData.data1x7x1.value?responseRealData.data1x7x1.value:0}}</view>
+      <view>水箱液位</view>
+    </view>
+  </view>
+  <view class="cont-item" bindtap="goChangeActiveItem" data-id="0">
+    <view class="item-tit">
+      <view class="left">
+        <image class="icon" src="../../../resource/icon_data2.png"></image>
+        <view class="tit">一次数据</view>
+      </view>
+      <view class="right">
+        <image class="icon {{activeItemNum == 0?'icon2':''}}" src="../../../resource/submenu_enter@2x.png"></image>
+      </view>
+    </view>
+    <view class="item-content yes" wx:if="{{activeItemNum == 0}}">
+      <view class="list" wx:for="{{responseRealData2}}" wx:key="item">
+        <view class="left">{{item.dataName}}：</view>
+        <view class="right">{{item.value}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="cont-item" bindtap="goChangeActiveItem" data-id="1">
+    <view class="item-tit">
+      <view class="left">
+        <image class="icon" src="../../../resource/icon_data1.png"></image>
+        <view class="tit">二次数据</view>
+      </view>
+      <view class="right">
+        <image class="icon {{activeItemNum == 1?'icon2':''}}" src="../../../resource/submenu_enter@2x.png"></image>
+      </view>
+    </view>
+    <view class="item-content yes" wx:if="{{activeItemNum == 1}}">
+      <view class="list" wx:for="{{responseRealData3}}" wx:key="item">
+        <view class="left">{{item.dataName}}：</view>
+        <view class="right">{{item.value}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="cont-item" bindtap="goChangeActiveItem" data-id="2">
+    <view class="item-tit">
+      <view class="left">
+        <image class="icon" src="../../../resource/icon_beng.png"></image>
+        <view class="tit">循环水泵数据</view>
+      </view>
+      <view class="right">
+        <image class="icon {{activeItemNum == 2?'icon2':''}}" src="../../../resource/submenu_enter@2x.png"></image>
+      </view>
+    </view>
+    <view class="item-content no" wx:if="{{activeItemNum == 2}}">
+      <view class="list" wx:for="{{responseRealData4}}" wx:key="item">
+        <view class="left">{{item.dataName}}</view>
+        <view class="right">{{item.value}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="cont-item" bindtap="goChangeActiveItem" data-id="3">
+    <view class="item-tit">
+      <view class="left">
+        <image class="icon" src="../../../resource/icon_bs.png"></image>
+        <view class="tit">补水泵数据</view>
+      </view>
+      <view class="right">
+        <image class="icon {{activeItemNum == 3?'icon2':''}}" src="../../../resource/submenu_enter@2x.png"></image>
+      </view>
+    </view>
+    <view class="item-content no" wx:if="{{activeItemNum == 3}}">
+      <view class="list" wx:for="{{responseRealData5}}" wx:key="item">
+        <view class="left">{{item.dataName}}</view>
+        <view class="right">{{item.value}}</view>
+      </view>
+    </view>
+  </view>
+</view>

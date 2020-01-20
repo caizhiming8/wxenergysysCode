@@ -1,0 +1,138 @@
+/* pages/page/equipeManage/pages/addApply/index.wxss */
+page {
+  background-color: #f1f1f1;
+}
+.add-apply>.item {
+  display: flex;
+  height: 88rpx;
+  color: #656565;
+  font-size: 30rpx;
+  padding: 0 30rpx;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 2rpx solid #f1f1f1;
+}
+.add-apply>.item>.title {
+  width: 180rpx;
+}
+.add-apply>.item>.title2 {
+  width: 210rpx;
+}
+.item>.cont {
+  flex: 1;
+  text-align: right;
+}
+.item>.cont>.put {
+  width: 100%;
+  text-align: right;
+}
+.place-style {
+  text-align: right;
+}
+.item>.right {
+  display: flex;
+  width: 150rpx;
+  align-items: center;
+}
+.item>.right .icon {
+  width: 28rpx;
+  height: 25rpx;
+  margin-left: 10rpx;
+  vertical-align: middle;
+}
+.item>.right3 {
+  display: flex;
+  width: 100rpx;
+  position: relative;
+  align-items: center;
+  justify-content: flex-end;
+}
+.add-apply>.item .right-view {
+  display: flex;
+  height: 50rpx;
+  align-items: center;
+}
+.item>.right3 picker {
+  display: flex;
+  align-items: center;
+}
+.item>.right3 picker .text {
+  top: 5rpx;
+  right: 55rpx;
+  position: absolute;
+}
+.item>.right3 .icon2,
+.item>.right2 .icon2 {
+  width: 35rpx;
+  height: 35rpx;
+}
+.item>.right2 .icon {
+  width: 50rpx;
+  height: 50rpx;
+}
+.item-btn {
+  color: #fff;
+  width: 690rpx;
+  height: 88rpx;
+  display: flex;
+  font-size: 36rpx;
+  margin: 50rpx auto;
+  align-items: center;
+  justify-content: center;
+  background-color: #3AA0FB;
+}
+.touch-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #f1f1f1;
+  width: 100%;
+  overflow: hidden;
+  background-color: #fff;
+}
+ 
+.content {
+  width: 100%;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  padding-left: 20rpx;
+  line-height: 50rpx;
+  margin-right: 0;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transform: translateX(180rpx);
+  transform: translateX(180rpx);
+  margin-left: -180rpx;
+}
+ 
+.del {
+  background-color: #EF5A5A;
+  width: 230rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  -webkit-transform: translateX(230rpx);
+  transform: translateX(230rpx);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+ 
+.touch-move-active .content, .touch-move-active .del {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+ 
+.row {
+  display: flex;
+  flex-direction: row;
+}
+ 
+.column {
+  display: flex;
+  flex-direction: column;
+}
+ 
+.full_width {
+  width: 100%;
+}

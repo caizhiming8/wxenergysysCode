@@ -1,0 +1,15 @@
+/* pages/page/equipeManage/pages/pollTable/tableDetail/index.wxss */
+@import '../../pollRecord/recordDetail/index.wxss';
+.btn {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #fff;
+  display: flex;
+  height: 100rpx;
+  font-size: 36rpx;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background-color: #3AA0FB;
+}

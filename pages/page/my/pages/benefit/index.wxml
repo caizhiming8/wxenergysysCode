@@ -1,0 +1,123 @@
+<view class="benefit">
+  <!-- <view class="top-nav">
+    <view class="item {{currentTab == 1?'active':''}}" bindtap="goChangeTab" data-index="1">供暖</view>
+    <view class="item {{currentTab == 2?'active':''}}" bindtap="goChangeTab" data-index="2">供水</view>
+    <view class="item {{currentTab == 3?'active':''}}" bindtap="goChangeTab" data-index="3">供电</view>
+  </view> -->
+  <view class="top-nav">
+    <view class="top-item">当前系统：{{buildSysList[curBuildIndex].name}}</view>
+    <view class="top-item">
+      <picker
+       bindchange="goChangeBuildSystem"
+       value="{{curBuildIndex}}"
+       range="{{buildSysList}}" 
+       range-key="{{'name'}}">
+        <view class="cont">
+          <view class="picker">{{buildSysList[curBuildIndex].name}}</view>
+          <image class="up" src="/images/icon_more.png"></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="cont index {{isIpx? 'cont-x': '' }}" wx:if="{{tabNavIndex == 'index'}}">
+    <view class="cont-top">
+      <view class="item left">
+        <view class="top">
+          <view class="num g">{{economyMoneyObj.moneySaving}}元</view>
+          <view class="icon">
+            <image wx:if="{{economyMoneyObj.moneySaving>0}}" src="../../resource/icon_up.png"></image>
+            <image wx:if="{{economyMoneyObj.moneySaving<=0}}" src="../../resource/icon_down.png"></image>
+          </view>
+        </view>
+        <view>总节能金额</view>
+      </view>
+      <view class="item right">
+        <view class="top">
+          <view class="num r">{{economyMoneyObj.profit}}元</view>
+          <view class="icon">
+            <image wx:if="{{economyMoneyObj.profit>0}}" src="../../resource/icon_up.png"></image>
+            <image wx:if="{{economyMoneyObj.profit<=0}}" src="../../resource/icon_down.png"></image>
+          </view>
+        </view>
+        <view>总节能利润</view>
+      </view>
+    </view>
+    <view class="cont-top">
+      <view class="item left">
+        <view class="top">
+          <view class="num g">{{economyMoneyObj.cruQouat}}{{unitObj.name1}}</view>
+        </view>
+        <view>当年周期已用定额</view>
+      </view>
+      <view class="item right">
+        <view class="top">
+          <view class="num r">{{economyMoneyObj.quotaAll}}{{unitObj.name1}}</view>
+        </view>
+        <view>当年周期总定额</view>
+      </view>
+    </view>
+    <view class="cont-table">
+      <view class="t-h">
+        <view class="item b-t"><text decode="true">类名</text></view>
+        <view class="item b-t">今日</view>
+        <view class="item b-t">昨日</view>
+      </view>
+      <view class="t-h">
+        <view class="item b-t2">能耗（{{unitObj.name1}}）</view>
+        <view class="item b-t2">{{todayTableData.dayCon}}</view>
+        <view class="item b-t2">{{yesterdayTableData.dayCon}}</view>
+      </view>
+      <view class="t-h">
+        <view class="item b-t2">定额（{{unitObj.name1}}）</view>
+        <view class="item b-t2">{{todayTableData.quota}}</view>
+        <view class="item b-t2">{{yesterdayTableData.quota}}</view>
+      </view>
+      <view class="t-h">
+        <view class="item b-t2">金额（{{unitObj.name2}}）</view>
+        <view class="item b-t2"
+         style="color:{{todayTableData.moneySaving>0?'#0DA311':'#E94C4C'}}">
+         {{todayTableData.moneySaving}}
+        </view>
+        <view class="item b-t2"
+         style="color:{{yesterdayTableData.moneySaving>0?'#0DA311':'#E94C4C'}}">
+         {{yesterdayTableData.moneySaving}}
+        </view>
+      </view>
+      <view class="t-h">
+        <view class="item b-t2">利润（{{unitObj.name2}}）</view>
+        <view class="item b-t2"
+         style="color:{{todayTableData.profit>0?'#0DA311':'#E94C4C'}}">
+         {{todayTableData.profit}}
+        </view>
+        <view class="item b-t2"
+         style="color:{{yesterdayTableData.profit>0?'#0DA311':'#E94C4C'}}">
+         {{yesterdayTableData.profit}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="cont setting {{isIpx? 'cont-x': '' }}" wx:if="{{tabNavIndex == 'setting'}}">
+    <view class="cont-set">
+      <ec-canvas id="mychart-dom-gauge" canvas-id="mychart-gauge" ec="{{ ec1 }}"></ec-canvas>
+    </view>
+    <view class="cont-set">
+      <ec-canvas id="mychart-dom-gauge" canvas-id="mychart-gauge" ec="{{ ec2 }}"></ec-canvas>
+    </view>
+  </view>
+  <view class="bot {{isIpx? 'bot-x': '' }}">
+    <view class="item {{tabNavIndex == 'index'?'active':''}}" bindtap="goTabPage" data-id="index">
+      <image class="icon" wx:if="{{tabNavIndex == 'index'}}" src="/images/list_se@2x.png"></image>
+      <image class="icon" wx:if="{{tabNavIndex != 'index'}}" src="/images/list_nor@2x.png"></image>
+      <view>表单</view>
+    </view>
+    <view class="item {{tabNavIndex == 'setting'?'active':''}}" bindtap="goTabPage" data-id="setting">
+      <image class="icon" wx:if="{{tabNavIndex != 'setting'}}" src="/images/chart_nor@2x.png"></image>
+      <image class="icon" wx:if="{{tabNavIndex == 'setting'}}" src="/images/chart_se@2x.png"></image>
+      <view>图表</view>
+    </view>
+    <view class="item" bindtap="goTabPage" data-id="extra">
+      <image class="icon" src="/images/icon_extra.png"></image>
+      <view>异常记录</view>
+    </view>
+  </view>
+</view>

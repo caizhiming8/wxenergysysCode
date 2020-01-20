@@ -1,0 +1,5 @@
+/* pages/page/alarm/pages/setting/addSet/index.wxss */
+@import '../../alarmDetail/setWarn/index.wxss';
+page {
+  background-color: #f1f1f1;
+}

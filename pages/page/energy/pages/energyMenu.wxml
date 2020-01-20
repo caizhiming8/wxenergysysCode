@@ -1,0 +1,35 @@
+<!--pages/page/energy/pages/energyMenu.wxml-->
+<view class="subitem-menu">
+  <image src="../resource/submenu_banner.png" class="submenu-bg"></image>
+  <view class="menu-item" bindtap="goSubitemMenuPage" data-index="0" data-auth="6-3-1">
+    <image src="../resource/submenu_de@2x.png" class="item-icon"></image>
+    <view class="item-title">定额考核对比</view>
+    <image src="../resource/submenu_enter@2x.png" class="item-next"></image>
+  </view>
+  <view class="menu-item" bindtap="goSubitemMenuPage" data-index="1" data-auth="6-3-2">
+    <image src="../resource/submenu_dw@2x.png" class="item-icon"></image>
+    <view class="item-title">二级单位</view>
+    <image src="../resource/submenu_enter@2x.png" class="item-next {{currentRoomIndex == 0?'up':'down'}}"></image>
+  </view>
+  <view class="sub-menu {{currentRoomIndex == 0?'':'up'}}">
+    <view class="menu-item" wx:for="{{menuArrayList1}}" wx:for-index="idx" wx:for-item="item" wx:key="item">
+      <view
+       class="title {{currentSubmenu == (idx+1)?'last-item':''}}" 
+       bindtap="goUnfoldSubitemMenu" 
+       data-index="{{idx+1}}">
+        <view class="title-tit">{{item.groupname}}</view>
+        <image src="../resource/submenu_2_open@2x.png" class="item-next {{currentSubmenu == 1?'down':'up'}}"></image>
+      </view>
+      <view class="sub-sub-menu" wx:if="{{currentSubmenu == idx+1}}">
+        <view
+         wx:for="{{item.chilList}}" 
+         wx:for-index="idx2" 
+         wx:for-item="list" 
+         wx:key="list" 
+         bindtap="goSubSubMenuItem" 
+         data-index="{{list}}" 
+         class="title title2 {{idx2 == item.chilList.length-1?'last-item':''}}">{{list.name}}</view>
+      </view>
+    </view>
+  </view>
+</view>

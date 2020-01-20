@@ -1,0 +1,83 @@
+<!--pages/tabBar/alarm/alarm.wxml-->
+<view class="alarm">
+  <view class="top">
+    <view class="item {{activeNav==1?'active':''}}" bindtap="goChangeNav" data-id="1">
+      <view class="tit">供电告警({{warnNum_ele}})</view>
+      <view class="active-mark"></view>
+    </view>
+    <view class="item {{activeNav==2?'active':''}}" bindtap="goChangeNav" data-id="2">
+      <view class="tit">供水告警({{warnNum_water}})</view>
+      <view class="active-mark"></view>
+    </view>
+    <view class="item {{activeNav==3?'active':''}}" bindtap="goChangeNav" data-id="3">
+      <view class="tit">供暖告警({{warnNum_warm}})</view>
+      <view class="active-mark"></view>
+    </view>
+    <view class="item {{activeNav==4?'active':''}}" bindtap="goChangeNav" data-id="4">
+      <view class="tit">空调告警({{warnNum_air}})</view>
+      <view class="active-mark"></view>
+    </view>
+  </view>
+  <view class="center {{isIpx? 'center-x': '' }}">
+    <view class="item">
+      <view class="tit">
+        <image class="icon" src="../../../images/icon_rank.png"></image>
+        <text>告警级别</text>
+      </view>
+      <view class="cont">
+        <ec-canvas
+         style="width: 100%; height: 100%;" 
+         id="mychartGauge1" 
+         canvas-id="mychartGauge1" 
+         ec="{{ ec }}"></ec-canvas>
+      </view>
+      <view class="bot">
+        <view class="list" style="margin-left: 0;">
+          <view class="zhishi"></view>
+          <view>高告警</view>
+        </view>
+        <view class="list">
+          <view class="zhishi cen"></view>
+          <view>中告警</view>
+        </view>
+        <view class="list">
+          <view class="zhishi bot"></view>
+          <view>低告警</view>
+        </view>
+      </view>
+    </view>
+    <view class="item">
+      <view class="tit">
+        <image class="icon" src="../../../images/icon_type.png"></image>
+        <text>告警类型</text>
+      </view>
+      <view class="cont">
+        <ec-canvas
+         style="width: 100%; height: 100%;" 
+         id="mychartGauge2" 
+         canvas-id="mychartGauge2" 
+         ec="{{ ec2 }}"></ec-canvas>
+      </view>
+      <view class="bot">
+        <view class="list" style="margin-left: 0;">
+          <view class="zhishi cen"></view>
+          <view>待确认</view>
+        </view>
+        <view class="list">
+          <view class="zhishi bot"></view>
+          <view>待处理</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="bot {{isIpx? 'bot-x': '' }}">
+    <view class="item" bindtap="goTabPage" data-id="index">
+      <image class="icon" src="/images/icon_form.png"></image>
+      <view>告警表单</view>
+    </view>
+    <view class="item" bindtap="goTabPage" data-id="setting" data-auth="3-6-3">
+      <image class="icon" src="/images/icon_sys.png"></image>
+      <view>告警设定</view>
+    </view>
+  </view>
+</view>

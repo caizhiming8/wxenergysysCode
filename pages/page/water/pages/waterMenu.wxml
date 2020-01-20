@@ -1,0 +1,33 @@
+<view class="subitem-menu">
+  <image src="../resource/submenu_banner.png" class="submenu-bg"></image>
+  <view class="menu-item" bindtap="goSubitemMenuPage" data-index="0" data-auth="2-2">
+    <image src="../resource/submenu_energy.png" class="item-icon"></image>
+    <view class="item-title">能耗分析</view>
+    <image src="../resource/submenu_enter@2x.png" class="item-next"></image>
+  </view>
+  <view class="menu-item" bindtap="goSubitemMenuPage" data-index="1">
+    <image src="../resource/submenu_flow.png" class="item-icon"></image>
+    <view class="item-title">流量分析</view>
+    <image src="../resource/submenu_enter@2x.png" class="item-next {{currentRoomIndex == 0?'up':'down'}}"></image>
+  </view>
+  <view class="sub-menu {{currentRoomIndex == 0?'':'up'}}">
+    <view class="menu-item" bindtap="goSubitemMenuPage" data-index="3" data-auth="2-5-1-2">DMA分区</view>
+    <view class="menu-item" bindtap="goSubitemMenuPage" data-index="4" data-auth="2-5-2-2">夜间小流量</view>
+    <!--  last-item -->
+  </view>
+  <view class="menu-item" bindtap="goSubitemMenuPage" data-index="2">
+    <image src="../resource/submenu_shebei.png" class="item-icon"></image>
+    <view class="item-title">设备状态</view>
+    <image src="../resource/submenu_enter@2x.png" class="item-next {{curSheBeiState == 0?'up':'down'}}"></image>
+  </view>
+  <view class="sub-menu {{curSheBeiState == 0?'':'up'}}">
+    <view class="menu-item" bindtap="goSubitemMenuPage" data-index="5" data-auth="2-4-1">NB水表</view>
+    <view class="menu-item" bindtap="goSubitemMenuPage" data-index="6" data-auth="2-4-2">集采水表</view>
+    <!--  last-item -->
+  </view>
+  <!-- <view class="menu-item" bindtap="goSubitemMenuPage" data-index="3">
+    <image src="../resource/submenu_shebei_shuibiao.png" class="item-icon"></image>
+    <view class="item-title">采集水表</view>
+    <image src="../resource/submenu_enter@2x.png" class="item-next"></image>
+  </view> -->
+</view>

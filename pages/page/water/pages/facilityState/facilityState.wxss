@@ -1,0 +1,105 @@
+/* pages/page/water/pages/facilityState/facilityState.wxss */
+.facility>.facility-tab {
+  display: flex;
+  width: 360rpx;
+  height: 60rpx;
+  overflow: hidden;
+  margin: 26rpx auto;
+  border-radius: 10rpx;
+  justify-content: center;
+  border: 1rpx solid #3AA0FB;
+  -webkit-border: 1rpx solid #3AA0FB;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+.facility>.facility-tab>.tab-btn {
+  display: flex;
+  width: 181rpx;
+  font-size: 24rpx;
+  color: #3AA0FB;
+  align-items: center;
+  justify-content: center;
+}
+.facility>.facility-tab>.tab-btn.active {
+  color: #fff;
+  background-color: #3AA0FB;
+}
+.facility-search {
+  display: flex;
+  padding: 10rpx 15px;
+  background-color: #F1F1F1;
+}
+.facility-search>.seacrch {
+  flex: 1;
+  height: 34px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  border-radius: 17px;
+  background-color: #fff;
+}
+.facility-search>.seacrch>.input-seacrch {
+  width: 100%;
+  height: 28px;
+  font-size: 14px;
+  border-radius: 17px;
+  padding: 0 60rpx 0 34rpx;
+}
+.facility-search>.seacrch>.icon-seacrch {
+  width: 19px;
+  height: 19px;
+  position: absolute;
+  right: 15px;
+  z-index: 10;
+}
+.facility-table {
+  font-size: 16px;
+  color: #282828;
+}
+.facility-table>.table-header {
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.facility-table>.table-header>view {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+/* .facility-table .tension {
+  justify-content: center;
+}
+.facility-table .sign {
+  justify-content: center;
+}
+.facility-table .state {
+  justify-content: flex-end;
+} */
+.facility-table .state {
+  color: #C51818;
+}
+.facility-table .state2 {
+  color: lightgreen;
+}
+.facility-table>.table-cont{
+  padding: 0 10rpx;
+}
+.facility-table>.table-cont>.cont-item {
+  height: 40px;
+  display: flex;
+  font-size: 14px;
+  color: #656565;
+  align-items: center;
+}
+.facility-table>.table-cont>.cont-item.items {
+  background-color: #F1F1F1;
+}
+.facility-table>.table-cont>.cont-item>view {
+  flex: 1;
+  /* display: flex; */
+  overflow: hidden;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /* justify-content: center; */
+}

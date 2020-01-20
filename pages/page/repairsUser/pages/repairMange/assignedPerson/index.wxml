@@ -1,0 +1,22 @@
+<!--pages/page/repairs/pages/repairMange/assignedPerson/index.wxml-->
+<view class="page-person">
+  <view class="item">
+    <view class="title">维修人员：</view>
+    <view class="cont">{{personArray[cur_personIndex].name}}</view>
+    <view class="right">
+      <picker bindchange="goBindPickerChangePerson" value="{{cur_personIndex}}" range="{{personArray}}" range-key="{{'name'}}">请选择<image class="icon" src="/images/my_enter@2x.png"></image></picker>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">联系方式：</view>
+    <view class="cont">
+      <input class="put" bindinput="goInputPhone" type="number" maxlength="11" placeholder="请输入维修人员电话" placeholder-class="place-style"></input>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title2">期望完成时间：</view>
+    <view class="cont">{{cur_timeData}}</view>
+    <view class="right2"><picker mode="date" value="{{cur_timeData}}" start="2019-09-01" bindchange="goBindDateChange"><image class="icon2" src="../../../resources/icon_rili.png"/></picker></view>
+  </view>
+  <view class="item-btn" bindtap="goSubmitForm">提交</view>
+</view>

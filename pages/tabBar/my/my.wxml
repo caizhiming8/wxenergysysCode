@@ -1,0 +1,85 @@
+<!--pages/tabBar/my/my.wxml-->
+<view class="my">
+  <view class="my-top">
+    <!-- <image class="bg" src="../../../images/my_bg@2x.png"></image> -->
+    <view class="top-info">
+      <image class="tx" src="../../../images/my_head@2x.png"></image>
+      <view class="info">
+        <view class="name">
+          <view>{{userInfo.username}}</view>
+          <view class="type">{{userInfo.roleName}}</view>
+        </view>
+        <view class="phone">{{userInfo.phone}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="my-cont">
+    <view class="item" bindtap="goNextPage" data-index="1">
+      <view class="l">
+        <image src="../../../images/my_pass@2x.png"></image>
+      </view>
+      <view class="r">
+        <view class="name">修改密码</view>
+        <view class="point">
+          <image src="../../../images/my_enter@2x.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="item" bindtap="goNextPage" data-index="2" wx:if="{{showItem2}}">
+      <view class="l">
+        <image src="../../../images/my_switch@2x.png"></image>
+      </view>
+      <view class="r">
+        <view class="name">切换项目</view>
+        <view class="point">
+          <image src="../../../images/my_enter@2x.png"></image>
+        </view>
+      </view>
+    </view>
+    <!-- <view class="item" bindtap="goNextPage" data-index="4" wx:if="{{showItem2}}">
+      <view class="l">
+        <image src="../../../images/my_xiaoxi@2x.png"></image>
+      </view>
+      <view class="r">
+        <view class="name">查看效益</view>
+        <view class="point">
+          <image src="../../../images/my_enter@2x.png"></image>
+        </view>
+      </view>
+    </view> -->
+    <view class="item" bindtap="goNextPage" data-index="3">
+      <view class="l">
+        <image src="../../../images/my_clear@2x.png"></image>
+      </view>
+      <view class="r">
+        <view class="name">清除缓存</view>
+        <view class="point">
+          <image src="../../../images/my_enter@2x.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="item" bindtap="getRoot">
+      <view class="l">
+        <image src="../../../images/my_allow@2x.png"></image>
+      </view>
+      <view class="r">
+        <view class="name">允许通知</view>
+        <view class="point">
+          <image src="../../../images/my_enter@2x.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="item">
+      <view class="l">
+        <image src="../../../images/my_about@2x.png"></image>
+      </view>
+      <view class="r">
+        <view class="name">关于我们</view>
+        <view class="point">
+          <image src="../../../images/my_enter@2x.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="out-btn" bindtap="goOutSystem">退出登录</view>
+  </view>
+</view>

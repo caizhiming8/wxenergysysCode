@@ -1,0 +1,43 @@
+<view class="heat-blance">
+  <view class="blance-search">
+    <view class="top-item" bindtap="goClickChangeBuild">
+      <picker
+       style="width: 100%;" 
+       bindchange="bindPickerChange" 
+       value="{{cur_index}}" 
+       range="{{systemArray}}" 
+       range-key="buildingName">
+        <view class="pick-middle">
+          <view class="picker">{{systemArray[cur_index].buildingName}}</view>
+          <image class="up" src="/images/icon_more.png"></image>
+        </view>
+      </picker>
+    </view>
+    <view class="top-item"></view>
+  </view>
+  <view class="blance-cont">
+    <view
+     class="item" 
+     wx:for="{{responseData}}" 
+     wx:for-item="item" 
+     wx:for-index="idx" 
+     wx:key="item.id" 
+     bindtap="goClickItemDetail" data-index="{{item}}">
+      <view class="l">
+        <view>系统名称：{{item.buildingName}}</view>
+        <view>名称：{{item.dataName}}</view>
+        <view>时间：{{item.time}}</view>
+        <view>
+          <text>状态：</text><text>{{item.state==1?'高':item.state == 2?'低':'正常'}}</text>
+        </view>
+      </view>
+      <view class="r">
+        <image class="icon-point" src="../../resource/submenu_enter@2x.png"></image>
+      </view>
+    </view>
+    <view class="data-null-cont" wx:if="{{responseData.length==0&&showNoContent}}">
+      <image class="icon" src="/images/icon_data_null.png"></image>
+      <view class="text">暂时没有内容呢</view>
+    </view>
+  </view>
+</view>

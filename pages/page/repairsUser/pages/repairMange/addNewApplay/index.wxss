@@ -1,0 +1,100 @@
+/* pages/page/repairsUser/pages/repairMange/addNewApplay/index.wxss */
+page {
+  background-color: #f1f1f1;
+}
+.page-person>.item {
+  display: flex;
+  height: 88rpx;
+  color: #656565;
+  font-size: 30rpx;
+  padding: 0 30rpx;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 2rpx solid #f1f1f1;
+}
+.item>.title {
+  width: 150rpx;
+}
+.item>.title2 {
+  width: 210rpx;
+}
+.item>.cont {
+  flex: 1;
+}
+.item>.cont>.put {
+  width: 100%;
+  text-align: right;
+}
+.place-style {
+  text-align: right;
+}
+.item>.right {
+  flex:1;
+  display: flex;
+  /* width: 350rpx; */
+  align-items: center;
+  justify-content: flex-end;
+}
+.item>.right .icon {
+  width: 28rpx;
+  height: 25rpx;
+  margin-left: 10rpx;
+  vertical-align: middle;
+}
+.item>.right2 .icon2 {
+  width: 50rpx;
+  height: 50rpx;
+}
+.item-btn {
+  margin: auto;
+  color: #fff;
+  width: 690rpx;
+  height: 88rpx;
+  display: flex;
+  font-size: 36rpx;
+  margin-top: 210rpx;
+  align-items: center;
+  justify-content: center;
+  background-color: #3AA0FB;
+}
+.item2 {
+  height: auto;
+  /* display: flex; */
+  color: #656565;
+  font-size: 30rpx;
+  margin-top: 10rpx;
+  align-items: center;
+  padding: 20rpx 30rpx;
+  background-color: #fff;
+  border-bottom: 2rpx solid #f1f1f1;
+}
+.item-input {
+  width: 100%;
+  min-height: 160rpx;
+}
+.item2-img {
+  display: flex;
+  color: #989898;
+  font-size: 18rpx;
+  margin-top: 20rpx;
+  align-items: flex-end;
+  justify-content: space-between;
+} 
+.item2-img>.img {
+  position: relative;
+}
+.item2-img>.img>.im {
+  width: 190rpx;
+  height: 190rpx;
+}
+.item2-img>.img>.im3 {
+  width: 94rpx;
+  height: 94rpx;
+}
+.item2-img>.img>.im2 {
+  top: 10rpx;
+  width: 30rpx;
+  right: 10rpx;
+  height: 30rpx;
+  position: absolute;
+}

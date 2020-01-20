@@ -1,0 +1,94 @@
+<view class="small-flow">
+  <view class="flow-tab">
+    <view class="tab-item {{tabActiveIndex == 0?'active':''}}" bindtap="goClickTabChange" data-index="0">设备间比</view>
+    <view class="tab-item right {{tabActiveIndex == 1?'active':''}}" bindtap="goClickTabChange" data-index="1">同设备之比</view>
+    <view class="active-mark {{tabActiveIndex == 0?'left':'right'}}"></view>
+  </view>
+  <view class="flow-set">
+    <view class="set-left" wx:if="{{tabActiveIndex == 1}}">
+      <image src="/images/img_calendar@2x.png" class="icon-facility"></image>
+      <picker bindchange="goChangeFacilityPicker" value="{{currentSelectIndex}}" range="{{equipmentArray}}" range-key="{{'deviceName'}}">
+        <view class="cont">
+          <view class="picker">{{equipmentArray[currentSelectIndex]?equipmentArray[currentSelectIndex].deviceName:'无'}}</view>
+          <image src="/images/icon_more.png" class="icon-more"></image>
+        </view>
+      </picker>
+    </view>
+    <view class="set-right" wx:if="{{tabActiveIndex == 0}}">
+      <image src="/images/img_calendar@2x.png" class="icon-time"></image>
+      <picker
+       class="set-picker" 
+       mode="date" 
+       value="{{timeSelect}}" 
+       start="2015-01-01" 
+       end="2020-12-31" 
+       bindchange="goChangeTimePicker">
+        <view class="cont">
+          <view class="picker">{{timeSelect}}</view>
+          <image src="/images/icon_more.png" class="icon-more"></image>
+        </view>
+      </picker>
+    </view>
+    <view class="set-right" wx:if="{{tabActiveIndex == 1}}">
+      <image src="/images/img_calendar@2x.png" class="icon-time"></image>
+      <picker
+       class="set-picker" 
+       mode="date" 
+       value="{{timeSelect2}}" 
+       fields="month" 
+       start="2015-01" 
+       end="2020-12" 
+       bindchange="goChangeTimePicker2">
+        <view class="cont">
+          <view class="picker">{{timeSelect2}}</view>
+          <image src="/images/icon_more.png" class="icon-more"></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <!-- 柱状图 -->
+  <view class="flow-histogram">
+    <view class="title">
+      <image class="icon-histogram" src="/images/icon_histogram@2x.png"></image>
+      <view class="tit">设备间比柱状图</view>
+    </view>
+    <view class="histogram">
+      <ec-canvas
+       wx:if="{{showEchartsModel}}"
+       id="mychart-dom-gauge"
+       canvas-id="mychart-gauge" ec="{{ ec }}"></ec-canvas>
+      <view class="data-null-cont" wx:if="{{!showEchartsModel}}">
+        <image class="icon" src="/images/icon_data_null.png"></image>
+        <view class="text">暂时没有内容呢</view>
+      </view>
+    </view>
+  </view>
+  <!-- 设备间比表单 -->
+  <view class="flow-histogram flow-table">
+    <view class="title">
+      <image class="icon-histogram" src="/images/icon_histogram@2x.png"></image>
+      <view class="tit">设备间比表单</view>
+    </view>
+    <view class="table">
+      <view class="table-item" wx:for="{{responseData}}" wx:for-item="item" wx:key="item" wx:for-index="idx">
+        <view class="item1">
+          <view>设备名称：{{item.deviceName}}</view>
+          <view>最大阈值：{{item.maxNum}}</view>
+        </view>
+        <view class="item1">
+          <view>开始时间：{{item.startTime}}</view>
+          <view>日流量：{{item.dayConsume}}</view>
+        </view>
+        <view class="item1">
+          <view>结束时间：{{item.endTime}}</view>
+          <view>夜流量：{{item.nightConsume}}</view>
+        </view>
+      </view>
+      <view class="data-null-cont" wx:if="{{responseData.length==0&&showNoContent}}">
+        <image class="icon" src="/images/icon_data_null.png"></image>
+        <view class="text">暂时没有内容呢</view>
+      </view>
+      <!-- <view wx:if="{{responseData.length<=0}}" class="data-null">——— 暂无数据 ———</view> -->
+    </view>
+  </view>
+</view>

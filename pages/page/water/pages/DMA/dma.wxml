@@ -1,0 +1,86 @@
+<view class="dom-page">
+  
+  <view class="page1" wx:if="{{curPageShow==0}}">
+    <view class="page1-top">
+      <view class="top-item" bindtap="goClickChangeBuild">
+        <picker
+         class="set-picker" 
+         bindchange="goChangeDMAtableTime3" 
+         value="{{curSelectDmaIndex}}" 
+         range="{{dmaSubareaList}}" range-key="{{'areaComment'}}">
+          <view class="pick-middle">
+            <view class="picker">{{dmaSubareaList[curSelectDmaIndex].areaComment}}</view>
+            <image class="up" src="/images/icon_more.png"></image>
+          </view>
+        </picker>
+      </view>
+      <view class="top-item top-right">
+        <picker
+         class="set-picker" 
+         bindchange="goChangeDMAtableTime2" 
+         value="{{curSelectDmaTime}}" 
+         range="{{tableTimeArray}}" range-key="{{'name'}}">
+          <view class="pick-middle">
+            <view class="picker">{{tableTimeArray[curSelectDmaTime].name}}</view>
+            <image class="up" src="/images/icon_more.png"></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="page1-cont">
+        <view class="item">
+          <view class="item-t">
+            <image class="icon" src="../../resource/icon_guanxi.png"></image>
+            <view>出入关系图</view>
+          </view>
+          <view class="item-b">
+            <ec-canvas id="mychart-dom-gauge" canvas-id="mychart-gauge" ec="{{ ec }}"></ec-canvas>
+          </view>
+        </view>
+        <view class="item">
+          <view class="item-t">
+            <image class="icon" src="../../resource/icon_data.png"></image>
+            <view>水表数据饼状图</view>
+          </view>
+          <view class="item-b">
+            <ec-canvas id="mychart-dom-gauge" canvas-id="mychart-gauge" ec="{{ ec1 }}"></ec-canvas>
+          </view>
+        </view>
+    </view>
+  </view>
+  <view class="page2" wx:if="{{curPageShow==1}}">
+    <view class="page2-top">
+      <picker class="set-picker" bindchange="goChangeDMAtableTime" value="{{curSelecttableIndex}}" range="{{tableTimeArray}}" range-key="{{'name'}}">
+        <view class="pick-middle">
+          <view class="picker">{{tableTimeArray[curSelecttableIndex].name}}</view>
+          <image src="/images/icon_more.png" class="icon-more"></image>
+        </view>
+      </picker>
+    </view>
+    <view class="page2-cont">
+      <view class="item" wx:for="{{tableResponseData1}}" wx:for-item="item" wx:key="item" wx:for-index="idx">
+        <view class="title">
+          <view class="left">
+            <view class="tit">{{item.areaComment}}</view>
+          </view>
+          <view class="right">
+            <view class="tit">是否告警：</view>
+            <view class="{{item.maxNum>item.percent?'unnormal':'normal'}}">{{item.maxNum>item.percent?'是':'否'}}</view>
+          </view>
+        </view>
+        <view class="cont">
+          <view class="list">总供水量：{{item.inconsume}}</view>
+          <view class="list">总用水量：{{item.outconsume}}</view>
+          <view class="list">漏损率：{{item.percent}}%</view>
+          <view class="list">漏损量：{{item.diff}}</view>
+          <view class="list">阈值：{{item.maxNum?item.maxNum:'无'}}</view>
+        </view>
+      </view>
+      <view class="data-null-cont" wx:if="{{tableResponseData1.length==0&&showNoContent}}">
+        <image class="icon" src="/images/icon_data_null.png"></image>
+        <view class="text">暂时没有内容呢</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- <mp-tabbar style="position:fixed;bottom:0;width:100%;left:0;right:0;height: 60px" list="{{list}}" bindchange="tabChange" ></mp-tabbar> -->

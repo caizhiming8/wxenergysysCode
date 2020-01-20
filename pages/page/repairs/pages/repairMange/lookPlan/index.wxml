@@ -1,0 +1,48 @@
+<!--pages/page/repairs/pages/repairMange/lookPlan/index.wxml-->
+<view class="repair-detail">
+  <view class="detail">
+    <view class="detail-t">
+      <view class="t-top">
+        <image class="icon" src="../../../resources/icon_detail.png"></image>
+        <view>报修详情</view>
+      </view>
+      <view class="t-cont">
+        <view>报修人：{{curDetailInfo.commitName}}</view>
+        <view>区域：{{curDetailInfo.buildingName}}</view>
+        <view>地点：{{curDetailInfo.roomName}}</view>
+        <view>设备：{{curDetailInfo.typeComment}}</view>
+        <view>维修项目：{{curDetailInfo.projectComment}}</view>
+        <view>报修时间：{{curDetailInfo.commitTime}}</view>
+        <view>详情描述：{{curDetailInfo.details}}</view>
+      </view>
+    </view>
+    <!-- 第二部分 -->
+    <view class="detail-t detail-t2">
+      <view class="t-top">
+        <image class="icon" src="../../../resources/icon_detail.png"></image>
+        <view>维修详情</view>
+      </view>
+      <view class="t-cont">
+        <view>报修人：{{curDetailInfo.repairPerson}}</view>
+        <view>联系方式：{{curDetailInfo.repairPersonPhone}}</view>
+        <view>指派时间：{{curDetailInfo.assignTime}}</view>
+        <view>完成时间：{{curDetailInfo.endTime}} </view>
+        <view>时长：{{curDetailInfo.commitPerson}}小时</view>
+      </view>
+    </view>
+    <!-- 第三部分 -->
+    <!-- <view class="detail-t detail-t2">
+      <view class="t-top">
+        <image class="icon" src="../../../resources/icon_progress.png"></image>
+        <view>进度跟踪</view>
+      </view>
+      <view class="t-cont">
+        <view>报修人：王凯</view>
+        <view>联系方式：15665899878</view>
+        <view>指派时间：2019-5-12 15:22:54</view>
+        <view>期望完成时间：2019-5-13 </view>
+        <view>时长：8小时</view>
+      </view>
+    </view> -->
+  </view>
+</view>

@@ -1,0 +1,90 @@
+<!--pages/page/my/pages/benefit/addNewExtra/index.wxml-->
+<view class="page-person">
+  <view class="item item2">
+    <view class="title">超额时间：</view>
+    <view class="cont">
+      <picker mode="date"
+       value="{{extraDate}}" 
+       start="2015-09-01" 
+       end="{{maxExtraDate}}" 
+       bindchange="bindDateChange">
+        <view class="picker">{{extraDate}}</view>
+      </picker>
+    </view>
+    <view class="right">
+      <picker mode="time" value="{{extraTime}}" start="00:00" end="23:59" bindchange="bindTimeChange">
+        <view class="picker">{{extraTime}}</view>
+      </picker>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">超额系统：</view>
+    <view class="cont"></view>
+    <view class="right">
+      <picker
+       bindchange="goBindPickerChangeSys" 
+       value="{{cur_sysIndex}}" 
+       range="{{systemArray}}" 
+       range-key="{{'label'}}">
+      <text>{{systemArray[cur_sysIndex].label}}</text>
+      <image class="icon" src="/images/my_enter@2x.png"></image></picker>
+    </view>
+  </view>
+  <!-- <view class="item">
+    <view class="title">当日能耗：</view>
+    <view class="cont">
+      <input class="put"
+       bindinput="goInputEnergy" 
+       type="number" 
+       maxlength="11" 
+       placeholder="请输入当日能耗" placeholder-class="place-style"></input>
+    </view>
+  </view> -->
+  <!-- <view class="item">
+    <view class="title">当日定额：</view>
+    <view class="cont">
+      <input class="put"
+       bindinput="goInputQuota" 
+       type="number" 
+       maxlength="11" 
+       placeholder="请输入当日定额" placeholder-class="place-style"></input>
+    </view>
+  </view> -->
+  <view class="item2" style="border: none">
+    <textarea class="item-input"
+     maxlength="100"
+     bindinput="goInputTextarea"
+     auto-height placeholder="请输入详细描述，最多100字" />
+  </view>
+  <view class="img-list">
+    <view class="list" wx:for="{{uploadImgArr}}" wx:key="item">
+      <image class="icon" src="{{item.value}}"></image>
+      <image
+        bindtap="goDeleteImg"
+        data-id="{{item}}"
+        data-index="{{index}}"
+        src="/images/icon_delete.png"
+        class="im2"></image>
+    </view>
+    <view class="list" wx:for="{{uploadVideoArr}}" wx:key="item">
+      <video class="icon" src="{{item.value}}"></video>
+      <image
+        bindtap="goDeleteVideo"
+        data-id="{{item}}"
+        data-index="{{index}}"
+        src="/images/icon_delete.png"
+        class="im2"></image>
+    </view>
+    <view class="list list2">
+      <image class="icon2" bindtap="goShowChooseModel" src="/images/icon_upload.png"></image>
+    </view>
+  </view>
+  <view class="item-btn" bindtap="goSubmitForm">提交</view>
+</view>
+<view class="bot-choose" bindtap="goCancel" wx:if="{{showChoose}}">
+  <view class="bg-white">
+    <view class="item" bindtap="goUpLoadImg">上传图片</view>
+    <view class="item" bindtap="goUpLoadVideo">上传视频</view>
+    <view class="item" bindtap="goCancel">取消</view>
+  </view>
+</view>

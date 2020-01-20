@@ -1,0 +1,16 @@
+<!--pages/page/alarm/pages/alarmDispose/index.wxml-->
+<view class="page-person">
+  <view class="item2">
+    <textarea class="item-input"
+     maxlength="100"
+     bindinput="goInputTextarea"
+     auto-height placeholder="请输入处理方法" />
+  </view>
+  <view class="item2">
+    <textarea class="item-input"
+     maxlength="100"
+     bindinput="goInputTextareaResult"
+     auto-height placeholder="请输入处理结果" />
+  </view>
+  <view class="item-btn" bindtap="goSubmitForm">提交</view>
+</view>

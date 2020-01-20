@@ -1,0 +1,76 @@
+/* pages/page/equipeManage/pages/addApply/deviceList/index.wxss */
+page {
+  background-color: #f1f1f1;
+}
+.list-top {
+  display: flex;
+  height: 70rpx;
+  padding: 0 30rpx;
+  font-size: 24rpx;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+}
+.list-top>.l .set-picker {
+  display: flex;
+  color: #3AA0FB;
+  margin-left: 5px;
+  align-items: center;
+}
+.list-top>.l .picker {
+  display: inline-block;
+}
+.list-top>.l .icon-more {
+  width: 15px;
+  height: 15px;
+}
+.list-cont {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 80rpx;
+  position: absolute;
+  background-color: #fff;
+}
+.list-cont .item {
+  padding: 20px 30rpx;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+.list-cont .item>.i-top {
+  display: flex;
+  color: #282828;
+  font-size: 30rpx;
+  padding-bottom: 20rpx;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+.list-cont .item>.i-top>.r {
+  color: #656565;
+  font-size: 24rpx;
+}
+.list-cont .item>.i-cont {
+  display: flex;
+  color: #656565;
+  font-size: 26rpx;
+}
+.list-cont .item>.i-cont .l>.list {
+  padding-top: 30rpx;
+}
+.list-cont .item>.i-cont .l {
+  flex: 1;
+}
+.list-cont .item>.i-cont .r {
+  width: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.list-cont .item>.i-cont .r>.icon1 {
+  width: 24rpx;
+  height: 24rpx;
+}
+.list-cont .item>.i-cont .r>.icon2 {
+  width: 30rpx;
+  height: 30rpx;
+}

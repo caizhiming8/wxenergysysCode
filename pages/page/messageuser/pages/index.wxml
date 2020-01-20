@@ -1,0 +1,70 @@
+<!--pages/page/messageuser/pages/index.wxml-->
+<view class="message-top">
+  <view class="t-item {{activeNav==1?'active':''}}" bindtap="goTabPage" data-id="1">
+    <view>系统消息</view>
+    <view class="b-mark"></view>
+  </view>
+  <view class="t-item {{activeNav==2?'active':''}}" bindtap="goTabPage" data-id="2">
+    <view>我的消息</view>
+    <view class="b-mark"></view>
+  </view>
+</view>
+<scroll-view class="message-list" wx:if="{{activeNav == 1}}">
+  <view class="item"
+   wx:for="{{responceData}}" 
+   wx:key="item" 
+   bindtap="goLookMyInfoDetail" 
+   data-id="{{item}}">
+    <view class="top">
+      <view class="left">
+        <image class="icon" src="/images/icon_notify.png"></image>
+        <text>{{item.type}}</text>
+      </view>
+      <view class="right">
+        <text>{{item.time}}</text>
+        <view wx:if="{{item.status != '已读'}}" class="zhishi"></view>
+      </view>
+    </view>
+    <view class="cont">{{item.content}}</view>
+    <view class="bot">
+      <view class="left">查看详情</view>
+      <view class="right">
+        <image class="icon" src="/images/my_enter@2x.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="data-null-cont" wx:if="{{responceData.length==0&&showNoContent}}">
+    <image class="icon" src="/images/icon_data_null.png"></image>
+    <view class="text">暂时没有内容呢</view>
+  </view>
+</scroll-view>
+<scroll-view class="message-list" wx:if="{{activeNav == 2}}">
+  <view
+   class="item" 
+   wx:for="{{responceData}}" 
+   wx:key="item" 
+   bindtap="goLookMyInfoDetail" data-id="{{item}}">
+    <view class="top">
+      <view class="left">
+        <image class="icon" src="/images/icon_notify2.png"></image>
+        <text>{{item.type}}</text>
+      </view>
+      <view class="right">
+        <text>{{item.time}}</text>
+        <view class="zhishi" wx:if="{{item.status!='已读'}}"></view>
+      </view>
+    </view>
+    <view class="cont">{{item.content}}</view>
+    <view class="bot">
+      <view class="left">发送人：{{item.creatName}}</view>
+      <view class="right">
+        <text>查看详情</text>
+        <image class="icon" src="/images/my_enter@2x.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="data-null-cont" wx:if="{{responceData.length==0&&showNoContent}}">
+    <image class="icon" src="/images/icon_data_null.png"></image>
+    <view class="text">暂时没有内容呢</view>
+  </view>
+</scroll-view>

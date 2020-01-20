@@ -1,0 +1,118 @@
+/* pages/page/equipeManage/pages/executeForm/index.wxss */
+page {
+  background-color: #f1f1f1;
+}
+.top {
+  background-color: #fff;
+}
+.top>.item {
+  display: flex;
+  height: 90rpx;
+  padding: 0 30rpx;
+  align-items: center;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+.top>.item>.tit {
+  width: 150rpx;
+  color: #656565;
+  font-size: 30rpx;
+}
+.top>.item>.cont {
+  flex: 1;
+  display: flex;
+  color: #282828;
+  font-size: 26rpx;
+  justify-content: flex-end;
+}
+.top>.item2 {
+  display: flex;
+  padding: 30rpx;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+.top>.item2>textarea {
+  width: 100%;
+  min-height: 150rpx;
+}
+.top>.item2>.limit {
+  width: 100%;
+  display: flex;
+  color: #989898;
+  font-size: 18rpx;
+  justify-content: flex-end;
+}
+
+.center {
+  height: 65rpx;
+  display: flex;
+  color: #3AA0FB;
+  padding: 0 30rpx;
+  font-size: 24rpx;
+  align-items: center;
+}
+.table-list {
+  background-color: #fff;
+}
+.table-list>.item {
+  border-bottom: 1rpx solid #f1f1f1;
+}
+.table-list>.item>.top {
+  color: #656565;
+  font-size: 30rpx;
+  margin: 0rpx 50rpx;
+  padding-top: 30rpx;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+.table-list>.item>.top>.tit,
+.table-list>.item>.top>.data {
+  display: flex;
+  padding-bottom: 30rpx;
+}
+.table-list>.item>.top>.data {
+  color: #989898;
+  font-size: 26rpx;
+}
+.table-list>.item>.top>.tit>view,
+.table-list>.item>.top>.data>view {
+  flex: 1
+}
+.table-list>.item>.top>.tit>.r,
+.table-list>.item>.top>.data>.r {
+  display: flex;
+  justify-content: flex-end;
+}
+.table-list>.item>.top>.tit>.c,
+.table-list>.item>.top>.data>.c {
+  display: flex;
+  justify-content: center;
+}
+.table-list>.item>.handle {
+  height: 80rpx;
+  display: flex;
+  padding: 0 50rpx;
+  align-items: center;
+  justify-content: flex-end;
+}
+.table-list>.item>.handle radio {
+  padding-left: 80rpx;
+  font-size: 28rpx;
+}
+radio .wx-radio-input{ 
+ /* 自定义样式.... */
+
+  height: 30rpx; 
+  width: 30rpx;
+}
+ 
+.item-btn {
+  color: #fff;
+  width: 690rpx;
+  height: 88rpx;
+  display: flex;
+  font-size: 36rpx;
+  margin: 50rpx auto;
+  align-items: center;
+  justify-content: center;
+  background-color: #3AA0FB;
+}

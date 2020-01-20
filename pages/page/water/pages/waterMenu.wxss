@@ -1,0 +1,57 @@
+/* pages/page/home/pages/homeMenu.wxss */
+.subitem-menu>.submenu-bg {
+  width: 750rpx;
+  height: 374rpx;
+}
+.subitem-menu>.menu-item {
+  /* height: 88rpx; */
+  display: flex;
+  padding: 40rpx 0 20rpx;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid #f1f1f1;
+}
+.subitem-menu>.menu-item>.item-icon {
+  width: 78rpx;
+  height: 78rpx;
+  margin: 0 21rpx 0 33rpx;
+}
+.subitem-menu>.menu-item>.item-title {
+  flex: 1;
+  font-size: 32rpx;
+  color: #282828;
+}
+.subitem-menu>.menu-item>.item-next {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 0 19rpx;
+}
+.subitem-menu>.menu-item>.item-next.up {
+  transform:rotate(0deg);
+  transform-origin:center center;
+  transition:transform .3s ease-in;
+}
+.subitem-menu>.menu-item>.item-next.down {
+  transform:rotate(90deg);
+  transform-origin:center center;
+  transition:transform .3s ease-in;
+}
+.subitem-menu>.sub-menu {
+  height: 0rpx;
+  overflow: hidden;
+  margin-left: 180rpx;
+  transition: all 0.5s;
+}
+.subitem-menu>.sub-menu.up {
+  height: 176rpx;
+}
+.subitem-menu>.sub-menu>.menu-item {
+  height: 88rpx;
+  display: flex;
+  font-size: 28rpx;
+  align-items: center;
+  border-bottom: 1px solid #f1f1f1;
+}
+.subitem-menu>.sub-menu>.menu-item.last-item {
+  border: none;
+}

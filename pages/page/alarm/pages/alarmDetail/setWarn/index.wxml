@@ -1,0 +1,37 @@
+<!--pages/page/alarm/pages/alarmDetail/setWarn/index.wxml-->
+<view class="page-person">
+  <view class="item">
+    <view class="title">指派人员：</view>
+    <view class="cont">{{personDataList[cur_person].name}}</view>
+    <view class="right">
+      <picker
+       bindchange="goBindPickerChangeType" 
+       value="{{cur_person}}" 
+       range="{{personDataList}}" 
+       range-key="{{'name'}}">请选择<image class="icon" src="/images/my_enter@2x.png"></image></picker>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">指派人员电话：</view>
+    <view class="cont">{{personDataList[cur_person].phone}}</view>
+  </view>
+  <view class="item">
+    <view class="title">完成时间：</view>
+    <view class="cont">{{cur_prodTimeData}}</view>
+    <view class="right2">
+      <picker mode="date" value="{{cur_prodTimeData}}" 
+        start="2019-09-01" 
+        data-id="4" 
+        bindchange="goBindDateChange">
+        <image class="icon2" src="../../../resources/icon_rili.png"/>
+      </picker>
+    </view>
+  </view>
+  <view class="item2">
+    <textarea class="item-input"
+     maxlength="100"
+     bindinput="goInputTextarea"
+     auto-height placeholder="请输入告警原因" />
+  </view>
+  <view class="item-btn" bindtap="goSubmitForm">提交</view>
+</view>

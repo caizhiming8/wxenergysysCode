@@ -1,0 +1,78 @@
+/* pages/page/air/pages/airGroup/index.wxss */
+
+.air-group>.item {
+  border-bottom: 1rpx solid #F1F1F1;
+}
+.air-group>.item>.title {
+  display: flex;
+  margin: 0 15px;
+  padding: 10px 0;
+  font-size: 16px;
+  align-items: center;
+  border-bottom: 1rpx solid #ECECEC;
+}
+.air-group>.item>.title>view {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.air-group>.item>.title>.left>.icon {
+  width: 20px;
+  height: 19px;
+}
+.air-group>.item>.title>.left>.tit {
+  padding-left: 5px;
+}
+.air-group>.item>.title>.right {
+  font-size: 14px;
+  color: #656565;
+  justify-content: flex-end;
+}
+.air-group>.item>.title>.right>.normal {
+  color: #18A61B;
+}
+.air-group>.item>.title>.right>.unnormal {
+  color: #18A61B;
+}
+.air-group>.item>.cont {
+  color: #656565;
+  font-size: 15px;
+  margin: 18rpx 26rpx;
+  transition: all .2s;
+}
+.air-group>.item>.cont2 {
+  height: 0rpx;
+  overflow: hidden;
+  transition: all .2s;
+}
+.air-group>.item>.cont3 {
+  height: auto;
+  transition: all .2s;
+}
+.air-group>.item>.cont>.list {
+  display: flex;
+  margin-bottom: 16rpx;
+}
+.air-group>.item>.cont>.list>.l {
+  flex: 3;
+}
+.air-group>.item>.cont>.list>.r {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.air-group>.item>.cont>.list>.r>.zhankai {
+  font-size: 12px;
+  color: #3AA0FB;
+  padding-right: 5rpx;
+}
+.air-group>.item>.cont>.list>.r>.shouqi {
+  font-size: 12px;
+  color: #989898;
+  padding-right: 5rpx;
+}
+.air-group>.item>.cont>.list>.r>image {
+  width: 11px;
+  height: 11px;
+}

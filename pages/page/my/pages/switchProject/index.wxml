@@ -1,0 +1,5 @@
+<!--pages/page/my/pages/switchProject/index.wxml-->
+<view class="project-list" wx:for="{{responseData}}" wx:key="item" data-index="{{index}}" data-id="{{item}}" bindtap="goSwitchProject">
+  <view class="left">{{item.name}}</view>
+  <view class="right"><image wx:if="{{curActive == index}}" class="icon" src="../../resource/icon_dui.png"></image></view>
+</view>

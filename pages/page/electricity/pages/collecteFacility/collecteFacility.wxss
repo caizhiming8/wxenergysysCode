@@ -1,0 +1,60 @@
+/* pages/page/electricity/pages/collecteFacility/collecteFacility.wxss */
+page{
+  background-color: #f1f1f1;
+}
+.coll-facility>.facility-item {
+  margin-bottom: 10rpx;
+  background-color: #fff;
+  padding: 20rpx 32rpx 12rpx;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+.coll-facility>.facility-item>.item-tit {
+  display: flex;
+  font-size: 30rpx;
+  color: #282828;
+  align-items: center;
+  padding-bottom: 10rpx;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+.coll-facility>.facility-item>.item-tit>.tit-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.coll-facility>.facility-item>.item-tit>.tit-left>.icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 30rpx;
+}
+.coll-facility>.facility-item>.item-tit>.tit-right {
+  width: 150rpx;
+  font-size: 24rpx;
+  color: #656565;
+  text-align: right;
+}
+.coll-facility>.facility-item .item-state {
+  color: #656565;
+  padding: 5rpx 0 5rpx;
+}
+.coll-facility>.facility-item .item-state>.on {
+  color: #41AA0D;
+}
+.coll-facility>.facility-item .item-state>.off {
+  color: #E71620;
+}
+.coll-facility>.facility-item .item-locate {
+  color: #656565;
+  padding: 5rpx 0;
+}
+.coll-facility>.facility-item .item-ip {
+  color: #656565;
+  padding: 5rpx 0 0;
+}
+.item-cont {
+  display: flex;
+  font-size: 26rpx;
+  padding: 14rpx 0 10rpx;
+}
+.item-cont>view {
+  flex: 1
+}

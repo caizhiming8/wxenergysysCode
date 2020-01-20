@@ -1,0 +1,55 @@
+<!--pages/page/my/pages/benefit/extraDetail/index.wxml-->
+<view class="page-person">
+  <view class="item item2">
+    <view class="title">超额时间：</view>
+    <view class="cont">
+      <text>{{infoObj.over_time}}</text>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">超额系统：</view>
+    <view class="cont">
+      <text>{{systemArray[cur_sysIndex].label}}</text>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">当日能耗：</view>
+    <view class="cont">
+      <input class="put"
+       bindinput="goInputEnergy" 
+       type="number" 
+       maxlength="11" 
+       value="{{infoObj.consum}}"
+       disabled="true"
+       placeholder="请输入当日能耗" placeholder-class="place-style"></input>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">当日定额：</view>
+    <view class="cont">
+      <input class="put"
+       bindinput="goInputQuota" 
+       type="number" 
+       maxlength="11" 
+       value="{{infoObj.quota}}"
+       disabled="true"
+       placeholder="请输入当日定额" placeholder-class="place-style"></input>
+    </view>
+  </view>
+  <view class="item2" style="border: none">
+    <textarea class="item-input"
+     maxlength="100"
+     bindinput="goInputTextarea"
+     disabled="true"
+     value="{{infoObj.reason}}"
+     auto-height placeholder="请输入详细描述" />
+  </view>
+  <view class="img-list" wx:if="{{uploadImgArr.length>0}}">
+    <view class="list" wx:for="{{uploadImgArr}}" wx:key="item" bindtap="goPreImg" data-info="{{item}}">
+      <image class="icon" src="{{item}}"></image>
+    </view>
+  </view>
+  <view class="video-list" wx:if="{{uploadVideoArr.length>0}}" wx:for="{{uploadVideoArr}}" wx:key="item">
+    <video controls="true" class="icon" src="{{item}}"></video>
+  </view>
+</view>

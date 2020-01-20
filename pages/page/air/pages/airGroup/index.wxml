@@ -1,0 +1,55 @@
+<!--pages/page/air/pages/airGroup/index.wxml-->
+<view class="air-group">
+  <view class="item" wx:for="{{resBackDataArray}}" wx:for-index="idx" wx:for-item="item" wx:key="{{item.id}}">
+    <view class="title">
+      <view class="left" style="flex: 2">
+        <image class="icon" src="../../resource/icon_airgroup@2x.png"></image>
+        <view class="tit">{{item.data.data3x11x1.deviceName}}</view>
+      </view>
+      <view class="right">
+        <view class="tit">通讯状态：</view>
+        <view class="normal {{item.data.status==1?'':'unnormal'}}">{{item.data.status==1?'正常':'异常'}}</view>
+      </view>
+    </view>
+    <view class="cont">
+      <view class="list">
+        <view class="l">电动调节阀一开关: {{item.data.data3x11x1.value?item.data.data3x11x1.value:'无'}}</view>
+      </view>
+      <view class="list">
+        <view class="l">电动调节阀一开度: {{item.data.data1x11x1.value?item.data.data1x11x1.value:'无'}}</view>
+      </view>
+      <view class="list">
+        <view class="l">补水泵一运行或停止: {{item.data.data3x5x1.value?item.data.data3x5x1.value:'无'}}</view>
+      </view>
+      <view class="list">
+        <view class="l">补水泵一频率: {{item.data.data8x5x1.value}}</view>
+        <view class="r" bindtap="goUnfoldItem" data-id="{{item}}" data-index="{{idx}}" wx:if="{{!item.state}}">
+          <text class="zhankai">点击展开</text>
+          <image src="../../resource/icon_xiala@2x.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="cont {{item.state?'cont3':'cont2'}}">
+      <view class="list">
+        <view class="l">补水泵二运行或停止: {{item.data.data3x6x1.value?vitem.data.data3x6x1.value:'无'}}</view>
+      </view>
+      <view class="list">
+        <view class="l">补水泵二频率: {{item.data.data8x6x1.value?item.data.data8x6x1.value:'无'}}</view>
+      </view>
+      <view class="list">
+        <view class="l">补水泵一补水量: {{item.data.data10x5x1.value}}</view>
+      </view>
+      <view class="list">
+        <view class="l">补水泵二补水量: {{item.data.data10x6x1.value?item.data.data10x6x1.value:'无'}}</view>
+        <view class="r" bindtap="goPackUpItem" data-id="{{item}}" data-index="{{idx}}">
+          <text class="shouqi">收起</text>
+          <image src="../../resource/icon_shouqi@2x.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="data-null-cont" wx:if="{{resBackDataArray.length==0}}">
+    <image class="icon" src="/images/icon_data_null.png"></image>
+    <view class="text">暂时没有内容呢</view>
+  </view>
+</view>

@@ -1,0 +1,167 @@
+/* pages/page/message/pages/index.wxss */
+page {
+  background-color: #F3F3F3;
+}
+
+.message-top {
+  display: flex;
+  height: 88rpx;
+  align-items: center;
+  background-color: #fff;
+}
+.message-top>.t-item {
+  flex: 1;
+  color: #000;
+  display: flex;
+  height: 88rpx;
+  font-size: 28rpx;
+  text-align: center;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+.message-top>.t-item.active {
+  color: #3AA0FB;
+  font-size: 28rpx;
+}
+.message-top>.t-item>.b-mark {
+  bottom: 0;
+  width: 80rpx;
+  height: 4rpx;
+  position: absolute;
+  background-color: #fff;
+}
+.message-top>.t-item.active>.b-mark {
+  background-color: #3AA0FB;
+}
+
+.message-list {
+  left: 4%;
+  right: 4%;
+  top: 90rpx;
+  width: 92%;
+  bottom: 0rpx;
+  overflow: auto;
+  /* padding: 0 30rpx; */
+  position: absolute;
+}
+.message-list-b0 {
+  bottom: 0;
+}
+.message-list-bx {
+  bottom: 147rpx;
+}
+.message-list .item {
+  margin: 30rpx 0;
+  overflow: hidden;
+  border-radius: 10rpx;
+  background-color: #fff;
+}
+.message-list .item>.top {
+  display: flex;
+  padding: 20rpx 30rpx;
+  background-color: #fafafa;
+  justify-content: space-between;
+}
+.message-list .item>.top .left {
+  display: flex;
+  color: #282828;
+  font-size: 30rpx;
+  align-items: center;
+}
+.message-list .item>.top .left .icon {
+  width: 31rpx;
+  height: 31rpx;
+  margin-right: 20rpx;
+}
+.message-list .item>.top .right {
+  display: flex;
+  color: #a7a7a7;
+  font-size: 28rpx;
+  align-items: center;
+}
+.message-list .item>.top .right>.zhishi {
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  margin-left: 20rpx;
+  background-color: #E02121;
+}
+.message-list .item>.cont {
+  color: #656565;
+  font-size: 28rpx;
+  padding: 30rpx 30rpx;
+}
+.message-list .item>.bot {
+  display: flex;
+  color: #989898;
+  font-size: 26rpx;
+  align-items: center;
+  padding: 20rpx 30rpx;
+  justify-content: space-between;
+  border-top: 1rpx solid #fafafa;
+}
+.message-list .item>.bot .icon {
+  width: 30rpx;
+  height: 30rpx;
+}
+.message-list .item>.bot .right{
+  display: flex;
+  align-items: center;
+}
+
+/* 
+ * 底部按钮
+ */
+.message-bot {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  height: 100rpx;
+  color: #989898;
+  font-size: 24rpx;
+  position: absolute;
+  background-color: #fff;
+  border-top: 1rpx solid #f1f1f1;
+}
+.message-bot-x {
+  height: 147rpx;
+}
+.message-bot>.item {
+  flex: 1;
+  display: flex;
+  color: #989898;
+  font-size: 24rpx;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.message-bot>.item.active {
+  color: #3AA0FB;
+}
+.message-bot>.item>.icon {
+  width: 46rpx;
+  height: 46rpx;
+  margin-top: 14rpx;
+}
+
+/* 
+ * 增加项目按钮
+ */
+.addProject {
+  width: 45px;
+  right: 30rpx;
+  height: 45px;
+  display: flex;
+  bottom: 160rpx;
+  position: fixed;
+  align-items: center;
+  border-radius: 45px;
+  justify-content: center;
+  background-color: #3AA0FB;
+}
+.addProject .icon {
+  width: 48rpx;
+  height: 48rpx;
+}

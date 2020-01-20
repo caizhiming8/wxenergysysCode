@@ -1,0 +1,5 @@
+/* pages/page/repairs/pages/repairMange/lookPlan/index.wxss */
+@import '../delegateDetail/index.wxss';
+.detail {
+  position: absolute;
+}

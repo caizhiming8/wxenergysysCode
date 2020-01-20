@@ -1,0 +1,35 @@
+<!--pages/page/repairsUser/pages/repairMange/appraiseView/index.wxml-->
+<view class="container">
+  <view class="g-top">
+    <image class="icon-touxiang" src="/images/my_head@2x.png"></image>
+    <view class="user-name">王可可</view>
+    <view class="user-pingjia">
+      <view class="icon"></view>
+      <view class="title">星级评价</view>
+      <view class="icon"></view>
+    </view>
+  </view>
+  <view class="comment1-description">
+    <view class="star-pos" style="display:flex;flex-direction:row;">
+      <view class="stars  {{flag>=1? 'on': ''}}" bindtap="changeColor1"></view>
+      <view class="stars  {{flag>=2? 'on': ''}}" bindtap="changeColor2"></view>
+      <view class="stars  {{flag>=3? 'on': ''}}" bindtap="changeColor3"></view>
+      <view class="stars  {{flag>=4? 'on': ''}}" bindtap="changeColor4"></view>
+      <view class="stars  {{flag>=5? 'on': ''}}" bindtap="changeColor5"></view>
+    </view>
+    <view class="pingjia-state">{{pingjiaText}}</view>
+  </view>
+  <!--文本域  -->
+  <view class="weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <textarea class="weui-textarea" bindinput="bindTextAreaChange" placeholder="我有话要说..." style="height: 8em;width: 100%;" value="{{info}}" maxlength="{{noteMaxLen}}" focus />
+        <view class="weui-textarea-counter">{{noteNowLen}}/{{noteMaxLen}}</view>
+      </view>
+    </view>
+  </view>
+  <!--发布按钮  -->
+  <view class="btnSf">
+  <button bindtap="bindSubmit">提交</button>
+  </view>
+</view>

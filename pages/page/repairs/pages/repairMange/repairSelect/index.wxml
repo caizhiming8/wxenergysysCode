@@ -1,0 +1,32 @@
+<!--pages/page/repairs/pages/repairMange/repairSelect/index.wxml-->
+<view>
+  <view class="sel-top">
+    <view class="item" bindtap="goLookPage" data-id="1" wx:if="{{isShowMange}}">
+      <image class="icon" src="../../../resources/user_mange.png"></image>
+      <view class="info">
+        <image class="icon" wx:if="{{activeSel == 1}}" src="../../../resources/user_selecte.png"></image>
+        <image class="icon" wx:if="{{activeSel != 1}}" src="../../../resources/user_selected.png"></image>
+        <view class="name">管理员</view>
+      </view>
+    </view>
+    <view class="item item2" bindtap="goLookPage" data-id="2" wx:if="{{isShowUser}}">
+      <image class="icon" src="../../../resources/user_user.png"></image>
+      <view class="info">
+        <image class="icon" wx:if="{{activeSel == 2}}" src="../../../resources/user_selecte.png"></image>
+        <image class="icon" wx:if="{{activeSel != 2}}" src="../../../resources/user_selected.png"></image>
+        <view class="name">普通用户</view>
+      </view>
+    </view>
+    <view class="item item3" bindtap="goLookPage" data-id="3" wx:if="{{isShowWork}}">
+      <image class="icon" src="../../../resources/user_work.png"></image>
+      <view class="info">
+        <image class="icon" wx:if="{{activeSel == 3}}" src="../../../resources/user_selecte.png"></image>
+        <image class="icon" wx:if="{{activeSel != 3}}" src="../../../resources/user_selected.png"></image>
+        <view class="name">维修工</view>
+      </view>
+    </view>
+  </view>
+  <view class="sel-bot">
+    <view class="btn" bindtap="goLookPage" data-id="4">下一步</view>
+  </view>
+</view>

@@ -1,0 +1,22 @@
+<view class="subitem-menu">
+  <image src="../resource/submenu_banner.png" class="submenu-bg"></image>
+  <view class="menu-item" bindtap="goSubitemMenuPage" data-index="0">
+    <image src="../resource/submenu_record.png" class="item-icon"></image>
+    <view class="item-title">设备档案</view>
+    <image src="../resource/submenu_enter@2x.png" class="item-next {{currentRecordIndex == 0?'up':'down'}}"></image>
+  </view>
+  <view class="sub-menu" wx:if="{{currentRecordIndex == 1}}">
+    <view class="menu-item" bindtap="goSubitemMenuPage" data-index="2" data-auth="4-1-1">设备查询</view>
+    <view class="menu-item" bindtap="goSubitemMenuPage" data-index="3" data-auth="4-1-1">设备入档</view>
+  </view>
+  <view class="menu-item" bindtap="goSubitemMenuPage" data-index="1">
+    <image src="../resource/submenu_poll.png" class="item-icon"></image>
+    <view class="item-title">设备巡检</view>
+    <image src="../resource/submenu_enter@2x.png" class="item-next {{currentPollIndex == 0?'up':'down'}}"></image>
+  </view>
+  <view class="sub-menu" wx:if="{{currentPollIndex == 1}}">
+    <view class="menu-item" bindtap="goSubitemMenuPage" data-index="4" data-auth="4-2">占比状态</view>
+    <view class="menu-item" bindtap="goSubitemMenuPage" data-index="5" data-auth="4-2">巡检表单</view>
+    <view class="menu-item" bindtap="goSubitemMenuPage" data-index="6" data-auth="4-2-2">巡检记录</view>
+  </view>
+</view>

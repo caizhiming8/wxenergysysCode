@@ -1,0 +1,115 @@
+<!--pages/page/repairs/pages/repairMange/index.wxml-->
+<view class="repair-mange">
+  <view class="mange-top">
+    <view class="t-item {{cur_activeTab==0?'active':''}}" bindtap="goChangeTab" data-index="0">
+      <view>新申请</view>
+      <view class="b-mark"></view>
+    </view>
+    <view class="t-item {{cur_activeTab==1?'active':''}}" bindtap="goChangeTab" data-index="1">
+      <view>已委派</view>
+      <view class="b-mark"></view>
+    </view>
+    <!-- <view class="t-item {{cur_activeTab==2?'active':''}}" bindtap="goChangeTab" data-index="2">
+      <view>维修中(3)</view>
+      <view class="b-mark"></view>
+    </view> -->
+    <view class="t-item {{cur_activeTab==3?'active':''}}" bindtap="goChangeTab" data-index="3">
+      <view>已完成</view>
+      <view class="b-mark"></view>
+    </view>
+    <view class="t-item {{cur_activeTab==4?'active':''}}" bindtap="goChangeTab" data-index="4">
+      <view>已评价</view>
+      <view class="b-mark"></view>
+    </view>
+  </view>
+  <!-- 新申请 -->
+  <scroll-view class="mange-cont" scroll-y="true" bindscrolltolower="goGetNextPage" wx:if="{{cur_activeTab == 0}}">
+    <view class="cont-item" wx:for="{{responseData}}" wx:key="item" data-id="{{item}}" bindtap="goLookDetail">
+      <view class="item-top">
+        <view>报修人：{{item.commitName}}</view>
+        <view>区域：{{item.buildingName}}</view>
+        <view>地点：{{item.roomName}}</view>
+        <view>维修项目：{{item.projectComment}}</view>
+      </view>
+      <view class="item-bottom">
+        <view class="time">报修时间：{{item.commitTime}}</view>
+        <view class="btn" data-id="{{item}}" catchtap="goAssignedPersonnel" wx:if="{{isShowZhiPai}}">指派人员</view>
+      </view>
+    </view>
+    <view class="data-null-cont" wx:if="{{responseData.length==0&&showNoContent}}">
+      <image class="icon" src="/images/icon_data_null.png"></image>
+      <view class="text">暂时没有内容呢</view>
+    </view>
+    <view wx:if="{{isBottom&&responseData.length!=0}}" class="data-null">——— 我是有底线的 ———</view>
+  </scroll-view>
+  <!-- 已委派 -->
+  <scroll-view class="mange-cont" scroll-y bindscrolltolower="goGetNextPage" wx:if="{{cur_activeTab == 1}}">
+    <view class="cont-item" wx:for="{{responseData}}" wx:key="item" data-id="{{item}}" bindtap="goLookDetail">
+      <view class="item-top item-top2">
+        <view>报修人：{{item.commitName}}</view>
+        <view>区域：{{item.buildingName}}</view>
+        <view>维修人：{{item.repairName}}</view>
+        <view>地点：{{item.roomName}}</view>
+        <view>维修项目：{{item.projectComment}}</view>
+      </view>
+      <view class="item-bottom">
+        <view class="time">委派时间：{{item.assignTime}}</view>
+        <view class="btn" data-id="{{item}}" catchtap="goAssignedPersonnel" wx:if="{{isShowXiuGai}}">修改人员</view>
+      </view>
+    </view>
+    <view class="data-null-cont" wx:if="{{responseData.length==0&&showNoContent}}">
+      <image class="icon" src="/images/icon_data_null.png"></image>
+      <view class="text">暂时没有内容呢</view>
+    </view>
+    <view wx:if="{{isBottom&&responseData.length!=0}}" class="data-null">——— 我是有底线的 ———</view>
+  </scroll-view>
+  <!-- 已完成 -->
+  <scroll-view class="mange-cont" scroll-y bindscrolltolower="goGetNextPage" wx:if="{{cur_activeTab == 3}}">
+    <view class="cont-item" wx:for="{{responseData}}" wx:key="item" data-id="{{item}}" bindtap="goLookDetail">
+      <view class="item-top item-top2">
+        <view>报修人：{{item.commitName}}</view>
+        <view>区域：{{item.buildingName}}</view>
+        <view>维修人：{{item.repairName}}</view>
+        <view>地点：{{item.roomName?item.roomName:'暂无'}}</view>
+        <view>维修项目：{{item.projectComment}}</view>
+      </view>
+      <view class="item-bottom">
+        <view class="time">完成时间：{{item.completeTime}}</view>
+        <view class="btn" data-id="{{item}}" catchtap="goAssignedPersonnel">查看详情</view>
+      </view>
+    </view>
+    <view class="data-null-cont" wx:if="{{responseData.length==0&&showNoContent}}">
+      <image class="icon" src="/images/icon_data_null.png"></image>
+      <view class="text">暂时没有内容呢</view>
+    </view>
+    <view wx:if="{{isBottom&&responseData.length!=0}}" class="data-null">——— 我是有底线的 ———</view>
+  </scroll-view>
+  <!-- 已评价 -->
+  <scroll-view class="mange-cont" scroll-y bindscrolltolower="goGetNextPage" wx:if="{{cur_activeTab == 4}}">
+    <view class="cont-item" wx:for="{{responseData}}" wx:key="item" data-id="{{item}}" bindtap="goLookDetail">
+      <view class="item-top item-top2">
+        <view>报修人：{{item.commitName}}</view>
+        <view>区域：{{item.buildingName}}</view>
+        <view>维修人：{{item.repairName}}</view>
+        <view>地点：{{item.roomName?item.roomName:'暂无'}}</view>
+        <view>维修项目：{{item.projectComment}}</view>
+      </view>
+      <view class="item-bottom">
+        <view class="time">完成时间：{{item.completeTime}}</view>
+        <view class="btn" data-id="{{item}}" catchtap="goAssignedPersonnel">查看详情</view>
+      </view>
+    </view>
+    <view class="data-null-cont" wx:if="{{responseData.length==0&&showNoContent}}">
+      <image class="icon" src="/images/icon_data_null.png"></image>
+      <view class="text">暂时没有内容呢</view>
+    </view>
+    <view wx:if="{{isBottom&&responseData.length!=0}}" class="data-null">——— 我是有底线的 ———</view>
+  </scroll-view>
+  <view
+   class="addProject"
+   style="right:{{newViewPosition.newRight}}px;bottom:{{newViewPosition.newBottom}}px;"
+   bindtouchmove="goViewTouchMove"
+   wx:if="{{isShowCreatNew}}">
+    <image class="icon" bindtap="goAddProject" src="../../resources/icon_add.png"></image>
+  </view>
+</view>

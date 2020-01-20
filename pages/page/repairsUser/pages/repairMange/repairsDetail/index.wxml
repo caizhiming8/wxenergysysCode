@@ -1,0 +1,19 @@
+<!--pages/page/repairs/pages/repairMange/repairsDetail/index.wxml-->
+<view class="repair-detail">
+  <view class="detail-t">
+    <view class="t-top">
+      <image class="icon" src="../../../resources/icon_detail.png"></image>
+      <view>报修详情</view>
+    </view>
+    <view class="t-cont">
+      <view>报修人：{{curDetailInfo.commitName}}</view>
+      <view>区域：{{curDetailInfo.buildingName}}</view>
+      <view>地点：{{curDetailInfo.roomName}}</view>
+      <view>设备：{{curDetailInfo.typeComment}}</view>
+      <view>维修项目：{{curDetailInfo.projectComment}}</view>
+      <view>报修时间：{{curDetailInfo.commitTime}}</view>
+      <view>详情描述：{{curDetailInfo.details}}</view>
+    </view>
+  </view>
+  <!-- <view class="detail-btn" bindtap="goZhiPai">指派人员</view> -->
+</view>

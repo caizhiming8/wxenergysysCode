@@ -1,0 +1,2 @@
+/* pages/page/alarm/pages/alarmDispose/index.wxss */
+@import '../alarmDetail/setWarn/index.wxss'

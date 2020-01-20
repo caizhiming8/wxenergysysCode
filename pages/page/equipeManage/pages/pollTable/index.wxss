@@ -1,0 +1,151 @@
+/* pages/page/equipeManage/pages/pollTable/index.wxss */
+page {
+  background-color: #f1f1f1;
+}
+.header {
+  display: flex;
+  height: 80rpx;
+  color: #3AA0FB;
+  font-size: 26rpx;
+  padding: 0 30rpx;
+  align-items: center;
+  background-color: #f1f1f1;
+  justify-content: space-between;
+}
+.header>.right {
+  color: #656565;
+}
+
+.poll-table {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 100rpx;
+  position: absolute;
+}
+.poll-table-t {
+  top: 80rpx;
+}
+.poll-table-x {
+  bottom: 147rpx;
+}
+.poll-table .item {
+  display: flex;
+  padding: 30rpx;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+.poll-table .item>.left {
+  width: 62rpx;
+  height: 62rpx;
+  display: flex;
+  align-items: center;
+  margin-right: 50rpx;
+  justify-content: center;
+}
+.poll-table .item>.left>.icon {
+  width: 62rpx;
+  height: 62rpx;
+}
+.poll-table .item>.top {
+  flex: 1;
+}
+.poll-table .item>.top>.list {
+  color: #656565;
+  font-size: 30rpx;
+  margin: 25rpx 0 0rpx;
+}
+.poll-table .item>.rig {
+  width: 34rpx;
+  display: flex;
+  height: 34rpx;
+  align-items: center;
+  justify-content: center;
+}
+.poll-table .item>.rig>.icon {
+  width: 24rpx;
+  height: 24rpx;
+}
+.poll-table .item>.rig>.icon2 {
+  width: 34rpx;
+  height:34rpx;
+}
+/* .poll-table .item>.bot {
+  display: flex;
+  padding: 20rpx;
+  margin-top: 25rpx;
+  justify-content: space-between;
+  border-top: 1rpx solid #f1f1f1;
+}
+.poll-table .item>.bot>.btn {
+  color: #fff;
+  width: 150rpx;
+  height: 55rpx;
+  display: flex;
+  font-size: 26rpx;
+  align-items: center;
+  border-radius: 55rpx;
+  justify-content: center;
+  background-color: #3AA0FB;
+}
+.poll-table .item>.bot>.btn.btn-delete {
+  background-color: #F57676;
+}
+.poll-table .item>.bot>.btn-forbidden{
+  background-color: #67c23a;
+} */
+
+/* 
+ * 增加按钮
+ */
+.addProject {
+  width: 45px;
+  right: 30rpx;
+  height: 45px;
+  display: flex;
+  bottom: 160rpx;
+  position: fixed;
+  align-items: center;
+  border-radius: 45px;
+  justify-content: center;
+  background-color: #3AA0FB;
+}
+.icon {
+  width: 48rpx;
+  height: 48rpx;
+}
+.footer {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  height: 100rpx;
+  position: absolute;
+  background-color: #fff;
+}
+.footer-x {
+  height: 147rpx;
+}
+.footer>.item {
+  flex: 1;
+  display: flex;
+  color: #989898;
+  font-size: 24rpx;
+  align-items: center;
+  flex-direction: column;
+}
+.footer2 {
+  background-color: #3AA0FB;
+}
+.footer2>.item {
+  color: #ffffff;
+}
+.footer>.item2 {
+  color: #989898;
+}
+.footer>.item>.icon {
+  width: 54rpx;
+  height: 54rpx;
+  margin-top: 10rpx;
+}

@@ -1,0 +1,156 @@
+/* pages/tabBar/alarm/alarm.wxss */
+page {
+  background-color: #f1f1f1;
+}
+.alarm>.top {
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+}
+.alarm>.top>.item {
+  flex: 1;
+  display: flex;
+  height: 90rpx;
+  color: #656565;
+  font-size: 28rpx;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+.alarm>.top>.item>.active-mark {
+  width: 80rpx;
+  height: 5rpx;
+  bottom: 0rpx;
+  position: absolute;
+  background-color: #fff;
+}
+.alarm>.top>.item.active>.active-mark {
+  background-color: #3AA0FB;
+}
+
+/* 
+ * 中间
+ */
+.alarm>.center {
+  left: 0;
+  right: 0;
+  top: 90rpx;
+  display: flex;
+  bottom: 101rpx;
+  position: absolute;
+  flex-direction: column;
+}
+.alarm>.center-x {
+  bottom: 148rpx;
+}
+.alarm>.center>.item {
+  height: 100%;
+  display: flex;
+  padding: 30rpx;
+  margin-top: 10rpx;
+  flex-direction: column;
+  background-color: #fff;
+}
+.alarm>.center>.item>.tit {
+  display: flex;
+  height: 36rpx;
+  color: #282828;
+  font-size: 24rpx;
+  align-items: center;
+}
+.alarm>.center>.item>.tit>.icon {
+  width: 36rpx;
+  height: 36rpx;
+}
+.alarm>.center>.item>.tit>.r {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.alarm>.center>.item>.tit>.r>.list {
+  display: flex;
+  height: 20rpx;
+  color: #656565;
+  font-size: 20rpx;
+  margin-left: 70rpx;
+  align-items: center;
+}
+.alarm>.center .r>.list>.zhishi {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 14rpx;
+  background-color: #FF9E9D;
+}
+.alarm>.center .r>.list>.zhishi.cen {
+  background-color: #8693F3;
+}
+.alarm>.center .r>.list>.zhishi.bot {
+  background-color: #08A9FE;
+}
+.alarm>.center>.item>.cont {
+  height: 100%;
+  display: flex;
+}
+.alarm>.center>.item>.bot {
+  display: flex;
+  height: 20rpx;
+  justify-content: center;
+}
+.alarm>.center>.item>.bot>.list {
+  display: flex;
+  height: 20rpx;
+  color: #656565;
+  font-size: 20rpx;
+  margin-left: 70rpx;
+  align-items: center;
+}
+.alarm>.center>.item>.bot>.list>.zhishi {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 14rpx;
+  background-color: #FF9E9D;
+}
+.alarm>.center>.item>.bot>.list>.zhishi.cen {
+  background-color: #8693F3;
+}
+.alarm>.center>.item>.bot>.list>.zhishi.bot {
+  background-color: #08A9FE;
+}
+
+
+/* 
+ * 底部
+ */
+.alarm>.bot {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  height: 100rpx;
+  color: #989898;
+  font-size: 24rpx;
+  position: absolute;
+  background-color: #fff;
+  border-top: 1rpx solid #f1f1f1;
+}
+.alarm>.bot-x {
+  height: 147rpx;
+}
+.alarm>.bot>.item {
+  flex: 1;
+  display: flex;
+  color: #989898;
+  font-size: 24rpx;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.alarm>.bot>.item.active {
+  color: #3AA0FB;
+}
+.alarm>.bot>.item>.icon {
+  width: 54rpx;
+  height: 54rpx;
+  margin-top: 10rpx;
+}

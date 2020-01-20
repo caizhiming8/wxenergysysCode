@@ -1,0 +1,200 @@
+/* pages/page/electricity/pages/buildEle/buildEle.wxss */
+.build-air {
+  position: relative;
+}
+.build-air>.air-top {
+  display: flex;
+  height: 88rpx;
+  align-items: center;
+  border-bottom: 1px solid #D7D7D7;
+}
+.build-air>.air-top>.top-item {
+  flex: 1;
+  display: flex;
+  height: 44rpx;
+  align-items: center;
+  justify-content: center;
+}
+.build-air>.air-top>.top-item image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 10rpx;
+}
+.build-air>.air-top>.top-item .picker {
+  display: inline-block;
+}
+.build-air>.air-top>.top-item .down {
+  transform:rotate(-180deg);
+  transform-origin:center center;
+  transition:transform .2s ease-in;
+}
+.build-air>.air-top>.top-item .up {
+  transform:rotate(0deg);
+  transform-origin:center center;
+  transition:transform .2s ease-in;
+}
+.build-air>.air-top>.top-right {
+  border-left: 1rpx solid #ccc;
+}
+.build-air>.air-pull-down>.pull-down {
+  top: 89rpx;
+  z-index: 1;
+  width: 100%;  
+  height: 0rpx;
+  overflow: hidden;
+  position: absolute;
+  transition: all 0.5s;
+  background-color: #fff;
+}
+.build-air>.air-pull-down>.pull-down.up {
+  height: 500rpx;
+}
+.build-air>.air-pull-down>.pull-down>.content {
+  height: 417rpx;
+  overflow: auto;
+}
+.build-air>.air-pull-down>.pull-down>.content>.opt-item {
+  display: flex;
+  height: 83rpx;
+  padding: 0 20px;
+  color: #656565;
+  font-size: 28rpx;
+  align-items: center;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+.build-air .pull-down>.content>.opt-item>.item-tit {
+  flex: 1;
+}
+.build-air .pull-down>.content>.opt-item>image {
+  width: 34rpx;
+  height: 34rpx;
+}
+.build-air>.air-pull-down>.pull-down>.content>.opt-item.active {
+  color: #3AA0FB;
+}
+.build-air>.air-pull-down>.pull-down>.content>.opt-item>image {
+  display: none;
+}
+.build-air>.air-pull-down>.pull-down>.content>.active>image {
+  display: block;
+}
+.build-air>.air-pull-down>.pull-down>.content-btn {
+  display: flex;
+  height: 84rpx;
+  border-top: 1rpx solid #e3e3e3;
+}
+.build-air>.air-pull-down>.pull-down>.content-btn>.btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.build-air>.air-pull-down>.pull-down>.content-btn>.btn.btn-true {
+  color: #fff;
+  background-color: #FF6D6D;
+}
+/* 
+  内容区域css
+ */
+ .air-content {
+   left: 0;
+   right: 0;
+   bottom: 0;
+   top: 90rpx;
+   position: absolute;
+ }
+ .air-content>.item {
+   margin-top: 10rpx;
+   background-color: #fff;
+ }
+ .air-content>.item.top .list {
+   display: flex;
+   height: 130rpx;
+   padding: 0 30rpx;
+   align-items: center;
+   justify-content: space-between;
+   border-bottom: 1rpx solid #f1f1f1;
+ }
+ .air-content>.item.top .list>.left {
+   display: flex;
+   color: #656565;
+   font-size: 30rpx;
+   align-items: center;
+ }
+ .air-content>.item.top .list>.left :last-child {
+   padding-left: 30rpx;
+ }
+ .air-content>.item.top .list>.left>.icon {
+   width: 64rpx;
+   height: 64rpx;
+ }
+ .air-content>.item.top .list>.right {
+   color: #3AA0FB;
+   font-size: 36rx;
+ }
+ .air-content>.item.top .list>.right>.led-font {
+   font-size: 54rpx;
+   font-family: 'UniDreamLED';
+ }
+ .air-content>.item.top .list:nth-child(2) .right {
+   color: #FB873A;
+ }
+ .air-content>.item.top .list:nth-child(3) .right {
+   color: #EB4242;
+ }
+ .air-content>.item.top .list .right :nth-child(2) {
+   padding-left: 10rpx;
+ }
+ 
+ /* 底部echarts */
+ .air-content>.item.bot {
+   flex: 1;
+   display: flex;
+   padding: 30rpx;
+   flex-direction: column;
+ }
+ .air-content>.item.bot>.tit {
+   color: #656565;
+   font-size: 30rpx;
+ }
+ .air-content>.item.bot>.echarts {
+   flex: 1;
+   padding: 30rpx 0 0;
+ }
+
+
+
+
+.air-content>.air-item {
+  padding: 40rpx;
+  border-bottom: 1rpx solid #F1F1F1;
+}
+.air-content>.air-item>.item-tit {
+  display: flex;
+  align-items: center;
+}
+.air-content>.air-item>.item-tit>.img {
+  width: 40rpx;
+  height: 40rpx;
+}
+.air-content>.air-item>.item-tit>.tit {
+  color: #282828;
+  font-size: 32rpx;
+  padding-left: 16rpx;
+}
+.air-content>.air-item>.item-cont {
+  display: flex;
+  height: 350rpx;
+  margin-top: 50rpx;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: center;
+}
+.air-content>.air-item>.item-cont ec-canvas {
+  width: 100%;
+  height: 100%;
+}
+.air-content>.air-item>.item-cont>.cont-echarts {
+  width: 298rpx;
+  height: 197rpx;
+}

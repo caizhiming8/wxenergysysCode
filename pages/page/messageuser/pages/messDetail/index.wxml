@@ -1,0 +1,6 @@
+<view class="info-detail">
+  <view class="tit">{{infoObj.name}}</view>
+  <view class="time">{{infoObj.time}}</view>
+  <view class="cont">{{infoObj.content}}</view>
+  <view class="name">发送人：{{infoObj.creatName}}</view>
+</view>

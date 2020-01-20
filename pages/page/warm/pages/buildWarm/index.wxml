@@ -1,0 +1,68 @@
+<!--pages/page/warm/pages/buildWarm/index.wxml-->
+<view class="build-warm">
+  <!-- <view class="warm-tab">
+    <view class="tab-item {{tabActiveIndex == 1?'active':''}}" bindtap="goClickTabChange" data-index="1">实时数据</view>
+    <view class="tab-item right {{tabActiveIndex == 0?'active':''}}" bindtap="goClickTabChange" data-index="0">能耗对比</view>
+    <view class="active-mark {{tabActiveIndex == 1?'left':'right'}}"></view>
+  </view> -->
+  <view class="warm-cont" wx:if="{{tabActiveIndex == 0}}">
+    <view class="cont1">
+      <view class="tab">
+        <view bindtap="goChangeTimeType" data-index="3" class="item {{curTimeType==3?'active':''}}">当日</view>
+        <view bindtap="goChangeTimeType" data-index="2" class="item {{curTimeType==2?'active':''}}">当月</view>
+        <view bindtap="goChangeTimeType" data-index="1" class="item {{curTimeType==1?'active':''}}">当年</view>
+      </view>
+      <view class="echarts">
+        <ec-canvas id="mychart-dom-gauge" canvas-id="mychart-gauge" ec="{{ ec }}"></ec-canvas>
+      </view>
+    </view>
+    <view class="cont2">
+      <view class="cont2-title">
+        <image src="../../resource/submenu_louyu@2x.png"></image>
+        <text>数据表</text>
+      </view>
+      <view class="cont2-table">
+        <view class="header">
+          <view>楼宇名称</view>
+          <view>历史能耗</view>
+        </view>
+        <view class="item" wx:for="{{buildHistoryEnergyList}}" wx:for-item="item" wx:for-index="idx">
+          <view>{{item.buildingName}}</view>
+          <view>{{item.consume}}GJ</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="warm-cont2" wx:if="{{tabActiveIndex == 1}}">
+    <view class="item" wx:for="{{buildEneryDataList}}" wx:for-item="item" wx:for-index="idx" wx:key="item">
+      <view class="title">
+        <view class="left">
+          <image class="icon" src="../../resource/submenu_louyu@2x.png"></image>
+          <view class="tit">{{item.data.data1x1x1.deviceName}}</view>
+        </view>
+        <view class="right">
+          <!-- <view class="tit">通讯状态：</view>
+          <view class="normal">正常</view> -->
+        </view>
+      </view>
+      <view class="cont">
+        <view class="list">
+          <view class="l">供水温度：{{item.data.data1x1x1.value}}</view>
+          <view class="r">瞬时流量 : {{item.data.data5x1x1.value}}</view>
+        </view>
+        <view class="list">
+          <view class="l">供水压力：{{item.data.data3x1x1.value}}</view>
+          <view class="r">累计流量: {{item.data.data6x1x1.value}}</view>
+        </view>
+        <view class="list">
+          <view class="l">回水温度：{{item.data.data2x1x1.value}}</view>
+          <view class="r">瞬时热量: {{item.data.data7x1x1.value}}</view>
+        </view>
+        <view class="list">
+          <view class="l">回水压力：{{item.data.data4x1x1.value}}</view>
+          <view class="r">累计热量: {{item.data.data8x1x1.value}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

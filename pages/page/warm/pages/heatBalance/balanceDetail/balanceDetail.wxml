@@ -1,0 +1,34 @@
+<view class="balance-detail">
+  <view class="detail">
+    <view>系统名称：{{curInfo.buildingName}}</view>
+    <view>名称：{{curInfo.dataName}}</view>
+    <view>温度：{{curInfo.temperature}}℃</view>
+    <view>二次测回水温度：{{curInfo.secondtem}}℃</view>
+    <view>阈值：{{curInfo.threshold}}</view>
+    <view>补偿值：{{curInfo.dataValue}}</view>
+    <view>
+      <text>状态：</text>
+      <text class="normal">{{item.state==1?'高':item.state == 2?'低':'正常'}}</text>
+    </view>
+    <view>时间：{{curInfo.time}}</view>
+  </view>
+  <view class="detail-btn" bindtap="goClickSetValue">操作</view>
+</view>
+<view class='modal-mask' wx:if='{{show}}'>
+  <view class='modal-content'>
+    <scroll-view scroll-y class='main-content'>
+      <view class="cont-item">
+        <view class="l">阈值</view>
+        <view class="r"><input type="digit" bindinput="bindReplaceInput" placeholder="请输入阈值" /></view>
+      </view>
+      <view class="cont-item">
+        <view class="l">补偿值</view>
+        <view class="r"><input type="digit" bindinput="bindReplaceInput2" placeholder="请输入补偿值" /></view>
+      </view>
+    </scroll-view>
+    <view class='modal-footer'>
+      <view wx:if='{{!single}}' class='cancel-btn' bindtap='cancel'>取消</view>
+      <view class='confirm-btn' bindtap='confirm'>确定 </view>
+    </view>
+  </view>
+</view>

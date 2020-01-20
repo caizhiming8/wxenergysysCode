@@ -1,0 +1,58 @@
+<!--pages/page/alarm/pages/setting/index.wxml-->
+<view class="set-page">
+  <view class="top">
+    <view class="item">
+      <picker
+       bindchange="goBindPickerChangeType" 
+       value="{{cur_devicetype}}"  
+       data-id="1" 
+       range="{{deviceTypeArrList}}" 
+       range-key="{{'label'}}">
+       <text>{{deviceTypeArrList[cur_devicetype].label}}</text>
+       <image class="icon" src="/images/icon_more.png"></image></picker>
+    </view>
+    <view class="item">
+      <picker
+       bindchange="goBindPickerChangeType" 
+       value="{{cur_device}}"  
+       data-id="2" 
+       range="{{deviceArrList}}" 
+       range-key="{{'label'}}">
+       <text>{{deviceArrList[cur_device].label}}</text>
+       <image class="icon" src="/images/icon_more.png"></image></picker>
+    </view>
+  </view>
+  <view class="cont">
+    <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" 
+    data-index="{{index}}" 
+    bindtouchstart="touchstart" 
+    bindtouchmove="touchmove" 
+    wx:for="{{responseDataList}}"
+    bindtap="goModifyDevive" 
+    data-id="{{item}}"
+    wx:key="item">
+      <view class='content' data-index="{{index}}">
+        <view class='column'>
+          <view class='row full_width'>
+            <view class="mark">
+              <image src="../../resources/icon_warn.png" mode="widthFix"></image>
+            </view>
+            <view class="cont">
+              <view style='line-height:60rpx;'>{{item.deviceName}}</view>
+              <view style='line-height:60rpx;'>{{item.typeName}}</view>
+              <view style='line-height:60rpx;'>{{item.degree==1?'低告警':item.degree==2?'中告警':'高告警'}}</view>
+            </view>
+            <view class="operate">
+              <image src="../../resources/submenu_enter@2x.png" mode="widthFix"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="del" catchtap="del" data-index="{{index}}">删除</view>
+    </view>
+  </view>
+  <view
+   class="addProject">
+    <image class="icon" bindtap="goAddProject" src="../../resources/icon_add.png"></image>
+  </view>
+</view>

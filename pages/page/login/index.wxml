@@ -1,0 +1,18 @@
+<!--pages/page/login/index.wxml-->
+<view class="login">
+  <view class="bg">
+    <image src="../../../images/login_bg.png"></image>
+  </view>
+  <view class="form">
+    <view class="tit">欢迎登录</view>
+    <view class="put">
+      <image src="../../../images/login_user.png"></image>
+      <input class="user" bindinput="goInputUserName" value="{{reqData.username}}" placeholder="请输入账号"></input>
+    </view>
+    <view class="put">
+      <image src="../../../images/login_pass.png"></image>
+      <input class="pass" bindinput="goInputPass" value="{{reqData.password}}" type="password" placeholder="请输入密码"></input>
+    </view>
+  </view>
+  <view class="login-btn" bindtap="goUserLogin">登录</view>
+</view>

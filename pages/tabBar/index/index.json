@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "component_home": "../home/home",
+    "component_my": "../my/my"
+  }
+}

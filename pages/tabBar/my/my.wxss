@@ -1,0 +1,94 @@
+/* pages/tabBar/my/my.wxss */
+.my>.my-top {
+  display: flex;
+  width: 750rpx;
+  height: 210rpx;
+  position: relative;
+  background-color: #3AA0FB;
+}
+.my>.my-top>.top-info {
+  left: 23%;
+  width: 510rpx;
+  display: flex;
+  color: #fff;
+  height: 210rpx;
+  position: absolute;
+  align-items: center;
+  transform: translateX(-20%);
+}
+.my>.my-top>.top-info>.tx {
+  width: 128rpx;
+  height: 128rpx;
+}
+.my>.my-top>.top-info>.info {
+  flex: 1;
+  display: flex;
+  margin-left: 40rpx;
+  flex-direction: column;
+}
+.my>.my-top>.top-info>.info>.name {
+  display: flex;
+  font-size: 36rpx;
+  align-items: center;
+  margin-bottom: 28rpx;
+}
+.my>.my-top>.top-info>.info>.name .type {
+  display: flex;
+  height: 18rpx;
+  padding: 10rpx;
+  font-size: 20rpx;
+  margin-left: 20rpx;
+  align-items: center;
+  border-radius: 20rpx;
+  background-color: #8AC8FE;
+}
+.my>.my-top>.top-info>.info>.phone {
+  display: flex;
+}
+.my>.my-cont {
+  padding: 24rpx;
+}
+.my>.my-cont>.item {
+  display: flex;
+}
+.my>.my-cont>.item>.l {
+  display: flex;
+  width: 60rpx;
+  height: 100rpx;
+  align-items: center;
+}
+.my>.my-cont>.item>.l>image {
+  width: 46rpx;
+  height: 46rpx;
+}
+.my>.my-cont>.item>.r {
+  flex: 1;
+  display: flex;
+  height: 100rpx;
+  margin-left: 10rpx;
+  align-items: center;
+  border-bottom: 1rpx solid #ECECEC;
+}
+.my>.my-cont>.item>.r>.name {
+  flex: 1;
+  color: #282828;
+  font-size: 36rpx;
+}
+.my>.my-cont>.item>.r>.point {
+  width: 32rpx;
+  height: 32rpx;
+}
+.my>.my-cont>.item>.r>.point>image {
+  width: 100%;
+  height: 100%;
+}
+.my>.my-cont>.out-btn {
+  display: flex;
+  color: #fff;
+  height: 80rpx;
+  font-size: 36rpx;
+  margin-top: 150rpx;
+  align-items: center;
+  justify-content: center;
+  background-color: #3AA0FB;
+}

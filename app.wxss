@@ -1,0 +1,45 @@
+@import './utils/font.wxss';
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+/* 
+  暂无数据
+ */
+.data-null {
+  font-size: 28rpx;
+  color: #ccc;
+  display: flex;
+  justify-content: center;
+  margin: 40rpx auto;
+}
+
+/* 
+  pick上下居中
+ */
+.pick-middle {
+  display: flex;
+  align-items: center;
+}
+/* 0 0 10px rgba(0,0,0,.12) */
+
+.data-null-cont {
+  height: 80%;
+  display: flex;
+  color: #989898;
+  font-size: 30rpx;
+  align-items: center;
+  padding: 30rpx 20rpx;
+  flex-direction: column;
+  justify-content: center
+}
+.data-null-cont>.icon {
+  width: 250rpx;
+  height: 207rpx;
+  margin-bottom: 70rpx;
+}

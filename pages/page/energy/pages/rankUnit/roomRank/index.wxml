@@ -1,0 +1,115 @@
+<!--pages/page/energy/pages/rankUnit/index.wxml-->
+<view class="rank-unit">
+  <!-- <view class="unit-top"> -->
+    <!-- <view class="item l {{curTabActive==0?'active':''}}" bindtap="goChangeTab" data-index="0">定额考核</view> -->
+    <!-- <view class="item {{curTabActive==1?'active':''}}" bindtap="goChangeTab" data-index="1">总定额考核</view> -->
+    <!-- <view class="item r {{curTabActive==2?'active':''}}" bindtap="goChangeTab" data-index="2">房间定额考核</view>
+  </view> -->
+  <view class="unit-cont">
+    <view class="cont-1 cont-2 cont-3" wx:if="{{curTabActive==2}}">
+      <view class="top {{activeShowMask?'top2':''}}" bindtap="goShowShaiXuan" data-index="0" catchtouchmove="catchtouchmove">
+        <!-- 弹窗内容 -->
+        <view class="top-cont" catchtap="catchtouchmove">
+          <view class="mask-top">
+            <view class="item">
+              <view class="tit">分类</view>
+              <view class="cont">
+                <view wx:for="{{classifyDataList}}" 
+                wx:for-item="item" wx:for-index="idx" 
+                class="btn {{activeClassify == idx?'active':''}}" 
+                wx:key="item.id" data-info="{{item}}" 
+                data-index="{{idx}}" bindtap="goChangeClassify">{{item.label}}</view>
+              </view>
+              <view style="text-align: center" wx:if="{{classifyDataList.length == 0}}">无</view>
+            </view>
+            <view class="item">
+              <view class="tit">楼宇</view>
+              <scroll-view class="cont" scroll-y="true">
+                <view wx:for="{{buildsDataList}}" 
+                wx:for-item="item" wx:for-index="idx" 
+                class="btn {{activeBuild == idx?'active':''}}" 
+                wx:key="item.id" data-info="{{item}}" 
+                data-index="{{idx}}" bindtap="goChangeBuild">{{item.label}}</view>
+              </scroll-view>
+              <view style="text-align: center" wx:if="{{buildsDataList.length == 0}}">无</view>
+            </view>
+            <view class="item">
+              <view class="tit">房间</view>
+              <scroll-view class="cont">
+                <view wx:for="{{roomsDataList}}" 
+                wx:for-item="item" wx:for-index="idx" 
+                class="btn {{activeRoom == idx?'active':''}}" 
+                wx:key="item.id" data-info="{{item}}" 
+                data-index="{{idx}}" bindtap="goChangeRoom">{{item.label}}</view>
+              </scroll-view>
+              <view style="text-align: center" wx:if="{{roomsDataList.length == 0}}">无</view>
+            </view>
+            <!-- <view class="item">
+              <view class="tit">周期选择</view>
+              <picker bindchange="goChangePeriod" 
+              value="{{activePeriod}}" range="{{periodsDataList}}" range-key="{{'name'}}">
+                <view class="picker">
+                  <view class="tit">{{periodsDataList[activePeriod].name}}</view>
+                  <image class="up" src="../../../resource/buildele_xiala_nor.png"></image>
+                </view>
+              </picker>
+            </view> -->
+            <!-- <view class="item">
+              <view class="tit">年份选择</view>
+              <picker bindchange="goChangeYear" 
+              value="{{activeYear}}" range="{{yearDataList}}" range-key="{{'time_year'}}">
+                <view class="picker">
+                  <view class="tit">{{yearDataList[activeYear].time_year}}年</view>
+                  <image class="up" src="../../../resource/buildele_xiala_nor.png"></image>
+                </view>
+              </picker>
+            </view> -->
+          </view>
+          <view class="mask-bot">
+            <!-- <view class="btn">重置</view> -->
+            <view class="btn btn-true" bindtap="goGetRoomEnergyData">确定</view>
+          </view>
+        </view>
+      </view>
+      <view class="cont1">
+        <view class="operation" bindtap="goShowShaiXuan" data-index="1">
+          <view>
+            <view>筛选</view>
+            <image src="../../../resource/icon_screen.png"></image>
+          </view>
+        </view>
+        <view class="item" wx:for="{{resBackDataArray}}" wx:for-item="item" wx:key="{{item.id}}">
+          <view class="title">
+            <view class="left">
+              <view class="tit">{{item.name}}</view>
+            </view>
+            <view class="right">
+              <view class="tit">完成状态：</view>
+              <view class="normal {{item.status=='超值'?'unnormal':''}}">{{item.status}}</view>
+            </view>
+          </view>
+          <view class="cont">
+            <view class="list">
+              <view class="l">定额值：{{item.quota}}</view>
+            </view>
+            <view class="list">
+              <view class="l">总能耗值：{{item.consum}}</view>
+            </view>
+            <view class="list">
+              <view class="l">
+                <view style="width: 90rpx">进度：</view>
+                <view class="jin-du">
+                  <progress activeColor="{{item.rate>90?'#FD7171':'#3AA0FB'}}" backgroundColor="#F1F1F1" border-radius="5rpx" percent="{{item.rate}}" show-info />
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="data-null-cont" wx:if="{{resBackDataArray.length==0}}">
+          <image class="icon" src="/images/icon_data_null.png"></image>
+          <view class="text">暂时没有内容呢</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

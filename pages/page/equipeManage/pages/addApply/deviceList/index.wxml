@@ -1,0 +1,48 @@
+<!--pages/page/equipeManage/pages/addApply/deviceList/index.wxml-->
+<view class="device-list">
+  <view class="list-top">
+    <view class="l l1">
+      <picker
+       class="set-picker" 
+       bindchange="goChangeDMAtableTime3" 
+       data-id="1" 
+       value="{{curSelectTypeIndex}}" 
+       range="{{typeArrList}}" 
+       range-key="{{'name'}}">
+        <view class="picker">{{typeArrList[curSelectTypeIndex].name}}</view>
+        <image class="icon-more" src="/images/icon_more.png"></image>
+      </picker>
+    </view>
+    <view class="l l2" wx:if="{{showSubSystem}}">
+      <picker
+       class="set-picker" 
+       bindchange="goChangeDMAtableTime3" 
+       data-id="2" 
+       value="{{curSelectRenIndex}}" 
+       range="{{renArrList}}" 
+       range-key="{{'name'}}">
+        <view class="picker">{{renArrList[curSelectRenIndex].name}}</view>
+        <image class="icon-more" src="/images/icon_more.png"></image>
+      </picker>
+    </view>
+  </view>
+  <scroll-view class="list-cont" scroll-y bindscrolltolower="goNextPage">
+    <view class="item" wx:for="{{responseData}}" wx:key="item">
+      <view class="i-top">
+        <view>{{item.name}}</view>
+        <view class="r">{{item.code?item.code:'无'}}</view>
+      </view>
+      <view class="i-cont" bindtap="goSelcetCurValue" data-id="{{item}}" data-index="{{index}}">
+        <view class="l">
+          <view class="list">设备类型：{{item.type_name}}</view>
+          <view class="list">归属系统：{{item.systemName}}</view>
+          <view class="list">归属子系统：{{item.subSystemName?item.subSystemName:'无'}}</view>
+        </view>
+        <view class="r">
+          <image wx:if="{{!item.state}}" class="icon1" src="/images/icon_no_select.png"></image>
+          <image wx:if="{{item.state}}" class="icon2" src="/images/icon_selected.png"></image>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

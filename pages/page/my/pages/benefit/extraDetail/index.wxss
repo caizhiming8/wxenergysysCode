@@ -1,0 +1,14 @@
+/* pages/page/my/pages/benefit/extraDetail/index.wxss */
+@import '../addNewExtra/index.wxss';
+.img-list {
+  margin-top: 0;
+}
+.video-list {
+  display: flex;
+  height: 300rpx;
+  margin-top: 15rpx;
+}
+.video-list video {
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,28 @@
+<!--pages/page/my/pages/benefit/extraList/extraList.wxml-->
+<view class="extra-list">
+  <scroll-view scroll-y="true" class="extra">
+    <view class="item" wx:for="{{responseData}}" wx:key="item" data-id="{{item}}" bindtap="goLookDetail">
+      <view class="left">
+        <view>定额：{{item.quota}}</view>
+        <view>能耗：{{item.consum}}</view>
+        <view>超额能耗：<text style="color: #E31D1D">{{item.diff}}</text></view>
+        <view>系统分类：{{item.systemName}}</view>
+        <view>超额时间：{{item.over_time}}</view>
+      </view>
+      <view class="right">
+        <image class="icon" src="/images/my_enter@2x.png"></image>
+      </view>
+    </view>
+  </scroll-view>
+  <view
+   class="addProject"
+   style="right:{{newViewPosition.newRight}}px;bottom:{{newViewPosition.newBottom}}px;"
+   bindtouchmove="goViewTouchMove"
+   bindtap="goAddNewExtra">
+    <image class="icon" src="/images/icon_add.png"></image>
+  </view>
+  <view class="data-null-cont" wx:if="{{responseData.length==0&&showNoContent}}">
+    <image class="icon" src="/images/icon_data_null.png"></image>
+    <view class="text">暂时没有内容呢</view>
+  </view>
+</view>

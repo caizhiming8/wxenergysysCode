@@ -1,0 +1,39 @@
+<!--pages/page/energy/pages/quotaContrast/index.wxml-->
+<view class="quota-contrast">
+  <view class="contrast-search">
+    <view class="seacrch">
+      <input class="input-seacrch" bindinput="goInputEvent" placeholder="请输入单位"></input>
+      <image bindtap="go" class="icon-seacrch" src="../../../../../images/icon_search@2x.png"></image>
+    </view>
+  </view>
+  <view class="table-cont">
+    <view class="item">
+      <view class="item-l">
+        <view class="list1">
+          <view>单位名称</view>
+        </view>
+        <view wx:for="{{responseData}}" wx:for-item="item" wx:for-index="idx" wx:key="item.id" class="list2 {{idx==responseData.length-1?'list3':''}}">
+          <view>{{item.name}}</view>
+        </view>
+      </view>
+      <scroll-view scroll-x="true">
+        <view class="item-r">
+          <view class="list">状态</view>
+          <view class="list">定额值</view>
+          <view class="list">总能耗值</view>
+          <view class="list">能耗差值</view>
+        </view>
+        <view wx:for="{{responseData}}" wx:for-item="item" wx:for-index="idx" wx:key="item.id" class="item-r item-r2 {{idx==responseData.length-1?'list3':''}}">
+          <view class="list">{{item.status}}</view>
+          <view class="list">{{item.quota}}</view>
+          <view class="list">{{item.consum}}</view>
+          <view class="list">{{item.diffconsum}}</view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="data-null-cont" wx:if="{{responseData.length==0&&showNoContent}}">
+      <image class="icon" src="/images/icon_data_null.png"></image>
+      <view class="text">暂时没有内容呢</view>
+    </view>
+  </view>
+</view>

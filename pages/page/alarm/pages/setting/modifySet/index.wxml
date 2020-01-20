@@ -1,0 +1,72 @@
+<!--pages/page/alarm/pages/setting/modifySet/index.wxml-->
+<view class="page-person">
+  <!-- <view class="item">
+    <view class="title">请选择：</view>
+    <view class="cont">{{deviceArrList[cur_device].typeComment}}</view>
+    <view class="right">
+      <picker
+       bindchange="goBindPickerChangeType" 
+       value="{{cur_device}}"  
+       data-id="1" 
+       range="{{deviceArrList}}" 
+       range-key="{{'typeComment'}}">请选择<image class="icon" src="/images/my_enter@2x.png"></image></picker>
+    </view>
+  </view> -->
+  <view class="item">
+    <view class="title">上限：</view>
+    <view class="cont">
+      <input class="put" 
+        bindinput="goInputCont" 
+        data-id="1" 
+        placeholder="请输入上限" 
+        value="{{maxNum}}"
+        placeholder-class="place-style"></input>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">下限：</view>
+    <view class="cont">
+      <input class="put" 
+        bindinput="goInputCont" 
+        data-id="2"  
+        value="{{minNum}}"
+        placeholder="请输入下限" 
+        placeholder-class="place-style"></input>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">告警级别：</view>
+    <view class="cont">{{alarmLevelArrList[cur_alarmlevel].message}}</view>
+    <view class="right">
+      <picker
+       bindchange="goBindPickerChangeType" 
+       value="{{cur_alarmlevel}}"  
+       data-id="2" 
+       range="{{alarmLevelArrList}}" 
+       range-key="{{'message'}}">请选择<image class="icon" src="/images/my_enter@2x.png"></image></picker>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">开始时间：</view>
+    <view class="cont">{{cur_startTimeData}}</view>
+    <view class="right2">
+      <picker mode="time" value="{{cur_startTimeData}}" 
+        data-id="3" 
+        bindchange="goBindPickerChangeType">
+        <image class="icon2" src="../../../resources/icon_rili.png"/>
+      </picker>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">结束时间：</view>
+    <view class="cont">{{cur_endTimeData}}</view>
+    <view class="right2">
+      <picker mode="time" value="{{cur_endTimeData}}" 
+        data-id="4" 
+        bindchange="goBindPickerChangeType">
+        <image class="icon2" src="../../../resources/icon_rili.png"/>
+      </picker>
+    </view>
+  </view>
+  <view class="item-btn" bindtap="goSubmitForm">提交</view>
+</view>

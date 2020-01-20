@@ -1,0 +1,24 @@
+<!--pages/page/alarm/pages/alarmDetail/index.wxml-->
+<view class="alarm-detail">
+  <view class="detail-t">
+    <view class="t-top">
+      <image class="icon" src="../../resources/icon_detail.png"></image>
+      <view>告警详情</view>
+    </view>
+    <view class="t-cont">
+      <view>设备名称：{{curDetailInfo.deviceName}}</view>
+      <view>当前状态：{{curDetailInfo.status}}</view>
+      <view>告警类型：{{curDetailInfo.typeComment}}</view>
+      <view>告警级别：{{curDetailInfo.degree}}</view>
+      <view>告警值：{{curDetailInfo.warningVal}}</view>
+      <view>最大值：{{curDetailInfo.maxVal}}</view>
+      <view>最小值：{{curDetailInfo.minVal}}</view>
+      <view>告警时间：{{curDetailInfo.warningTime}}</view>
+    </view>
+  </view>
+  <view class="detail-b">
+    <view class="btn l" bindtap="goSetWarning" wx:if="{{isShowMange}}">告警</view>
+    <view class="btn r" bindtap="goSetFakeWarning" wx:if="{{isShowMange}}">假告警</view>
+    <view class="btn l" bindtap="goSetDispose" wx:if="{{isShowWork}}">处理</view>
+  </view>
+</view>

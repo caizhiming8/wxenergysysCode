@@ -1,0 +1,36 @@
+<!--pages/page/repairs/pages/repairMange/assignedPerson/index.wxml-->
+<view class="page-person">
+  <view class="item">
+    <view class="title2">开始时间：</view>
+    <view class="cont">{{dateTimeArray[0][dateTime[0]]}}-{{dateTimeArray[1][dateTime[1]]}}-{{dateTimeArray[2][dateTime[2]]}} {{dateTimeArray[3][dateTime[3]]}}:{{dateTimeArray[4][dateTime[4]]}}</view>
+    <view class="right2">
+      <picker mode="multiSelector" value="{{dateTime}}" bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray}}"><image class="icon2" src="../../../resources/icon_rili.png"/></picker>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title2">结束时间：</view>
+    <view class="cont">{{dateTimeArray1[0][dateTime1[0]]}}-{{dateTimeArray1[1][dateTime1[1]]}}-{{dateTimeArray1[2][dateTime1[2]]}} {{dateTimeArray1[3][dateTime1[3]]}}:{{dateTimeArray1[4][dateTime1[4]]}}</view>
+    <view class="right2">
+      <picker mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime2" bindcolumnchange="changeDateTimeColumn2" range="{{dateTimeArray1}}"><image class="icon2" src="../../../resources/icon_rili.png"/></picker>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">工时：</view>
+    <view class="cont">
+      <input class="put" bindinput="goInputWorkHour" type="number" maxlength="11" placeholder="小时" placeholder-class="place-style"></input>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">配件名称：</view>
+    <view class="cont">
+      <input class="put" bindinput="goInputPartsName" type="text" maxlength="11" placeholder="请输入配件名称" placeholder-class="place-style"></input>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">金额：</view>
+    <view class="cont">
+      <input class="put" bindinput="goInputPartsMoney" type="number" maxlength="11" placeholder="元" placeholder-class="place-style"></input>
+    </view>
+  </view>
+  <view class="item-btn" bindtap="goSubmitForm">提交</view>
+</view>

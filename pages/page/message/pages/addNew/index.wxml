@@ -1,0 +1,52 @@
+<!--pages/page/message/pages/addNew/index.wxml-->
+<view class="page-person">
+  <view class="item">
+    <view class="title">所在项目：</view>
+    <!-- <view class="cont"></view> -->
+    <view class="right">
+      <picker
+       bindchange="goBindPickerChangeArea" 
+       value="{{cur_projectIndex}}" 
+       range="{{projectArray}}" 
+       range-key="{{'name'}}">{{projectArray[cur_projectIndex].name}}<image class="icon" src="/images/my_enter@2x.png"></image></picker>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">接收人：</view>
+    <view class="cont"></view>
+    <view class="right">
+      <picker
+       bindchange="goBindPickerChangeSite" 
+       value="{{cur_personIndex}}" 
+       range="{{personArray}}" 
+       range-key="{{'username'}}">请选择<image class="icon" src="/images/my_enter@2x.png"></image></picker>
+    </view>
+  </view>
+  <view class="item-p" wx:if="{{checkedPersonArr.length > 0}}">
+    <view class="list" wx:for="{{checkedPersonArr}}" wx:key="item">
+      <view>{{item.username}}</view>
+      <image class="icon" bindtap="goDeleteItemPerson" data-id="{{item}}" src="/images/icon_delete2.png"></image>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">消息标题：</view>
+    <view class="cont">
+      <input
+       class="put" 
+       bindinput="goInputPhone" 
+       type="text" 
+       maxlength="10" 
+       placeholder="请输入标题" placeholder-class="place-style"></input>
+    </view>
+  </view>
+  <view class="item2">
+    <textarea class="item-input"
+     maxlength="200"
+     bindinput="goInputTextarea"
+     auto-height placeholder="请输入详细描述" />
+    <view class="item2-img">
+      <view>{{textLength}}/200</view>
+    </view>
+  </view>
+  <view class="item-btn" bindtap="goSubmitForm">提交</view>
+</view>

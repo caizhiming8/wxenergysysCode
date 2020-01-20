@@ -1,0 +1,137 @@
+/* pages/page/water/pages/smallFlow/smallFlow.wxss */
+.flow-tab {
+  height: 44px;
+  display: flex;
+  font-size: 15px;
+  color: #656565;
+  position: relative;
+  align-items: center;
+}
+.flow-tab>.tab-item {
+  flex: 1;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flow-tab>.tab-item.right {
+  border-left: 1px solid #C7C7C7;
+}
+.flow-tab>.tab-item.active {
+  color: #3AA0FB;
+}
+.flow-tab>.active-mark {
+  width: 50rpx;
+  height: 5rpx;
+  bottom: 0rpx;
+  animation: all 1s;
+  position: absolute;
+  background-color: #3AA0FB;
+}
+.flow-tab>.active-mark.left {
+  left: 23%;
+  animation: all 1s;
+  transform: translateX(-23%);
+}
+.flow-tab>.active-mark.right {
+  left: 77%;
+  animation: all 1s;
+  transform: translateX(-77%);
+}
+.flow-set {
+  height: 40px;
+  display: flex;
+  padding: 0 20px;
+  font-size: 14px;
+  color: #656565;
+  align-items: center;
+  background-color: #f1f1f1;
+}
+.flow-set>.set-left,
+.flow-set>.set-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.flow-set>.set-right {
+  justify-content: flex-end;
+}
+.flow-set>.set-left>.icon-facility,
+.flow-set>.set-right>.icon-time {
+  width: 20px;
+  height: 19px;
+}
+.flow-set>.set-left .cont,
+.flow-set>.set-right .cont {
+  height: 20px;
+  display: flex;
+  margin-left: 5px;
+  align-items: center;
+}
+/* .flow-set>.set-left .picker,
+.flow-set>.set-right .picker {
+  display: inline-block;
+} */
+.flow-set>.set-left .icon-more,
+.flow-set>.set-right .icon-more {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 10rpx;
+}
+/* 
+  柱状图css
+ */
+.flow-histogram>.title {
+  display: flex;
+  font-size: 14px;
+  color: #282828;
+  margin: 14px 16px;
+  align-items: center;
+}
+.flow-histogram>.title>.icon-histogram {
+  width: 18px;
+  height: 18px;
+}
+.flow-histogram>.title>.tit {
+  margin-left: 5px;
+}
+/* 柱状图 */
+.flow-histogram>.histogram {
+  display: flex;
+  height: 500rpx;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #F1F1F1;
+}
+.flow-histogram>.histogram ec-canvas {
+  width: 100%;
+  height: 100%;
+}
+/* 设备间比表单 */
+.flow-table {
+  margin: 0;
+}
+.flow-table>.title {
+  margin: 0 16px;
+  padding: 14px 0;
+  border-bottom: 1rpx solid #F1F1F1;
+}
+.flow-table>.table {
+  color: #282828;
+  font-size: 14px;
+}
+.flow-table>.table>.table-item {
+  border-bottom: 1rpx solid #F1F1F1;
+}
+.flow-table>.table>.table-item>.item1 {
+  display: flex;
+  margin: 14px 17px;
+}
+.flow-table>.table>.table-item>.item1>view:first-child {
+  flex: 3;
+}
+.flow-table>.table>.table-item>.item1>view:last-child {
+  flex: 2;
+}

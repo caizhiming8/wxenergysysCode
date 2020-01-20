@@ -1,0 +1,28 @@
+<!--pages/page/electricity/pages/eleDeviceState/index.wxml-->
+<view class="coll-facility">
+  <view class="facility-item" wx:for="{{collectorList}}" wx:for-item="item" wx:for-index="idx">
+    <view class="item-tit">
+      <view class="tit-left">
+        <image class="icon" src="../../resource/sub_dianbiao@2x.png"></image>
+        <text>{{item.ammeter_name}}</text>
+      </view>
+      <!-- <view class="tit-right">编码：{{item.deviceId}}</view> -->
+    </view>
+    <view class="item-state">
+      <text>状态：</text>
+      <text class="on {{item.device_status=='0'?'off':''}}">{{item.device_status=='0'?'离线':'正常'}}</text>
+    </view>
+    <view class="item-locate">
+      <text>上次上数时间：</text>
+      <text>{{item.collect_time}}</text>
+    </view>
+    <!-- <view class="item-ip">
+      <text>IP：</text>
+      <text>{{item.ip}}</text>
+    </view> -->
+  </view>
+  <view class="data-null-cont" wx:if="{{collectorList.length==0&&showNoContent}}">
+    <image class="icon" src="/images/icon_data_null.png"></image>
+    <view class="text">暂时没有内容呢</view>
+  </view>
+</view>

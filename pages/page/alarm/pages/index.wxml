@@ -1,0 +1,44 @@
+<!--pages/page/alarm/pages/index.wxml-->
+<view class="alarm-table">
+  <view class="top">
+    <view class="item {{activeTab == '0'?'active': ''}}" bindtap="goChangeTab" data-index="0">
+      <view class="tit">全部</view>
+      <view class="icon"></view>
+    </view>
+    <view class="item r {{activeTab == '1'?'active': ''}}" bindtap="goChangeTab" data-index="1">
+      <view class="tit">待确认</view>
+      <view class="icon"></view>
+    </view>
+    <view class="item r {{activeTab == '2'?'active': ''}}" bindtap="goChangeTab" data-index="2">
+      <view class="tit">待处理</view>
+      <view class="icon"></view>
+    </view>
+  </view>
+  <view class="top top2">
+    <view class="list"></view>
+    <view class="center">{{startTime}} 至 {{endTime}}</view>
+    <view class="list" bindtap="pickerShow">
+      <image class="icon" src="../resources/icon_rili.png"></image>
+    </view>
+  </view>
+  <scroll-view class="cont" scroll-y="true" bindscrolltolower="goNextPage">
+    <view class="item" wx:for="{{responseData}}" wx:key="item" bindtap="goLookDetail" data-id="{{item}}">
+      <view>设备名称：{{item.deviceName?item.deviceName:'无'}}</view>
+      <view>当前状态：{{item.status}}</view>
+      <view>告警类型：{{item.typeComment}}</view>
+      <view>告警级别：{{item.degree}}</view>
+    </view>
+    <view class="data-null-cont" wx:if="{{responseData.length==0&&showNoContent}}">
+      <image class="icon" src="/images/icon_data_null.png"></image>
+      <view class="text">暂时没有内容呢</view>
+    </view>
+  </scroll-view>
+  <time-picker
+   pickerShow="{{isPickerShow}}" 
+   id="picker" 
+   wx:if="{{isPickerRender}}" 
+   bind:hidePicker="pickerHide"
+   bind:clearTime="clearTime" 
+   bind:setPickerTime="setPickerTime"
+   config="{{pickerConfig}}"></time-picker>
+</view>

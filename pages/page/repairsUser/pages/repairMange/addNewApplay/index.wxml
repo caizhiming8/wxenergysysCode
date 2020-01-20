@@ -1,0 +1,103 @@
+<!--pages/page/repairsUser/pages/repairMange/addNewApplay/index.wxml-->
+<view class="page-person">
+  <view class="item">
+    <view class="title">区域：</view>
+    <view class="cont"></view>
+    <view class="right">
+      <picker
+       bindchange="goBindPickerChangeArea" 
+       value="{{cur_areaIndex}}" 
+       range="{{areasArray}}" 
+       range-key="{{'label'}}">{{areasArray[cur_areaIndex].label}}<image class="icon" src="/images/my_enter@2x.png"></image></picker>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">地点：</view>
+    <view class="cont"></view>
+    <view class="right">
+      <picker
+       bindchange="goBindPickerChangeSite" 
+       value="{{cur_siteIndex}}" 
+       range="{{siteArray}}" 
+       range-key="{{'label'}}">{{siteArray[cur_siteIndex].label}}<image class="icon" src="/images/my_enter@2x.png"></image></picker>
+    </view>
+  </view>
+  <view class="item" wx:if="{{isShowManualInput}}">
+    <view class="title">手动输入：</view>
+    <view class="cont">
+      <input class="put"
+       bindinput="goInputLocation"
+       type="number"
+       placeholder="请输入地点" placeholder-class="place-style"></input>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">类型：</view>
+    <view class="cont"></view>
+    <view class="right">
+      <picker
+       bindchange="goBindPickerChangeType" 
+       value="{{cur_typeIndex}}" 
+       range="{{typeArray}}" 
+       range-key="{{'label'}}">{{typeArray[cur_typeIndex].label}}<image class="icon" src="/images/my_enter@2x.png"></image></picker>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">维修项目：</view>
+    <view class="cont"></view>
+    <view class="right">
+      <picker
+       bindchange="goBindPickerChangePerson" 
+       value="{{cur_personIndex}}" 
+       range="{{personArray}}" 
+       range-key="{{'label'}}">{{personArray[cur_personIndex].label}}<image class="icon" src="/images/my_enter@2x.png"></image></picker>
+    </view>
+  </view>
+  <view class="item" wx:if="{{isShowDeviceName}}">
+    <view class="title">设备名称：</view>
+    <!-- <view class="cont"></view> -->
+    <view class="right">
+      <picker
+       bindchange="goBindPickerDeviceName" 
+       value="{{cur_personIndex}}" 
+       range="{{deviceNameArray}}" 
+       range-key="{{'name'}}">{{deviceNameArray[cur_deviceNameIndex].name}}
+       <image class="icon" src="/images/my_enter@2x.png"></image></picker>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">联系方式：</view>
+    <view class="cont">
+      <input class="put" bindinput="goInputPhone" type="number" maxlength="11" placeholder="请输入报修人员电话" placeholder-class="place-style"></input>
+    </view>
+  </view>
+  <view class="item2">
+    <textarea class="item-input"
+     maxlength="100"
+     bindinput="goInputTextarea"
+     auto-height placeholder="请输入详细描述" />
+    <view class="item2-img">
+      <view class="img">
+        <image
+         wx:if="{{!upLoadSuccess}}" 
+         bindtap="goUpLoadImg" 
+         src="../../../resources/icon_bg.png"
+         class="im3"></image>
+        <image
+         wx:if="{{upLoadSuccess}}" 
+         bindtap="goBigImg" 
+         data-id="{{uploadImgSrc}}" 
+         src="{{uploadImgSrc}}"
+         class="im"></image>
+         <image
+          wx:if="{{upLoadSuccess}}" 
+          bindtap="goDeleteImg" 
+          data-id="{{uploadImgSrc}}" 
+          src="/images/icon_delete.png"
+          class="im2"></image>
+      </view>
+      <view>{{textLength}}/100</view>
+    </view>
+  </view>
+  <view class="item-btn" bindtap="goSubmitForm">提交</view>
+</view>

@@ -1,0 +1,39 @@
+<view class="subitem-menu">
+  <image src="../resource/submenu_banner.png" class="submenu-bg"></image>
+  <view class="menu-item" bindtap="goSubitemMenuPage" data-index="0" data-auth="3-2">
+    <image src="../resource/submenu_reyuan@2x.png" class="item-icon"></image>
+    <view class="item-title">热源系统</view>
+    <image src="../resource/submenu_enter@2x.png" class="item-next"></image>
+  </view>
+  <view class="menu-item" bindtap="goSubitemMenuPage" data-index="1">
+    <image src="../resource/submenu_huanrezhan@2x.png" class="item-icon"></image>
+    <view class="item-title">换热站</view>
+    <image src="../resource/submenu_enter@2x.png" class="item-next {{currentRoomIndex == 0?'up':'down'}}"></image>
+  </view>
+  <view class="sub-menu {{currentRoomIndex == 0?'':'up'}}">
+    <view class="menu-item" bindtap="goSubitemMenuPage" data-index="5" data-auth="3-3-1">实时监测</view>
+    <view class="menu-item" bindtap="goSubitemMenuPage" data-index="6" data-auth="3-3-1">能耗数据</view>
+    <!--  last-item -->
+  </view>
+  <view class="menu-item" bindtap="goSubitemMenuPage" data-index="2">
+    <image src="../resource/submenu_louyu@2x.png" class="item-icon"></image>
+    <view class="item-title">楼宇系统</view>
+    <image src="../resource/submenu_enter@2x.png" class="item-next"></image>
+  </view>
+  <view class="sub-menu {{currentBuildIndex == 0?'':'up'}}">
+    <view class="menu-item" bindtap="goSubitemMenuPage" data-index="7" data-auth="3-4-2">实时数据</view>
+    <view class="menu-item" bindtap="goSubitemMenuPage" data-index="8" data-auth="3-4-2">能耗对比</view>
+    <!--  last-item -->
+  </view>
+  <view class="menu-item" bindtap="goSubitemMenuPage" data-index="3" data-auth="3-5-3">
+    <image src="../resource/submenu_guanwang@2x.png" class="item-icon"></image>
+    <view class="item-title">供热管网平衡</view>
+    <image src="../resource/submenu_enter@2x.png" class="item-next"></image>
+  </view>
+  <!-- 市政联系方式暂时去掉 -->
+  <!-- <view class="menu-item" bindtap="goSubitemMenuPage" data-index="4">
+    <image src="../resource/submenu_lianxifangshi@2x.png" class="item-icon"></image>
+    <view class="item-title">市政联系方式</view>
+    <image src="../resource/submenu_enter@2x.png" class="item-next"></image>
+  </view> -->
+</view>

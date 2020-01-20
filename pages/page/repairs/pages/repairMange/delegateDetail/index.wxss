@@ -1,0 +1,51 @@
+/* pages/page/repairs/pages/repairMange/repairsDetail/index.wxss */
+page {
+  background-color: #f1f1f1;
+}
+.detail {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 100rpx;
+  overflow: auto;
+}
+.detail-t {
+  padding: 12rpx 30rpx;
+  background-color: #fff;
+}
+.detail-t2 {
+  margin-top: 10rpx;
+}
+.detail-t>.t-top {
+  display: flex;
+  color: #282828;
+  font-size: 24rpx;
+  padding: 14rpx 0;
+  border-bottom: 2rpx solid #EFEFEF;
+}
+.detail-t>.t-top>image {
+  width: 34rpx;
+  height: 34rpx;
+  margin-right: 20rpx;
+}
+.t-cont {
+  color: #656565;
+  font-size: 28rpx;
+}
+.t-cont>view {
+  margin-top: 30rpx;
+}
+
+.detail-btn {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #fff;
+  display: flex;
+  height: 100rpx;
+  font-size: 36rpx;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background-color: #3AA0FB;
+}

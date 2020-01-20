@@ -1,0 +1,34 @@
+<!--pages/page/repairs/pages/repairMange/repairsDetail/index.wxml-->
+<view class="repair-detail">
+  <view class="detail {{isIpx?'detail-t-x':''}}">
+    <view class="detail-t">
+      <view class="t-top">
+        <image class="icon" src="../../../resources/icon_detail.png"></image>
+        <view>报修详情</view>
+      </view>
+      <view class="t-cont">
+        <view>报修人：{{cur_info.commitName}}</view>
+        <view>区域：{{cur_info.buildingName}}</view>
+        <view>地点：{{cur_info.roomName}}</view>
+        <view>设备：{{cur_info.projectComment}}</view>
+        <view>维修项目：{{cur_info.typeComment}}</view>
+        <view>报修时间：{{cur_info.commitTime}}</view>
+        <view>详情描述：{{cur_info.details}}</view>
+      </view>
+    </view>
+    <!-- 第二部分 -->
+    <view class="detail-t detail-t2">
+      <view class="t-top">
+        <image class="icon" src="../../../resources/icon_detail.png"></image>
+        <view>维修详情</view>
+      </view>
+      <view class="t-cont">
+        <view>维修人：{{cur_info.repairName}}</view>
+        <view>联系方式：{{cur_info.commitPhone}}</view>
+        <view>指派时间：{{cur_info.assignTime}}</view>
+        <view>期望完成时间：{{cur_info.completeTime}} </view>
+      </view>
+    </view>
+  </view>
+  <view class="detail-btn {{isIpx?'detail-btn-x':''}}" bindtap="goZhiPai">修改维修人员</view>
+</view>

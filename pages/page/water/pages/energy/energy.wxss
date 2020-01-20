@@ -1,0 +1,116 @@
+/* pages/page/water/pages/energy/energy.wxss */
+page {
+  background-color: #f1f1f1;
+}
+.energy>.energy-top {
+  padding: 25rpx 0;
+  background-color: #ffffff;
+}
+.energy>.energy-top>.energy-tab {
+  margin: auto;
+  display: flex;
+  width: 340rpx;
+  height: 60rpx;
+  overflow: hidden;
+  border-radius: 10rpx;
+  justify-content: center;
+  border: 1rpx solid #3AA0FB;
+  -webkit-border: 1rpx solid #3AA0FB;
+}
+.energy>.energy-top>.energy-tab>.tab-btn {
+  display: flex;
+  width: 171rpx;
+  font-size: 24rpx;
+  color: #3AA0FB;
+  align-items: center;
+  justify-content: center;
+}
+.energy>.energy-top>.energy-tab>.tab-btn.active {
+  color: #fff;
+  background-color: #3AA0FB;
+}
+.energy>.energy-cont {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 120rpx;
+  display: flex;
+  overflow: auto;
+  position: absolute;
+  flex-direction: column;
+}
+.energy>.energy-cont .cont-top {
+  background-color: #ffffff;
+}
+.energy>.energy-cont .cont-top>.item {
+  display: flex;
+  height: 130rpx;
+  padding: 0 30rpx;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+.energy>.energy-cont .cont-top>.item>.left {
+  display: flex;
+  color: #656565;
+  font-size: 30rpx;
+  align-items: center;
+}
+.energy>.energy-cont .cont-top>.item>.left :last-child {
+  padding-left: 30rpx;
+}
+.energy>.energy-cont .cont-top>.item>.left>.icon {
+  width: 64rpx;
+  height: 64rpx;
+}
+.energy>.energy-cont .cont-top>.item>.right {
+  color: #3AA0FB;
+  font-size: 36rx;
+}
+.energy>.energy-cont .cont-top>.item>.right>.led-font {
+  font-size: 54rpx;
+  font-family: 'UniDreamLED';
+}
+.energy>.energy-cont .cont-top>.item:nth-child(2) .right {
+  color: #FB873A;
+}
+.energy>.energy-cont .cont-top>.item:nth-child(3) .right {
+  color: #EB4242;
+}
+.energy>.energy-cont .cont-echart {
+  flex: 1;
+  margin-top: 10rpx;
+  background-color: #ffffff;
+}
+.energy-cont>.section {
+  display: flex;
+  height: 50rpx;
+  margin: 10rpx 20px;
+  align-items: center;
+}
+.energy-cont>.section>.left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.energy-cont>.section>.left>.img {
+  width: 20px;
+  height: 20px;
+}
+.energy-cont>.section>.left>.tit {
+  font-size: 14px;
+}
+.energy-cont>.section>.right {
+  width: 100rpx;
+  color: #3AA0FB;
+  font-size: 24rpx;
+}
+.energy-cont>.section .picker {
+  display: flex;
+  align-items: center;
+}
+.energy-cont>.section .icon-more {
+  width: 20px;
+  height: 12px;
+  transform:rotate(90deg);
+}

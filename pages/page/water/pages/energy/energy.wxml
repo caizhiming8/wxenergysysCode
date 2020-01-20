@@ -1,0 +1,96 @@
+<view class="energy">
+  <view class="energy-top">
+    <view class="energy-tab">
+      <view class="tab-btn {{currentTab == 1?'active':''}}" bindtap="goChangeTab" data-index="1">系统总能耗</view>
+      <view class="tab-btn {{currentTab == 2?'active':''}}" bindtap="goChangeTab" data-index="2">楼宇能耗</view>
+    </view>
+  </view>
+  <view class="energy-cont" wx:if="{{currentTab == 1}}">
+    <view class="cont-top">
+      <view class="item">
+        <view class="left">
+          <image class="icon" src="/images/new_img/heat_z_day.png"></image>
+          <view>当日用水量</view>
+        </view>
+        <view class="right">
+          <text class="led-font">{{dayDataNum}}</text>
+          <text>m³</text>
+        </view>
+      </view>
+      <view class="item">
+        <view class="left">
+          <image class="icon" src="/images/new_img/heat_z_month.png"></image>
+          <view>当月用水量</view>
+        </view>
+        <view class="right">
+          <text class="led-font">{{monthDataNum}}</text>
+          <text>m³</text>
+        </view>
+      </view>
+      <view class="item">
+        <view class="left">
+          <image class="icon" src="/images/new_img/heat_z_year.png"></image>
+          <view>当年用水量</view>
+        </view>
+        <view class="right">
+          <text class="led-font">{{yearDataNum}}</text>
+          <text>m³</text>
+        </view>
+      </view>
+    </view>
+    <view class="cont-echart">
+      <ec-canvas id="mychart-dom-gauge" canvas-id="mychart-gauge" ec="{{ ec3 }}"></ec-canvas>
+    </view>
+  </view>
+  <view class="energy-cont" wx:if="{{currentTab == 2}}">
+    <view class="section">
+      <view class="left">
+        <image class="img" src="../../resource/submenu_louyu@2x.png"></image>
+        <view class="tit">{{waterBuildsArr[curBuildIndex].label}}</view>
+      </view>
+      <view class="right">
+        <picker bindchange="goChangeBuild" range="{{waterBuildsArr}}" range-key="label">
+          <view class="picker">
+            <view>MORE</view>
+            <image src="../../resource/submenu_enter@2x.png" class="icon-more"></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="cont-top">
+      <view class="item">
+        <view class="left">
+          <image class="icon" src="/images/new_img/heat_z_day.png"></image>
+          <view>当日用水量</view>
+        </view>
+        <view class="right">
+          <text class="led-font">{{dayDataNum}}</text>
+          <text>m³</text>
+        </view>
+      </view>
+      <view class="item">
+        <view class="left">
+          <image class="icon" src="/images/new_img/heat_z_month.png"></image>
+          <view>当月用水量</view>
+        </view>
+        <view class="right">
+          <text class="led-font">{{monthDataNum}}</text>
+          <text>m³</text>
+        </view>
+      </view>
+      <view class="item">
+        <view class="left">
+          <image class="icon" src="/images/new_img/heat_z_year.png"></image>
+          <view>当年用水量</view>
+        </view>
+        <view class="right">
+          <text class="led-font">{{yearDataNum}}</text>
+          <text>m³</text>
+        </view>
+      </view>
+    </view>
+    <view class="cont-echart">
+      <ec-canvas id="mychart-dom-gauge" canvas-id="mychart-gauge" ec="{{ ec3 }}"></ec-canvas>
+    </view>
+  </view>
+</view>
